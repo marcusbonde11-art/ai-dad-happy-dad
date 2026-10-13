@@ -4,32 +4,38 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 
 ## Start Here
 
-> AI Dad ___ Dad: launch plan. Research done 2026-10-13. First post: Wednesday, Oct 14, 2026, morning.
+> AI Dad ___ Dad: launch plan. Research done 2026-10-13; updated the night of Oct 13. First post: Wednesday, Oct 14, 2026, morning.
 > Read this section first. Every section below has the detail behind it.
 
+### WHAT CHANGED TONIGHT
+- **Bottom line:** (1) Story corrected everywhere: the account never names the habit. The story is now: the same destructive patterns, over and over → you finally told your wife something had to change → that was the turning point → ADHD diagnosis and AI, all inside about a month, about two months ago. (2) All three scripts rewritten for filming at your gym, with specific details. Each script has a 'Detail check' row so you only say what's true. (3) Pillar 3 is now 'Late-Diagnosis Log', and every pillar has 15 ready-to-film ideas. (4) Bios sharpened with the trend terms from this sheet. (5) New 'Filming Logistics' section: tripod verdict and the gym-music copyright risk. (6) Re-check log at the end of Assumptions.
+
 ### NAME DECISION
-- **Bottom line:** Go with AI DAD HEALTHY DAD. 'AI Dad Happy Dad' contains the whole of HAPPY DAD, a brand owned by Happy Dad, LLC (the Nelk / Full Send hard seltzer). It has live filings in Class 33 (hard seltzer) and a registration covering Class 25 (clothing and hats). It has about 23 filings and keeps adding new HAPPY ___ marks, and it markets to young men on TikTok and Instagram, the same apps you'll be on. Your alcohol-free message doesn't lower the legal risk, and it makes the branding risk worse: search 'happy dad' and you get beer-aisle results, and an alcohol-free dad account would share its name with a hard seltzer. For 'Healthy Dad' I found no live federal trademark, and the full phrase 'AI Dad Healthy Dad' has zero search results. The acronym still spells A-D-H-D.
+- **Bottom line:** Go with AI DAD HEALTHY DAD. 'AI Dad Happy Dad' contains the whole of HAPPY DAD, a brand owned by Happy Dad, LLC (the Nelk / Full Send hard seltzer). It has live filings in Class 33 (hard seltzer) and a registration covering Class 25 (clothing and hats), about 23 filings in all, and it keeps adding new HAPPY ___ marks. It markets to young men on TikTok and Instagram, the same apps you'll be on. Search 'happy dad' and you get their product, not you. For 'Healthy Dad' I found no live federal trademark, and the full phrase 'AI Dad Healthy Dad' has zero search results. The acronym still spells A-D-H-D. Re-checked after tonight's story change: the call rests on trademark and search crowding, and neither changed.
 
 ### ACTION BEFORE WED
-- **Bottom line:** Tonight: (1) Claim @aidadhealthydad on TikTok and Instagram. Also grab @aidadhappydad as a free defensive hold, but don't post on it. (2) Register aidadhealthydad.com at any registrar, about $10-20/yr. (3) Run the 5 USPTO queries in the 'Trademark Detail' section yourself; this sandbox's network blocked tmsearch.uspto.gov. (4) Connect TikTok and Instagram to your Metricool brand. It's linked, but no social accounts are connected yet.
+- **Bottom line:** Tonight: (1) Claim @aidadhealthydad on TikTok and Instagram. Also grab @aidadhappydad as a free defensive hold, but don't post on it. (2) Register aidadhealthydad.com at any registrar, about $10-20/yr. (3) Run the 5 USPTO queries in the 'Trademark Detail' section yourself; this sandbox's network blocked tmsearch.uspto.gov. (4) Connect TikTok and Instagram to your Metricool brand. It's linked, but no social accounts are connected yet. (5) Pack the filming kit and read each script's Detail check row (see Filming Logistics).
+
+### FILMING AT THE GYM
+- **Bottom line:** Talk where the music isn't. Gym speakers play licensed music, your mic will pick it up, and TikTok and Instagram scan audio automatically. A muted talking video is a dead video. So: record talking parts in your car in the gym lot or a music-free corner, and use the gym floor for silent B-roll. Turn on TikTok's 'Music copyright check' on the posting page. A $20-40 tripod with a Bluetooth remote is worth buying.
 
 ### POSTING STACK (phone-only)
-- **Bottom line:** Write/tighten scripts in the Claude app → film on your phone's camera with a $20-60 clip mic → edit + auto-captions in CapCut (TikTok master) → re-caption/finish the Instagram version in Edits (Instagram's free editor, no watermark) → schedule/auto-publish both through Metricool (already connected) → check TikTok Creative Center and your own For You page 10 min a day for trends. No AI faces, AI voices, or AI eye-contact fixes. Raw stays raw.
+- **Bottom line:** Write/tighten scripts in the Claude app → film at your gym on a $20-40 tripod with a noise-cancelling clip mic (DJI Mic Mini class, ~$79 on sale) → edit + auto-captions in CapCut (TikTok master) → re-caption/finish the Instagram version in Edits (Instagram's free editor, no watermark) → schedule/auto-publish both through Metricool (already connected) → check TikTok Creative Center and your own For You page 10 min a day for trends. No AI faces, AI voices, or AI eye-contact fixes. Raw stays raw.
 
 ### SEQUENCE
 - **Bottom line:** TikTok first, every time. Repurpose to Instagram Reels about 24 hours later with a clean export (no TikTok watermark) and fresh captions. TikTok's For You feed ranks on content signals, not follower count, so a zero-follower account can reach people on day one. Instagram rewards originality and 'sends' (shares by DM), so post a native, clean upload rather than a repost.
 
 ### TIMING
-- **Bottom line:** Week 1-2: post TikTok at 7:00 AM ET (your morning-person brand, and in line with Hootsuite's morning window and Hopper's 7-8 AM Reels finding). Post Instagram Reels the next morning at 8:00 AM ET. Week 3: test one evening slot (6-8 PM, Metricool's TikTok study). After about 3 weeks of posts, switch to Metricool's personalized 'Best times' for your own audience.
+- **Bottom line:** First post (Wed): TikTok at 7:30 AM ET, which leaves 45 minutes after the gym to edit and proof captions. From Thursday: TikTok at 7:00 AM ET, Instagram Reels the next morning at 8:00 AM ET (in line with Hootsuite's morning window and Hopper's 7-8 AM Reels finding). Week 3: test one evening slot (6-8 PM, Metricool's TikTok study). After about 3 weeks of posts, switch to Metricool's personalized 'Best times' for your own audience.
 
 ### FIRST POST
-- **Bottom line:** Post Script B ('The Acronym') first: it has the strongest 1-second hook and explains the channel. Post Script C ('5 AM') second and Script A ('The Confession') third. Pin all three on TikTok, which allows 3 pinned videos. Captions are burned into every video.
+- **Bottom line:** Post Script B ('The Acronym') first: it has the strongest 1-second hook and explains the channel. Post Script C ('5:40 AM') second and Script A ('The Parking Lot') third. Film all three Wednesday morning, and pin all three on TikTok (it allows 3 pinned videos). Captions are burned into every video.
 
 ### CONTENT PILLARS
-- **Bottom line:** 1) 5AM Brain: mornings as ADHD regulation, not hustle. 2) AI External Brain: real prompts, real screens. 3) Alcohol-Free Dad Log. 4) Pattern Breaks: the loop, telling your wife, repair. 5) ADHD Dad in the Wild: dry humor with one takeaway. Each video gives viewers one thing worth saving.
+- **Bottom line:** 1) 5AM Brain: early mornings at the gym as ADHD regulation, not hustle. 2) AI External Brain: real prompts, real screens. 3) Late-Diagnosis Log: two months in, what the diagnosis changed and didn't. 4) Pattern Breaks: the loop, the sentence to your wife, repair. 5) ADHD Dad in the Wild: dry humor with one fix. 15 ideas each = 75 videos, about 15 weeks at 5 a week. Each video gives viewers one thing worth saving.
 
 ### WHAT I COULDN'T VERIFY
-- **Bottom line:** The sandbox only allows web search, so I couldn't directly query USPTO, domain registries, or TikTok/Instagram profile pages. Trademark findings come from indexed USPTO-data mirrors (Justia, Trademarkia, uspto.report, TTABVUE). Handle and domain status is 'no existing use found', not 'confirmed available'. None of this is legal advice. Before you file a federal application, get a 1-hour clearance review from a trademark attorney.
+- **Bottom line:** The sandbox only allows web search, so I couldn't directly query USPTO, domain registries, or TikTok/Instagram profile pages. Trademark findings come from indexed USPTO-data mirrors (Justia, Trademarkia, uspto.report, TTABVUE). Handle and domain status is 'no existing use found', not 'confirmed available'. Instagram reach penalties for muted audio come from third-party guides; Meta hasn't confirmed them. None of this is legal advice. Before you file a federal application, get a 1-hour clearance review from a trademark attorney.
 
 
 ## Name Decision
@@ -43,9 +49,9 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Edge:** Healthy
 
 ### 1a
-- **Criterion:** Is 'Happy Dad' seltzer a REAL conflict given your alcohol-free message?
-- **AI Dad Happy Dad:** Yes, as a real-world conflict, though not a slam-dunk legal loss. Trademark law compares marks, goods and trade channels, not your message, so being alcohol-free doesn't help you legally. On the brand side it hurts: you'd be the alcohol-free dad sharing a name with a hard seltzer, #happydad is seltzer content, and people may assume a parody or an affiliate deal. That's the wrong first impression for a recovery-adjacent account.
-- **AI Dad Healthy Dad:** N/A: no alcohol association. 'Healthy' supports the alcohol-free story.
+- **Criterion:** Is the 'Happy Dad' hard seltzer a REAL conflict for your account?
+- **AI Dad Happy Dad:** Yes, as a real-world conflict, though not a slam-dunk legal loss. Trademark law compares marks, goods and trade channels, not your message, so your story doesn't move the legal risk either way. On the brand side: #happydad is seltzer content, people may assume a parody or an affiliate deal, and an account about breaking destructive patterns would spend its first videos explaining that it isn't a drinks brand.
+- **AI Dad Healthy Dad:** No drinks-brand association. 'Healthy' fits a story about breaking patterns, early mornings and the gym.
 - **Edge:** Healthy
 
 ### 2
@@ -67,9 +73,9 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Edge:** Healthy
 
 ### 5
-- **Criterion:** Brand fit (ADHD + AI + alcohol-free + dry humor)
-- **AI Dad Happy Dad:** The word 'Happy' is warmer and funnier, and it reads like a dad joke. But it's the seltzer's tagline.
-- **AI Dad Healthy Dad:** The word 'Healthy' fits the alcohol-free and mornings story. It's a bit earnest, so the dry humor in the content has to carry the voice.
+- **Criterion:** Brand fit (ADHD + AI + breaking patterns + dry humor)
+- **AI Dad Happy Dad:** The word 'Happy' is warmer and funnier, and it reads like a dad joke. But it's someone else's product name.
+- **AI Dad Healthy Dad:** The word 'Healthy' fits the breaking-patterns, early-gym story. It's a bit earnest, so the dry humor in the content has to carry the voice.
 - **Edge:** Slight Happy
 
 ### 6
@@ -244,7 +250,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Trademark:** No 'Hopeful Dad' record found. Nearest: THE HOPEFUL MAMA (SN 98500313, pending, parenting podcasts), a different mark.
 - **Domain / handles:** Nothing found for aidadhopefuldad
 - **Search crowding:** LOW: no brand, podcast or account found
-- **Verdict:** Best backup. Clean, and fits the recovery tone.
+- **Verdict:** Best backup. Clean, and fits the turning-point story.
 
 ### AI Dad Honest Dad
 - **Trademark:** No federal record found
@@ -271,29 +277,29 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Backup:** Apple Notes / Google Keep
 
 ### Teleprompter
-- **Tool (pick):** PromptSmart (voice-tracking scroll)
+- **Tool (pick):** PromptSmart (voice-tracking scroll), for the car shots
 - **Cost:** ~$9.99/mo
-- **Why this one:** Scrolls only while you talk and pauses when you pause. That helps with natural delivery.
-- **Watch-outs:** Reading word-for-word kills the raw feel. Use bullet points, not full sentences, after week 1.
+- **Why this one:** Scrolls only while you talk and pauses when you pause. Works on a dash-mounted phone for Script A.
+- **Watch-outs:** On the gym floor a teleprompter is awkward and reading kills the raw feel. Use the script's On-screen TEXT lines as your cue card instead.
 - **Backup:** BIGVU free (watermark) / Teleprompter for Video (free short scripts)
 
 ### Record
-- **Tool (pick):** Phone's native camera, rear lens, 1080p/30 or 4K/30, window light
+- **Tool (pick):** Phone's native camera, rear lens, 1080p/30 or 4K/30, on a tripod (see Filming Logistics)
 - **Cost:** Free
-- **Why this one:** Best quality you've got. Mornings give you soft light, which suits the 5AM pillar.
-- **Watch-outs:** Audio matters more than video. A $20-60 clip-on wireless mic is the one purchase worth making.
+- **Why this one:** Best quality you've got. Face the brightest light in the gym; overhead lighting alone flattens faces.
+- **Watch-outs:** Audio matters more than video: a noise-cancelling wireless clip mic (DJI Mic Mini kit, ~$79 on sale) is the one purchase worth making. Gym music is a copyright risk; see Filming Logistics.
 
 ### Edit + captions (TikTok master)
 - **Tool (pick):** CapCut
 - **Cost:** Free (Pro ~$19.99/mo)
-- **Why this one:** Strongest free phone editor. Auto-captions in 55+ languages, jump cuts, text overlays.
+- **Why this one:** Strongest free phone editor. Auto-captions in 55+ languages, jump cuts, text overlays. The 'Reduce noise' toggle and 'Vocal isolation' (Pro) help strip leftover gym music.
 - **Watch-outs:** Proofread auto-captions: TikTok reads on-screen text and speech to decide what the video is about, so a wrong word can mis-file it. Pro assets add a watermark on free exports.
 
 ### Instagram version
 - **Tool (pick):** Edits (by Instagram)
 - **Cost:** Free
-- **Why this one:** No watermark, built for Reels, Instagram-native trending audio, built-in Reel insights.
-- **Watch-outs:** Needs an Instagram login. Re-export from the clean CapCut file, never from a downloaded TikTok (watermarks get suppressed).
+- **Why this one:** No watermark, built for Reels, Instagram-native trending audio, built-in Reel insights, and an audio-enhancement tool that reduces background noise (per its store listing).
+- **Watch-outs:** Needs an Instagram login. Re-export from the clean CapCut file, never from a downloaded TikTok (watermarks get suppressed). One creator reported the audio enhancement glitching at cuts, so listen before posting.
 - **Backup:** CapCut export without watermark
 
 ### AVOID for this brand
@@ -324,8 +330,94 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ### Optional automation (later)
 - **Tool (pick):** Make (connected)
 - **Cost:** Free tier
-- **Why this one:** Week 4+: mark a script row 'Filmed' and auto-create a Metricool draft or a calendar block.
+- **Why this one:** Week 4+: mark a script row 'Filmed' and auto-create a Metricool draft or a calendar block. (Make is also how this sheet was updated in place tonight.)
 - **Watch-outs:** Not needed for launch. Don't spend Tuesday night on it.
+
+
+## Filming Logistics
+
+> You film at your gym in the morning. Two things decide whether that works: a stable phone, and keeping the gym's music out of your audio. Researched the night of Oct 13; product claims from vendors are marked as marketing.
+
+### Tripod or stand: worth it?
+- **Recommendation:** YES. Buy a tall telescoping phone tripod with a Bluetooth remote: $20-40, and the biggest upgrade after the mic. Most-cited pick in 2026 gym reviews: the EUCOS 62-in with remote.
+- **Why / evidence:** Handheld at the gym means arm-length framing, shake, a sweaty grip, and no hands free for B-roll of your lifts. A tripod lets you set the shot once and just talk. Reviewers rate the EUCOS remote as reliable at ~33 ft but its plastic build as less premium; the TONEOF 68-in is the sturdier aluminum option. Metric Coach's ~$20 pick held up to a year of daily use.
+- **Cost:** $20-40
+- **Source:** metric.coach/articles/best-gym-tripod-for-phones · kingswaygym.com/gym-tripod · musclemadnesshq.com/best-gym-tripods
+
+### Magnetic gym mount (optional add-on)
+- **Recommendation:** Only if you want lifting B-roll from the rack: a MagSafe magnetic mount that sticks to steel equipment.
+- **Why / evidence:** Holds on steel/iron racks and benches, not aluminum. Android phones need the metal ring adapter. Hold-strength claims (one vendor says 'through a 405 lb deadlift') are marketing; I found no neutral long-term tests.
+- **Cost:** $25-60
+- **Source:** blaubeck.com (vendor) · SmallRig 5460 listing · Amazon listing
+
+### Skip for now
+- **Recommendation:** Gimbals, ring lights, auto-tracking mounts.
+- **Why / evidence:** Talking-head videos don't move, and raw is the brand. Spend the money on the mic.
+- **Cost:** $0
+
+### Shot setup (2 minutes)
+- **Recommendation:** Phone vertical, lens at eye level, 3-4 ft away, chest-up framing. Face the brightest light. Back to a wall or corner, never a mirror.
+- **Why / evidence:** A wall behind you means no other members and no reflections in frame, which is the #1 gym-filming rule (see the etiquette row). An eye-level lens reads as a conversation, not a lecture.
+- **Source:** Gym filming policies (Axios; Health Club Management)
+
+### Mic
+- **Recommendation:** Wireless clip-on mic with noise cancellation ON, clipped 6-8 in below your chin. DJI Mic Mini class.
+- **Why / evidence:** A close mic makes your voice much louder than the room. The Mic Mini has two noise-cancellation levels (helps in moderate noise, not extreme, per New Atlas); the Mic Mini 2S adds AI noise reduction and an internal backup recording (TechRadar). Neither was tested against gym music, so test yours on your first morning.
+- **Cost:** ~$79 Mic Mini kit on sale ($169 at launch) · ~$88-168 Mini 2S
+- **Source:** New Atlas · TechRadar · Kotaku
+
+### THE MUSIC RISK (read this)
+- **Recommendation:** Treat gym music as a real risk. It's highest for talking-to-camera segments.
+- **Why / evidence:** Gym speakers play licensed music, and your mic will pick it up even at low volume. TikTok: copyrighted music caught by a mic can get a video's sound muted or removed, and TikTok's Creator Academy describes a 'Music copyright check' on the posting page that warns you before you publish. Instagram: its help center says reel audio can be muted when music-rights agreements change, and 2026 guides report automatic detection of copyrighted tracks, muted Reels getting reduced distribution, and business accounts getting a narrower music library (third-party, not confirmed by Meta). A muted talking video loses the only thing it has: your voice.
+- **Source:** TikTok Creator Academy · Instagram Help · LastPlayDistro · InspireToThrive
+
+### Avoid it #1: talk where there's no music
+- **Recommendation:** Record talking segments in your car in the gym lot (Script A is written for this), outside the entrance, in a stairwell, or in a studio room with the speaker off.
+- **Why / evidence:** No music in the recording means no copyright match. The car is also the quietest, most private room you have at 5:30 AM.
+- **Cost:** $0
+
+### Avoid it #2: voiceover over silent B-roll
+- **Recommendation:** On the floor, film B-roll only: chalk, the bar loading, the clock, the empty gym. In CapCut set that audio to 0. Record your lines in the car and lay them over.
+- **Why / evidence:** The gym's music never reaches the final file. This is how Scripts B and C cover their gym shots.
+- **Cost:** $0
+
+### Reduce it #3: if you must talk on the floor
+- **Recommendation:** Mic clipped close with noise cancellation on, stand as far from the speakers as you can, film when the floor is emptiest, and ask the front desk once whether they'd drop the volume for two minutes.
+- **Why / evidence:** This lowers the music relative to your voice but rarely removes it, so always check in post (next row).
+- **Cost:** $0
+
+### Clean it in post
+- **Recommendation:** CapCut: the 'Reduce noise' toggle, then 'Vocal isolation' (a Pro feature, per 2026 tutorials). Edits: 'audio enhancement'. Then listen on headphones: if you can still hear a melody or lyrics, re-record. Don't post it.
+- **Why / evidence:** Isolation results depend on the recording (CapCut guide, Aug 2026), and one creator reported Edits' enhancement glitching at cuts. Your ears are the final check.
+- **Cost:** Free · CapCut Pro ~$19.99/mo
+- **Source:** capcutguide.com · creator tutorial (TikTok) · Edits App Store listing · Threads report
+
+### Check before and after posting
+- **Recommendation:** TikTok: switch on 'Music copyright check' on the posting page (TikTok Studio app or web). Instagram: open the Reel 10 minutes after posting and look for an 'audio unavailable' notice.
+- **Why / evidence:** If a talking video gets muted anyway, swapping in new audio won't save it, because your voice goes too. Re-record the voice in the car, rebuild the edit, and post it as a new video. Don't repost the same file: a 2026 guide says it usually gets muted again.
+- **Cost:** $0
+- **Source:** TikTok Creator Academy · InspireToThrive
+
+### Don't fight music with music
+- **Recommendation:** Never add a trending song to 'cover' gym music. If you want music, add it from the app's own library at low volume, after the gym audio is gone.
+- **Why / evidence:** In-app library sounds are cleared for that platform; a second song doesn't erase the first. Business accounts get a smaller library (third-party guides), which is another reason to stay on a personal/creator TikTok for now.
+- **Cost:** $0
+- **Source:** Fox Music · LastPlayDistro
+
+### Gym etiquette and rules
+- **Recommendation:** Ask the front desk once: 'I film short talking videos for my own account. Anywhere you'd rather I didn't?' Never show another member recognizably, including in mirrors or their voice. Blur anyone who wanders into frame.
+- **Why / evidence:** Big chains (Life Time, Equinox, Crunch) reportedly ban filming members without permission, and one operator's code of conduct bars any recognizable person in posts, reflections and audio included. Getting banned from your filming location would cost more than any video.
+- **Cost:** $0
+- **Source:** Axios (2025) · Health Club Management · STV News
+
+### Car setup (Script A)
+- **Recommendation:** Phone on a dash or vent mount, or the tripod on the passenger seat. Engine off, windows up, lens at eye level. Sit back so your shoulders are in frame.
+- **Why / evidence:** Engine off beats any filter. If it's still dark, park under a lot light or angle your face toward the gym's entrance lights.
+- **Cost:** $0-15 (mount)
+
+### Night-before kit (2 minutes)
+- **Recommendation:** Tripod + remote, mic charged, phone at 80%+ with storage cleared. Read each script's Detail check row, then use its On-screen TEXT lines as your cue card.
+- **Why / evidence:** No decisions at 5:30 AM. That's the whole point of the 5AM pillar.
 
 
 ## Timing & Sequence
@@ -333,7 +425,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 > Times are US Eastern (assumed; see Assumptions). Published studies disagree, so these are starting defaults, not rules. After about 3 weeks, switch to Metricool's personalized Best Times for your own audience.
 
 ### TikTok (post FIRST)
-- **Default slot:** 7:00 AM weekdays; test 6-8 PM in week 3
+- **Default slot:** 7:00 AM weekdays (first post: 7:30 AM); test 6-8 PM in week 3
 - **Evidence:** Hootsuite (secondhand): Thu 6-9 AM. Sprout (~2B engagements): Tue-Thu 2-6 PM. Buffer (7.1M posts): Sun 9 AM. Metricool 2026: 6-8 PM.
 - **Why for you:** Studies disagree, so the morning slot matches the brand: you post at the hour you talk about. TikTok judges new accounts on content, not followers, so timing matters less than the hook.
 
@@ -350,40 +442,45 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 
 ## Week 1 Calendar
 
-> TikTok first, Instagram next day. Reply to every comment within the first 60 minutes of each post.
+> TikTok first, Instagram next day. Reply to every comment within the first 60 minutes of each post. Launch week runs the three intro scripts Wed-Fri; the weekly rhythm in Content Pillars starts Monday.
 
 ### Tue Oct 13
 - **Time (ET):** Evening
-- **Post:** Claim handles + domain, connect Metricool, set bios, film Scripts B, C, A
-- **Notes:** Film C at 5 AM Wednesday if you can. The real light and real quiet are the point.
+- **Post:** Claim handles + domain, connect Metricool, set bios, pack the filming kit
+- **Notes:** Read each script's Detail check row tonight and swap anything that isn't true for you.
 
 ### Wed Oct 14
-- **Time (ET):** 7:00 AM ET
+- **Time (ET):** 5:30-6:45 AM ET
+- **Post:** Film at the gym: Script A in the car first, then B and C (talking parts in a music-free spot, B-roll on the floor)
+- **Notes:** Film all three now; post only B today.
+
+### Wed Oct 14
+- **Time (ET):** 7:30 AM ET
 - **Platform:** TikTok
 - **Post:** Script B: 'The Acronym'
 - **Pillar:** Intro
-- **Notes:** Post natively in the TikTok app; you'll be there to reply anyway. Pin it.
+- **Notes:** Moved from 7:00 to leave 45 min to edit and proof captions. Post natively in the TikTok app with 'Music copyright check' on; reply for the first hour. Pin it.
 
 ### Thu Oct 15
 - **Time (ET):** 7:00 AM ET
 - **Platform:** TikTok
-- **Post:** Script C: '5 AM'
+- **Post:** Script C: '5:40 AM'
 - **Pillar:** 5AM Brain
 - **Notes:** Pin it.
 
 ### Thu Oct 15
 - **Time (ET):** 8:00 AM ET
 - **Platform:** Instagram Reel
-- **Post:** Script B (clean export, Edits captions)
+- **Post:** Script B (watermark-free export, Edits captions)
 - **Pillar:** Intro
 - **Notes:** Via Metricool, or in-app if not connected yet
 
 ### Fri Oct 16
 - **Time (ET):** 7:00 AM ET
 - **Platform:** TikTok
-- **Post:** Script A: 'The Confession'
+- **Post:** Script A: 'The Parking Lot'
 - **Pillar:** Pattern Breaks
-- **Notes:** Pin it. Friday = the drink-night conversation.
+- **Notes:** Pin it.
 
 ### Fri Oct 16
 - **Time (ET):** 8:00 AM ET
@@ -391,6 +488,13 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Post:** Script C
 - **Pillar:** 5AM Brain
 - **Notes:** Metricool
+
+### Sat Oct 17
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Reply-to-comment video (best question from Wed-Fri)
+- **Pillar:** Comment Answers
+- **Notes:** TikTok's 'reply with video' button
 
 ### Sat Oct 17
 - **Time (ET):** 8:00 AM ET
@@ -402,13 +506,13 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ### Sat Oct 17
 - **Time (ET):** 9:00 AM ET
 - **Platform:** Instagram carousel
-- **Post:** Carousel: '3 decisions I make before my kids wake up' (from Script C)
+- **Post:** Carousel: 'The 3 calls I make between sets' (from Script C)
 - **Pillar:** 5AM Brain
 - **Notes:** Saveable checklist
 
 ### Sun Oct 18
-- **Post:** Batch-film 3-4 videos for next week (see Content Pillars)
-- **Notes:** Morning session, 45 min
+- **Post:** Batch-film 3-4 videos for next week (pick from the 15-idea lists in Content Pillars)
+- **Notes:** Morning gym session, 45 min
 
 ### Mon Oct 19
 - **Time (ET):** 7:00 AM ET
@@ -420,9 +524,9 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ### Tue Oct 20
 - **Time (ET):** 7:00 AM ET
 - **Platform:** TikTok
-- **Post:** Reply-to-comment video (best question from week 1)
-- **Pillar:** Comment Answers
-- **Notes:** TikTok's 'reply with video' button
+- **Post:** Pattern Breaks: 'Apologies with an action attached'
+- **Pillar:** Pattern Breaks
+- **Notes:** Put the formula on screen; it's the saveable part
 
 
 ## Trends (Oct 2026)
@@ -432,7 +536,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ### Late-diagnosed / undiagnosed ADHD dads
 - **Platform:** TikTok
 - **Evidence:** TikTok search cluster 'dad undiagnosed adhd' is active. Few established creators combine ADHD + dad, so the niche is open.
-- **How AI Dad uses it:** That's your story exactly. Make 'I got diagnosed two months ago' a recurring frame.
+- **How AI Dad uses it:** That's your story exactly, and now its own pillar (Late-Diagnosis Log). Say 'late-diagnosed' and 'ADHD dad' out loud early; they're the search terms.
 - **Shelf life:** Evergreen
 
 ### Backlash against ADHD misinformation
@@ -444,7 +548,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ### Emotionally expressive, involved dads; unpolished beats produced
 - **Platform:** TikTok, IG
 - **Evidence:** 2026 creator guidance: younger audiences respond to expressive, involved dads, and everyday raw moments outperform polished ones.
-- **How AI Dad uses it:** Your raw-and-real rule is already the right call. Film in the kitchen, not a studio.
+- **How AI Dad uses it:** Your raw-and-real rule is already the right call. Film at your gym and in your car, not a studio.
 - **Shelf life:** Evergreen
 
 ### Practical 'dad advice' / how-to format
@@ -453,11 +557,11 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **How AI Dad uses it:** Every video gives one concrete takeaway (a prompt, a checklist, a script) and puts it on screen so people save it.
 - **Shelf life:** Evergreen
 
-### Sober-curious parents
-- **Platform:** IG, TikTok
-- **Evidence:** Millennial/Gen Z parents are driving the shift toward drinking less, framed as presence over 'checking out' (The Bump, Datassential).
-- **How AI Dad uses it:** Alcohol-Free Dad Log: what replaced the 5 PM drink, the Friday-night problem, and no preaching.
-- **Shelf life:** Rising
+### Watch time beats length
+- **Platform:** TikTok, IG
+- **Evidence:** Hootsuite 2026: watch time and completion rate carry the most weight among engagement signals. One 2026 guide argues total seconds watched matter, so a 45-second video watched fully beats a 12-second one (a vendor claim; TikTok hasn't confirmed it).
+- **How AI Dad uses it:** The rewritten scripts put a new, specific detail every ~10 seconds so 60-75 seconds holds. If week-1 retention drops before 15 seconds, cut the next video to hook + one detail + CTA (~30 s).
+- **Shelf life:** Platform rule
 
 ### Halloween formats (Pumpkin Head Illusion, Ramalama Costume Walk)
 - **Platform:** TikTok
@@ -487,158 +591,182 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ## Scripts
 
 > All three are written for the recommended name. If you keep 'Happy', swap 'Healthy' → 'Happy'; nothing else changes.
-> Length: about 65-80 seconds after jump cuts (B is shortest). Timestamps are targets; tighten pauses rather than cutting lines. Captions: burn in word-by-word captions for every line (CapCut auto-captions, proofread). Big on-screen text (TEXT) sits above the captions.
-> Alcohol-free math: Sept 8 is Day 1, so Wed Oct 14 is Day 37 ('a little over five weeks').
-> Recommended order: B first, C second, A third. Pin all three.
+> Story rule: the habit is never named, hinted at, or counted in days. The story is the pattern, the sentence to your wife, and what came after.
+> Details: every script ends with a 'Detail check' row. TRUE lines come from what you told me (or your own setup). SWAP lines are specifics I wrote to make it sound like a real person: keep the ones that are true for you, and replace the rest with your version.
+> Length: 60-75 seconds after jump cuts. Captions: word-by-word captions burned in on every line (CapCut auto-captions, proofread). Big on-screen TEXT sits above the captions.
+> Audio: talking parts are recorded where there's no gym music (car, entrance, stairwell, quiet corner). Gym-floor shots are muted B-roll. See Filming Logistics.
+> Recommended order: B first (Wed), C second (Thu), A third (Fri). Film all three Wednesday morning. Pin all three.
 
-### A: The Confession
+### A: The Parking Lot
 - **Beat:** HOOK
-- **Time:** 0-2s
-- **On-screen TEXT:** I told my wife the truth. 30 days later, everything was different.
-- **You say (word for word):** About two months ago I sat my wife down and told her the thing I'd been pretending wasn't a thing.
-- **Shot / delivery:** Tight shot, eye level, phone on something steady. No smile. Start talking on frame one: no 'hey guys'.
+- **Time:** 0-4s
+- **On-screen TEXT:** One sentence to my wife. It's why this account exists.
+- **You say (word for word):** One sentence to my wife. Two months ago. It's the reason this account exists.
+- **Shot / delivery:** Driver's seat, gym lot, engine off, still dark. Phone on the dash at eye level. First word on frame one: no 'hey guys', no smile yet.
 
-### A: The Confession
+### A: The Parking Lot
 - **Beat:** The loop
-- **Time:** 2-12s
-- **On-screen TEXT:** Same mistakes. New excuses.
-- **You say (word for word):** I kept doing the same destructive stuff. Over and over. Same loop, different week. And every time I swore it was the last time. Spoiler: it was not the last time.
-- **Shot / delivery:** Dry delivery on 'spoiler'. Slight pause before it.
+- **Time:** 4-15s
+- **On-screen TEXT:** Same pattern. Same apology. Same 'this time's different.'
+- **You say (word for word):** For years I ran the same destructive patterns. Same mistake, same apology, same speech about how this time was different. I could've given that speech in my sleep. Not a flex.
+- **Shot / delivery:** Dry on 'Not a flex.' Glance away, then back to the lens.
 
-### A: The Confession
+### A: The Parking Lot
+- **Beat:** The sentence
+- **Time:** 15-26s
+- **On-screen TEXT:** “Something has to change. And I think it's me.”
+- **You say (word for word):** Then one night I skipped the speech and said, 'Something has to change. And I think it's me.' That was the turning point. One sentence I'd dodged for years.
+- **Shot / delivery:** Slow down. Hold one full second of silence after 'And I think it's me.'
+
+### A: The Parking Lot
 - **Beat:** The month
-- **Time:** 12-30s
-- **On-screen TEXT:** Told my wife → ADHD diagnosis → found AI. All in ~1 month.
-- **You say (word for word):** So I told her. All of it. Which, for the record, was harder than any workout I've ever skipped. Then, inside about a month, I got diagnosed with ADHD. Turns out the loop had a name. And I started using AI. Not to make content. To run the parts of my brain that don't show up for work.
-- **Shot / delivery:** Jump cut between sentences. Keep the cuts. They read as honest.
+- **Time:** 26-40s
+- **On-screen TEXT:** Inside a month: ADHD diagnosis + AI
+- **You say (word for word):** Inside a month, a doctor said 'ADHD.' About me. It explained a lot. Excused none of it. And I started using AI for the stuff my brain drops. Last night it checked whether this channel's name was trademarked.
+- **Shot / delivery:** Jump cut between sentences and keep the cuts. Half-smile on 'trademarked.'
 
-### A: The Confession
-- **Beat:** Alcohol-free
-- **Time:** 30-42s
-- **On-screen TEXT:** Alcohol-free since Sept 8.
-- **You say (word for word):** And on September 8th I had my last drink. I'm a little over five weeks alcohol-free. I'm not here to tell you it's easy. I'm here because it isn't.
-- **Shot / delivery:** Slow down. This is the most important line, so let it sit for a beat.
-
-### A: The Confession
+### A: The Parking Lot
 - **Beat:** The channel
-- **Time:** 42-58s
-- **On-screen TEXT:** AI Dad. Healthy Dad. (A.D.H.D.)
-- **You say (word for word):** This account is called AI Dad, Healthy Dad. Say the first letters out loud. ... Yeah. I see it too. I'm going to show you what's actually working for me: the 5 a.m. mornings, the AI setups, the dad stuff. And what isn't.
-- **Shot / delivery:** Small smirk on 'I see it too'. That's the dry humor showing.
+- **Time:** 40-50s
+- **On-screen TEXT:** AI Dad. Healthy Dad. (Check the first letters.)
+- **You say (word for word):** So: AI Dad, Healthy Dad. Yes, the first letters spell exactly what you think. I'm two months into learning my own brain, and I'll show you what's helping, and what isn't.
+- **Shot / delivery:** Small smirk on 'exactly what you think.' Then straight down the lens.
 
-### A: The Confession
+### A: The Parking Lot
 - **Beat:** Soft CTA
-- **Time:** 58-65s
-- **On-screen TEXT:** Sound like your house? Comment or DM.
-- **You say (word for word):** If any of this sounds like your house, tell me in the comments. Or DM me. I read all of it. Mostly at 5 a.m.
-- **Shot / delivery:** End on a look, not a wave. Cut 0.5s after the last word.
+- **Time:** 50-62s
+- **On-screen TEXT:** Been there? 🚗 below. Got a sentence you haven't said yet? DMs open.
+- **You say (word for word):** If you've been there, drop a 🚗 in the comments. If you've got your own version of that sentence, the one you haven't said yet, DM me. I'll read it right here tomorrow, before I go in.
+- **Shot / delivery:** Open the car door on the last word and cut as it opens. That's your ending.
 
-### A: The Confession
+### A: The Parking Lot
 - **Beat:** Post copy
-- **On-screen TEXT:** Cover text: 'ADHD dad: the 30 days that changed everything'
-- **You say (word for word):** CAPTION: ADHD dad, diagnosed 2 months ago, 5+ weeks alcohol-free. This is where I start. Lived experience, not medical advice. #adhddad #adhd #adultadhd #alcoholfree #soberdad #dadsoftiktok #fatherhood
+- **On-screen TEXT:** Cover text: 'The sentence that changed everything (ADHD dad)'
+- **You say (word for word):** CAPTION: Late-diagnosed ADHD dad. Two months ago I told my wife something had to change. Inside a month: the diagnosis, and AI. This account is what happens next. Lived experience, not medical advice. #adhddad #latediagnosedadhd #adultadhd #adhd #dadsoftiktok #fatherhood
 - **Shot / delivery:** Pillar: Pattern Breaks
+
+### A: The Parking Lot
+- **Beat:** Detail check
+- **You say (word for word):** TRUE (from you): the repeating patterns; telling your wife something had to change; that being the turning point; the diagnosis and AI inside about a month, about two months ago; the gym before the house wakes up. TRUE (from last night): AI checked whether the channel name was trademarked. SWAP if it isn't yours: 'for years'; the speech-in-my-sleep line; the exact words of your sentence (use your own; the hook works with any one sentence); 'one night'. ASSUMES you drive to the gym; if not, film on a bench outside the entrance.
+- **Shot / delivery:** Read before filming. Your cue card is the On-screen TEXT column.
 
 ### B: The Acronym (POST FIRST)
 - **Beat:** HOOK
-- **Time:** 0-2s
+- **Time:** 0-3s
 - **On-screen TEXT:** AI Dad Healthy Dad → A.D.H.D.
-- **You say (word for word):** AI Dad. Healthy Dad. Read the first letters. ... Yeah. That's on purpose.
-- **Shot / delivery:** Point at the on-screen text as it appears. Deadpan. This is the 1-second hook: the reveal makes people stay to see where it goes.
+- **You say (word for word):** AI Dad. Healthy Dad. Read the first letters.
+- **Shot / delivery:** Outside the gym doors or in a stairwell, with no speakers in earshot. Point up at the text as it appears. Deadpan.
+
+### B: The Acronym (POST FIRST)
+- **Beat:** The payoff
+- **Time:** 3-8s
+- **On-screen TEXT:** I didn't notice either. A doctor did.
+- **You say (word for word):** ... Yeah. I didn't notice either. A doctor did. About me. Two months ago.
+- **Shot / delivery:** One beat of silence before 'Yeah.' This line is what makes people stay.
 
 ### B: The Acronym (POST FIRST)
 - **Beat:** Who
-- **Time:** 2-10s
-- **On-screen TEXT:** ADHD dad · diagnosed 2 months ago · 5+ weeks alcohol-free
-- **You say (word for word):** I'm a dad with ADHD. Officially, as of about two months ago. And I'm a little over five weeks alcohol-free.
+- **Time:** 8-18s
+- **On-screen TEXT:** ADHD dad · late-diagnosed · at the gym before the house wakes up
+- **You say (word for word):** I'm a dad. It's not even six, I'm at the gym before my house wakes up, and I'm finally learning why my brain does what it does.
 - **Shot / delivery:** Each fact pops on screen as you say it.
 
 ### B: The Acronym (POST FIRST)
-- **Beat:** Story
-- **Time:** 10-28s
-- **On-screen TEXT:** The loop → told my wife → diagnosis → AI
-- **You say (word for word):** Short version: I kept running the same destructive patterns. Same mistakes, new excuses. I finally told my wife what was really going on. Then, all inside about a month, I got diagnosed, and I found AI.
-- **Shot / delivery:** Steady pace. Don't rush 'told my wife'.
+- **Beat:** The story
+- **Time:** 18-30s
+- **On-screen TEXT:** Same patterns → told my wife → turning point → diagnosis + AI
+- **You say (word for word):** Short version: same destructive patterns, over and over. Different week, same ending. Then I told my wife something had to change. That was the turning point. Inside a month: the diagnosis, and AI.
+- **Shot / delivery:** Steady pace. Don't rush 'told my wife.'
 
 ### B: The Acronym (POST FIRST)
-- **Beat:** Turn
-- **Time:** 28-36s
-- **On-screen TEXT:** AI didn't fix me. It just remembers stuff.
-- **You say (word for word):** And let's be clear: AI didn't fix me. It just remembers stuff so I can stop pretending I do.
-- **Shot / delivery:** Dry. Tiny shrug.
+- **Beat:** The turn
+- **Time:** 30-40s
+- **On-screen TEXT:** AI didn't fix me. It built me a 296-row spreadsheet.
+- **You say (word for word):** AI didn't fix me. I asked it to help launch this account, and it built me a 296-row spreadsheet. I have ADHD. I've read row one.
+- **Shot / delivery:** Hold up your phone with the sheet open for 2 seconds, then back to camera. Dry: the laugh is theirs, not yours.
 
 ### B: The Acronym (POST FIRST)
-- **Beat:** What you'll get (SAVEABLE)
-- **Time:** 36-58s
-- **On-screen TEXT:** 1. AI as an external brain: real prompts<br>2. 5 AM: the only quiet hour<br>3. Alcohol-free dad, no sermons
-- **You say (word for word):** Here's what this account is. Three things. One: how I use AI as an external brain. Real prompts, real screens. Two: mornings. I'm up at five. Not to grind. Because it's the only hour my head is quiet. Three: being an alcohol-free dad without making it my whole personality. ... Okay. A little bit my personality.
-- **Shot / delivery:** Hold up fingers for 1-2-3. Each item stays on screen and stacks as a list, so people screenshot or save it.
+- **Beat:** Three things (SAVEABLE)
+- **Time:** 40-58s
+- **On-screen TEXT:** 1. The gym before the house wakes up<br>2. AI as my external brain (real prompts)<br>3. Dad life with a brain that finally has a name
+- **You say (word for word):** So I asked for the short version. One: the gym before my house wakes up, the only quiet hour I get. Two: AI as my external brain, real prompts, real screens. Three: dad life with a brain that finally has a name. Including the parts I'm still bad at.
+- **Shot / delivery:** Fingers up for 1-2-3; each item stacks on screen so people screenshot it. One second of muted B-roll per item: the gym clock, your phone screen, your gym bag.
 
 ### B: The Acronym (POST FIRST)
 - **Beat:** Soft CTA
-- **Time:** 58-68s
-- **On-screen TEXT:** Just diagnosed? Suspect it? Say hi 👇
-- **You say (word for word):** If you're a dad who just got the diagnosis, or you think you might, say hi in the comments. Tell me what your loop is. You're not the only one in it.
-- **Shot / delivery:** Warm, not salesy. End on the last word.
+- **Time:** 58-67s
+- **On-screen TEXT:** Just diagnosed? Wondering? Say hi 👇
+- **You say (word for word):** Dads: just got the diagnosis? Or watching this going 'hang on...'? Say hi in the comments. You don't need it figured out. I clearly don't.
+- **Shot / delivery:** Small smile on 'I clearly don't.' End on the last word.
 
 ### B: The Acronym (POST FIRST)
 - **Beat:** Post copy
 - **On-screen TEXT:** Cover text: 'AI Dad Healthy Dad = ADHD'
-- **You say (word for word):** CAPTION: ADHD dad here. Diagnosed 2 months ago, alcohol-free since 9/8, up at 5 AM, using AI as my external brain. Real dad, real footage. Lived experience, not medical advice. #adhddad #adhd #adhdtiktok #adultadhd #dadsoftiktok #alcoholfree #ai
+- **You say (word for word):** CAPTION: ADHD dad here. Late-diagnosed two months ago. At the gym before the house wakes up, using AI as my external brain, figuring the rest out on camera. Lived experience, not medical advice. #adhddad #latediagnosedadhd #adultadhd #adhdtiktok #dadsoftiktok #5amclub #ai
 - **Shot / delivery:** Pillar: Intro / all
 
-### C: 5 AM
+### B: The Acronym (POST FIRST)
+- **Beat:** Detail check
+- **You say (word for word):** TRUE (from you): the acronym; diagnosed about two months ago; patterns → told your wife → turning point → diagnosis and AI inside about a month; the gym before the house wakes up. TRUE (from tonight): AI built you this launch spreadsheet, which has 296 rows as of Oct 13 (if you add rows, update the number or say 'a giant spreadsheet'). SWAP if it isn't yours: 'It's not even six' (say your real time); 'the only quiet hour I get'; the B-roll items (use what's actually there).
+- **Shot / delivery:** Read before filming. Your cue card is the On-screen TEXT column.
+
+### C: 5:40 AM
 - **Beat:** HOOK
-- **Time:** 0-2s
-- **On-screen TEXT:** 5:04 AM. The only hour my ADHD brain is quiet.
-- **You say (word for word):** It's five a.m., everybody's asleep, and this is the only hour of the day my brain isn't on fire.
-- **Shot / delivery:** FILM AT 5 AM for real: dark kitchen, one lamp, coffee steam. Low voice, like you're trying not to wake the kids.
+- **Time:** 0-4s
+- **On-screen TEXT:** 5:40 AM. The only hour my ADHD brain shuts up.
+- **You say (word for word):** 5:40 a.m. The only hour my ADHD brain isn't running fourteen tabs.
+- **Shot / delivery:** Between sets; a little out of breath is fine. Quietest corner, back to a wall, no mirrors. If gym music is audible on playback, re-record your lines in the car and use these shots as muted B-roll.
 
-### C: 5 AM
+### C: 5:40 AM
 - **Beat:** Who
-- **Time:** 2-20s
-- **On-screen TEXT:** ADHD dad · told my wife → diagnosed → found AI
-- **You say (word for word):** Quick intro, since you don't know me. I'm a dad. About two months ago I finally admitted to my wife that I kept repeating the same destructive patterns and couldn't stop. Within about a month I got diagnosed with ADHD, and I found AI and started using it like a second brain.
-- **Shot / delivery:** Sip coffee between sentences. That's a natural jump cut.
+- **Time:** 4-15s
+- **On-screen TEXT:** ADHD dad · told my wife something had to change · diagnosis + AI inside a month
+- **You say (word for word):** Quick version: I'm a dad. Years of the same destructive patterns. Two months ago I told my wife something had to change. Inside a month: an ADHD diagnosis, and AI.
+- **Shot / delivery:** Sit on the bench. Wipe your face mid-sentence: it reads as real, and it's a natural jump-cut point.
 
-### C: 5 AM
-- **Beat:** Alcohol-free
-- **Time:** 20-25s
-- **On-screen TEXT:** Alcohol-free since Sept 8.
-- **You say (word for word):** Also, I haven't had a drink since September 8th.
-- **Shot / delivery:** Flat, matter-of-fact. No music swell.
-
-### C: 5 AM
+### C: 5:40 AM
 - **Beat:** The insight
-- **Time:** 25-35s
-- **On-screen TEXT:** Mornings aren't for doing MORE. They're for getting AHEAD of my brain.
-- **You say (word for word):** Here's what I've figured out. Mornings aren't about getting more done. They're about getting ahead of my brain before the day starts making decisions for me.
-- **Shot / delivery:** Look straight down the lens on this line.
+- **Time:** 15-27s
+- **On-screen TEXT:** It's not about doing MORE. Nobody needs anything from me yet.
+- **You say (word for word):** This hour isn't about getting more done. It's that nobody needs anything from me yet. No questions. No notifications. No 'Dad, where's my...' One bar, one decision. Closest my brain gets to quiet.
+- **Shot / delivery:** Cut to muted B-roll on 'One bar': hands on the barbell, the plates, the empty floor.
 
-### C: 5 AM
-- **Beat:** The system (SAVEABLE)
-- **Time:** 35-55s
-- **On-screen TEXT:** Before the kids wake up:<br>1. The ONE thing that has to happen today<br>2. What I'm doing at 5 PM instead of a drink<br>3. One thing with the kids. No phone.
-- **You say (word for word):** So before the kids wake up, I make three decisions. One: the one thing that has to happen today. Not five. One. Two: what I'm doing at 5 p.m., because that's when I used to want a drink. Three: one thing I'm doing with my kids. Phone in a drawer. Then I tell my AI, and it nags me about all three all day. That's the system.
-- **Shot / delivery:** Optional 2-second cut to your phone screen showing the AI chat. Each item stacks on screen.
+### C: 5:40 AM
+- **Beat:** The reset
+- **Time:** 27-32s
+- **On-screen TEXT:** My checklist resets at 3 AM. Yesterday doesn't get a vote.
+- **You say (word for word):** My checklist resets itself at 3 a.m. Yesterday doesn't get a vote.
+- **Shot / delivery:** Optional 2-second shot of the checklist on your phone screen.
 
-### C: 5 AM
+### C: 5:40 AM
+- **Beat:** The 3 calls (SAVEABLE)
+- **Time:** 32-52s
+- **On-screen TEXT:** Between sets, 3 calls:<br>1. The ONE thing that has to happen today<br>2. When the old pattern's most likely to show up today (and what I'll do instead)<br>3. One thing with my kids. Phone in a drawer.
+- **You say (word for word):** Between sets I make three calls before the day makes them for me. One: the one thing that has to happen today. One, not five. Two: when the old pattern's most likely to show up, and what I'll do instead. Three: one thing with my kids, phone in a drawer. Then AI nags me till bedtime.
+- **Shot / delivery:** Count on your fingers. Each item stacks on screen: this is the part people save.
+
+### C: 5:40 AM
 - **Beat:** Channel + soft CTA
-- **Time:** 55-70s
-- **On-screen TEXT:** AI Dad. Healthy Dad. ☕ if you're up early.
-- **You say (word for word):** This is AI Dad, Healthy Dad. Real stuff, no filters, a lot of coffee. If you're up early too, drop a coffee in the comments. If you're not, DM me what your mornings look like now. Rough is fine.
-- **Shot / delivery:** Raise the mug on 'coffee'. Cut.
+- **Time:** 52-63s
+- **On-screen TEXT:** AI Dad. Healthy Dad. What time did you get up?
+- **You say (word for word):** This is AI Dad, Healthy Dad. The initials are on purpose. Up this early too? Drop the time you got up. If not, DM me what your mornings look like now. Rough is fine.
+- **Shot / delivery:** Stand up, last line to camera, walk back to the bar. Cut.
 
-### C: 5 AM
+### C: 5:40 AM
 - **Beat:** Post copy
-- **On-screen TEXT:** Cover text: 'The 3 decisions I make at 5 AM (ADHD dad)'
-- **You say (word for word):** CAPTION: ADHD dad morning routine: not for productivity, for getting ahead of my brain. The 3 decisions are on screen. Save it. #adhddad #adhd #morningroutine #5amclub #adultadhd #alcoholfree #dadsoftiktok
+- **On-screen TEXT:** Cover text: 'The 3 calls I make at 5:40 AM (ADHD dad)'
+- **You say (word for word):** CAPTION: ADHD dad morning routine, but not for productivity. It's for getting ahead of my brain before the day starts. The 3 calls are on screen; save it for tomorrow. Lived experience, not medical advice. #adhddad #adhd #morningroutine #5amclub #adultadhd #dadsoftiktok #gymtok
 - **Shot / delivery:** Pillar: 5AM Brain
+
+### C: 5:40 AM
+- **Beat:** Detail check
+- **You say (word for word):** TRUE (from you): morning person; gym in the morning; patterns → told your wife → diagnosis and AI inside about a month. CHECK (from your own Make account, seen while I checked its Google access): an automation named 'Checklist – Daily 3am Refresh'. Keep the 3 a.m. line only if that really resets your checklist; cut it if you'd rather not share it. SWAP if it isn't yours: '5:40' (your real time; change the hook text and cover too); 'Dad, where's my...' (use what your kids actually ask); 'years' of patterns.
+- **Shot / delivery:** Read before filming. Your cue card is the On-screen TEXT column.
 
 
 ## Bio
 
-> The name field is searchable on both apps, so 'ADHD Dad' goes there. Character counts are checked against platform limits.
+> Sharpened with the trend terms already in this sheet: 'late-diagnosed', 'ADHD dad', '5AM', 'external brain', and 'lived experience, not medical advice' (the misinformation-backlash trend). Name fields are what both apps search hardest. Character counts are checked against platform limits.
 
 ### TikTok
 - **Field:** Name
@@ -653,15 +781,15 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 
 ### TikTok
 - **Field:** Bio
-- **Copy (paste exactly):** ADHD dad. Alcohol-free. Up at 5AM.<br>AI is my external brain. DMs open.
-- **Chars / limit:** 69 of 80
-- **Notes:** Soft CTA = 'DMs open'.
+- **Copy (paste exactly):** Late-diagnosed ADHD dad · 5AM gym<br>AI = my external brain · DMs open
+- **Chars / limit:** 67 of 80
+- **Notes:** Each term comes from this sheet's trend list (late-diagnosed, ADHD dad, 5AM, external brain). Soft CTA = 'DMs open'.
 
 ### Instagram
 - **Field:** Name
-- **Copy (paste exactly):** AI Dad Healthy Dad | ADHD Dad
-- **Chars / limit:** 29 of 64
-- **Notes:** Instagram's name field is the main thing it searches. Keep both keywords.
+- **Copy (paste exactly):** AI Dad Healthy Dad | Late-Diagnosed ADHD Dad
+- **Chars / limit:** 44 of 64
+- **Notes:** Instagram searches the name field hardest, so it carries the top trend term. Instagram limits name changes (twice in 14 days), so set it once.
 
 ### Instagram
 - **Field:** Username
@@ -670,75 +798,75 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 
 ### Instagram
 - **Field:** Bio
-- **Copy (paste exactly):** Late-diagnosed ADHD dad. Alcohol-free since 9.8.26.<br>Up at 5AM. AI is my external brain.<br>Real dad, real footage, zero AI faces.<br>Say hi in the DMs 👇
-- **Chars / limit:** ~147 of 150
-- **Notes:** Category: 'Digital creator'. Add the link once aidadhealthydad.com is live.
+- **Copy (paste exactly):** Late-diagnosed ADHD dad<br>5AM gym before the house wakes up<br>AI = my external brain, real prompts<br>Real dad, no AI faces · not medical advice<br>DMs open
+- **Chars / limit:** 146 of 150
+- **Notes:** Lines 1-3 are search terms. Line 4 is the trust signal: the misinformation-backlash trend, and 'AI Dad' shouldn't read as an AI persona. Category: Digital creator. Add the link once aidadhealthydad.com is live.
 
 ### Both
 - **Field:** Pinned / Highlights
-- **Copy (paste exactly):** Pin Scripts B, C, A on TikTok. Instagram Highlights: 'Start Here', '5AM', 'AI Prompts', 'AF Log'.
+- **Copy (paste exactly):** Pin Scripts B, C, A on TikTok. Instagram Highlights: 'Start Here', '5AM Gym', 'AI Prompts', 'Diagnosis Log'.
 
 
 ## Content Pillars
 
-> Weekly rhythm: Mon AI External Brain · Tue Pattern Breaks · Wed 5AM Brain · Thu ADHD Dad in the Wild · Fri Alcohol-Free Log · Sat reply-to-comment video + IG carousel · Sun batch-film. Every video carries one saveable thing (prompt, checklist, or script).
+> Weekly rhythm: Mon AI External Brain · Tue Pattern Breaks · Wed 5AM Brain · Thu ADHD Dad in the Wild · Fri Late-Diagnosis Log · Sat reply-to-comment video + IG carousel · Sun batch-film. 5 pillars × 15 ideas = 75 videos, about 15 weeks at 5 a week. Every video carries one saveable thing (prompt, checklist, or script).
 
 ### 1. 5AM Brain
-- **What it is:** Early mornings as ADHD regulation, not productivity: quiet before demand, decisions made before the day hijacks you.
-- **Saveable element:** Morning checklists, '3 decisions' cards
-- **Ready-to-film ideas (5):** 1) Why I don't touch my phone until 5:30. 2) The 3 decisions I make before the kids wake up. 3) What I do the morning after a bad day. 4) My 5 AM brain vs my 5 PM brain. 5) The morning routine for when the alarm didn't work.
-- **Format:** Filmed live at 5 AM, voice low, coffee. Weekly IG carousel.
+- **What it is:** Early mornings at the gym, before the house wakes up, as ADHD regulation, not hustle: quiet before demand, and decisions made before the day makes them for you.
+- **Saveable element:** Morning checklists and the '3 calls' card
+- **Ready-to-film ideas (15):** 1) The only hour nobody needs anything from me: why 5 AM is regulation, not productivity. Save: the 3 calls.<br>2) Notifications off until my last set (yes, I film on this phone): what my brain does when I check them first. Save: the notifications-last rule.<br>3) Yesterday doesn't get a vote: the checklist that resets at 3 AM, and why a fresh start every morning matters with ADHD. Save: a reset checklist.<br>4) If the gym bag isn't packed by 9 PM, I don't go: killing morning decisions the night before. Save: the 4-item night-before list.<br>5) One bar, one decision: why lifting is the only time my brain single-tasks. Save: how to get one single-task block at home.<br>6) The morning after a bad day: what I do differently when yesterday went sideways. Save: the 3-step restart.<br>7) 5 AM me vs 9 PM me: same guy, different brain, and the note morning me leaves for bedtime me. Save: the hand-off note.<br>8) What I do in the 90 seconds between sets: one voice memo to AI. Save: the exact voice-memo prompt.<br>9) When the alarm doesn't work: the 10-minute version of my morning. Save: the minimum viable morning.<br>10) I don't set goals at 5 AM, I set defaults: breakfast, first task, phone. Save: my 3 defaults.<br>11) The drive home is my planning meeting: by the time I park, I know the first three things I'm doing inside. Save: the 3 questions I ask on the drive.<br>12) What lifting taught me about ADHD that the diagnosis didn't: add 5 lb, not 50. Save: the 5-lb rule for habits.<br>13) Sunday 6 AM: the whole week in 15 minutes, with AI. Save: the Sunday prompt.<br>14) Can't do 5 AM? It's the quiet, not the clock: how to find your quiet hour. Save: a 3-day test to find yours.<br>15) The ADHD guy who's a morning person: why it works for me (lived experience, not advice). Save: a test-it-yourself checklist.
+- **Format:** Filmed at the gym (talking parts in a music-free spot) or in the car after. Weekly IG carousel.
 
 ### 2. AI External Brain
-- **What it is:** Exactly how you use AI for the ADHD gaps: starting tasks, remembering, planning, accountability. Real screens.
+- **What it is:** Exactly how you use AI for the ADHD gaps: starting, remembering, planning, follow-through. Real screens and real prompts, failures included.
 - **Saveable element:** Copy-paste prompts in the caption
-- **Ready-to-film ideas (5):** 1) The prompt I use when I can't start anything. 2) How AI stopped me forgetting school stuff. 3) Brain dump → 3-item list in 30 seconds. 4) My 5 PM check-in prompt (the drink hour). 5) What I will NOT use AI for (talking to my kids).
-- **Format:** Talking head + 3-5s screen recording. Show the prompt, then the result.
+- **Ready-to-film ideas (15):** 1) The prompt I use when I can't start anything: 'give me a 2-minute first step'. Save: the prompt.<br>2) Brain dump → 3 things in 30 seconds: voice memo in, top 3 out. Save: the prompt.<br>3) The school flyer trick: photo of the flyer, AI turns it into reminders. Save: the 3-step workflow.<br>4) The worry sort: voice-memo everything on my mind, and AI sorts it into today / this week / not mine. Save: the sorting prompt.<br>5) I asked AI if my channel name was trademarked: what it found, and what it said I still had to check myself. Save: the 'verify it yourself' list.<br>6) AI built me a 296-row spreadsheet. Here's how I made it useful: 'just tell me this week's 3 things'. Save: the shrink-it prompt.<br>7) The 'am I sliding?' check-in: one sentence to AI when the old pattern starts, and it asks me 3 questions back. Save: the 3 questions.<br>8) 'Remind me later' → a real calendar event in 10 seconds, hands-free. Save: the dictation phrasing that works.<br>9) What I will NOT use AI for: talking to my kids, apologizing to my wife, health decisions. Save: my human-only list.<br>10) AI as a body double: 'check on me every 10 minutes while I do the dishes'. Save: the prompt.<br>11) The email I've been avoiding: AI writes the first sentence, I write the rest. Save: the prompt.<br>12) Planning a kid's birthday backward from the date. Save: the backward-plan prompt.<br>13) My lifting log builds itself every Saturday: the one boring thing I automated first (check: from your Make automation name). Save: how to pick your first automation.<br>14) Prompts that made it worse: the 40-item list, the generic pep talk. Save: how to ask for less.<br>15) Getting ready for a doctor's appointment: AI organizes my notes and questions; the doctor gives the answers. Save: the appointment-prep prompt.
+- **Format:** Talking head + 3-5 s screen recording. Show the prompt, then the result. Never show private info on screen.
 
-### 3. Alcohol-Free Dad Log
-- **What it is:** Honest weekly check-ins on being alcohol-free with ADHD. What replaced the drink, what's hard. No preaching.
-- **Saveable element:** Lists of 'what I do instead'
-- **Ready-to-film ideas (5):** 1) Day 40: what nobody tells you. 2) The 5 PM problem (and what I do now). 3) Friday night without a drink, as a dad. 4) How I tell friends 'I'm not drinking' without a speech. 5) ADHD + alcohol: why I think it was self-medicating (lived experience only).
-- **Format:** Fridays. Milestone counter on screen (Day 40, 50, 60...).
+### 3. Late-Diagnosis Log (new; replaces the old pillar 3)
+- **What it is:** Two months in and counting: what the ADHD diagnosis changed, what it didn't, and what you're still figuring out. Honest updates from a late-diagnosed dad. Lived experience, not medical advice.
+- **Saveable element:** Question lists and 'what helped' lists
+- **Ready-to-film ideas (15):** 1) The week after the diagnosis: relief, then a weird kind of grief, then 'now what?' Save: what actually helped that week.<br>2) Explained, not excused: the rule I set the day I found out. Save: the rule, in one line.<br>3) What I thought ADHD looked like vs what it looks like on me. Save: my 5 surprises (not a checklist for diagnosing anyone).<br>4) The questions I took to my appointment. Save: the list (bring your own to a doctor).<br>5) Re-reading my own history: the moments that make more sense now. Save: how to look back without spiraling.<br>6) Things I wanted to blame on ADHD that weren't ADHD. Save: the 'ask a professional' list.<br>7) How I filter ADHD content online now (a 2026 study rated ~52% of top ADHD TikToks inaccurate). Save: my 3-question filter.<br>8) Month-2 check-in: what's working, what isn't (repeat monthly). Save: the one-page scorecard.<br>9) Deciding who to tell, and who doesn't need to know yet. Save: the who/when/how list.<br>10) ADHD at work: the one change that made the biggest difference. Save: the change.<br>11) The diagnosis didn't fix the patterns. Here's what it did do. Save: 3 things a name gives you.<br>12) What my wife noticed before I did (only with her OK). Save: 3 questions to ask your partner.<br>13) How we talk about brains at home with the kids: no labels, no lectures. Save: kid-friendly phrases.<br>14) Late-diagnosed dads: what I wish someone had told me at 20. Save: the list.<br>15) The 3 tools I'd keep if I could only keep 3. Save: the 3.
+- **Format:** Weekly on Fridays. Same opener every time: 'Late-diagnosed, week [X].' Car or quiet corner.
 
 ### 4. Pattern Breaks
-- **What it is:** The destructive loop, admitting it to your wife, and repair. Practical and specific, not confessional for its own sake.
-- **Saveable element:** Scripts and sentences that work
-- **Ready-to-film ideas (5):** 1) How I told my wife (the sentence I wish I'd had). 2) The 3 signs my loop is starting. 3) Apologies with an action attached. 4) What changed after I stopped hiding it. 5) 'I'll remember': why my wife stopped accepting that, and what replaced it.
-- **Format:** Talking head, slower pace. Strong DM-share ('send to your partner') potential.
+- **What it is:** The loop, the sentence to your wife, and the repair. Practical and specific. The pattern itself is never named, and the tools work for any pattern.
+- **Saveable element:** Scripts, sentences and formulas
+- **Ready-to-film ideas (15):** 1) The sentence that changed everything, and how to say yours. Save: 3 ways to start the conversation.<br>2) The 3 signs my loop is starting: going quiet, skipping the gym, 'I'll deal with it tomorrow'. Save: build your own early-warning list.<br>3) Apologies with an action attached. Save: the formula (what I did / what it cost you / what I'm doing differently by [date]).<br>4) Why 'this time's different' never worked: promises vs systems. Save: turn one promise into one system.<br>5) The first 10 minutes when the old pattern shows up. Save: my 10-minute plan.<br>6) Telling your partner: what I'd do differently. Save: the do/don't list.<br>7) 'I'll remember': why my wife stopped accepting it, and what replaced it. Save: the shared-list setup.<br>8) Shame is not a strategy: why beating myself up kept the loop running. Save: the shame → next step swap.<br>9) Patterns live in calendars: how to map when and where yours shows up (I share the method, not my map). Save: the 7-day pattern map.<br>10) The friend I told second: accountability without a speech. Save: what to ask a friend for.<br>11) Repair with your kids: saying sorry so a kid actually gets it. Save: the kid-sized repair script.<br>12) What week 3 of breaking a pattern actually felt like. Save: what to expect.<br>13) Replace, don't just remove: what I put in the gap. Save: the replacement list.<br>14) The setback video: when the old pattern wins a round, what I do next (film it only when it's real). Save: the setback plan.<br>15) Two months in: what's actually different at home. Save: 3 signs of progress that aren't perfection.
+- **Format:** Talking head, slower pace, car or quiet corner. Strong 'send this to your partner' potential (Instagram sends).
 
 ### 5. ADHD Dad in the Wild
-- **What it is:** Dry-humor everyday moments: lost keys, school forms, 14 open tabs at bedtime. Each one ends with one takeaway.
+- **What it is:** Dry-humor everyday moments: lost keys, school forms, fourteen tabs at bedtime. Each one ends with one actual fix.
 - **Saveable element:** The one fix at the end
-- **Ready-to-film ideas (5):** 1) Things I lost this week, ranked. 2) Parent-teacher night with ADHD. 3) My wife's face when I say 'I'll remember'. 4) Bedtime routine, ADHD dad edition. 5) ADHD dad Halloween prep, Oct 30 (seasonal).
-- **Format:** POV / skit-lite / trending audio under a voiceover. The easiest on-ramp for new viewers.
+- **Ready-to-film ideas (15):** 1) Things I lost this week, ranked. Fix: one landing spot by the door.<br>2) Parent-teacher night with ADHD. Fix: 3 questions in my notes app before I walk in.<br>3) Six cold coffees around the house: an ADHD dad mystery. Fix: one mug, one spot.<br>4) Bedtime routine, ADHD dad edition. Fix: a picture checklist (for the kids and for me).<br>5) Halloween prep, Oct 30 (seasonal; post by Oct 31). Fix: plan backward from the date.<br>6) I walked into the gym and forgot what day it was. Fix: the week's plan on my lock screen.<br>7) Grocery store with ADHD: a nature documentary. Fix: a list sorted by aisle (AI does it).<br>8) Fourteen tabs open at bedtime. Fix: tab dump to AI, then close everything.<br>9) School pickup: the 2:58 panic. Fix: a labeled alarm, not just a time.<br>10) Building kids' furniture with ADHD. Fix: AI reads me the next step only.<br>11) Explaining my new 'system' to my family for the fourth time. Fix: keep systems boring.<br>12) Hyperfocus: I went to the garage to fix one thing. Fix: a timer before I start.<br>13) Things my kids have already figured out about my brain (with their OK). Fix: the one thing I changed because of them.<br>14) ADHD dad 'multitasking', honestly. Fix: one thing at a time, said out loud.<br>15) Packing school lunches at 6:45 AM with ADHD. Fix: the same five lunches on rotation.
+- **Format:** POV / skit-lite / voiceover over B-roll. The easiest on-ramp for new viewers.
 
 ### Recurring format: Comment Answers
 - **What it is:** Reply to the best comment or DM question with a video, so the audience fills your calendar for you.
 - **Saveable element:** The answer itself
-- **Ready-to-film ideas (5):** Use TikTok's 'reply with video' on the top question each week. Turn DM themes into posts (anonymized).
+- **Ready-to-film ideas (15):** Use TikTok's 'reply with video' on the top question each week. Turn DM themes into posts (anonymized).
 - **Format:** Saturdays. Keeps you from running dry by week 2.
 
 
 ## Assumptions
 
-> Every assumption I made instead of asking you. Change any of them and tell me; the plan adjusts.
+> Every assumption I made instead of asking you, then the re-check log: what I caught and fixed on each review pass before marking the work done.
 
 ### 1
 - **Assumption:** You're US-based and posting to a US English-speaking audience; times are US Eastern (America/New_York).
 - **Why / impact if wrong:** If you're in another time zone, shift the clock times. The logic (morning, TikTok first) holds.
 
 ### 2
-- **Assumption:** Your 'Wednesday morning' means a 7:00 AM ET post on Wed Oct 14, 2026.
-- **Why / impact if wrong:** Fits your morning-person brand. Move to 8 AM if 7 is too tight after filming.
+- **Assumption:** First post: 7:30 AM ET on Wed Oct 14 (moved from 7:00 so you can film at the gym and still have 45 minutes to edit); 7:00 AM ET from Thursday.
+- **Why / impact if wrong:** If you film the night before instead, go back to 7:00.
 
 ### 3
-- **Assumption:** Sept 8, 2026 counts as Day 1 alcohol-free, so Oct 14 is Day 37 ('a little over five weeks').
-- **Why / impact if wrong:** If your count starts differently, adjust 'Day' references. The scripts say 'five weeks' so they stay safe.
+- **Assumption:** Corrected story, used everywhere: the same destructive patterns, over and over → you finally admitted to your wife that something needed to change (the turning point) → ADHD diagnosis and AI inside about a month, about two months ago. The habit is never named or hinted at, and nothing counts days.
+- **Why / impact if wrong:** If the order differs (for example, AI came before the diagnosis), swap the two in the scripts; nothing else depends on it.
 
 ### 4
-- **Assumption:** Diagnosis, telling your wife, and finding AI all happened mid-August to mid-September 2026; scripts say 'about two months ago' and 'inside about a month'.
-- **Why / impact if wrong:** Matches what you gave me. Edit if the order differs (I used: told wife → diagnosed → found AI).
+- **Assumption:** The old third pillar was replaced by 'Late-Diagnosis Log' to keep five pillars after the story correction.
+- **Why / impact if wrong:** It uses the sheet's strongest trend (late-diagnosed ADHD dads). Swap it out if you'd rather have a different fifth topic.
 
 ### 5
 - **Assumption:** You have more than one child ('the kids'). No names, ages or genders are used.
@@ -749,57 +877,108 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Why / impact if wrong:** Add 'I'm [name]' after the hook if you want a personal brand; it isn't needed for search.
 
 ### 7
+- **Assumption:** Script details are labeled TRUE (from you, or from tonight's work) or SWAP (specifics I wrote to make it sound like a real person). Two details come from your own Make automations, which I saw while checking Make's Google access: a daily 3 AM checklist refresh and a weekly lifting tab. Keep them only if they're accurate and you're happy sharing them.
+- **Why / impact if wrong:** Never say a SWAP line on camera unless it's true for you. Each script's Detail check row lists them.
+
+### 8
+- **Assumption:** You drive to the gym, so Script A is filmed in the car in the gym lot.
+- **Why / impact if wrong:** If you don't drive, film A on a bench outside the entrance; the words still work.
+
+### 9
 - **Assumption:** Trademark 'clearance search' = searching USPTO data through indexed mirrors (Justia, Trademarkia, uspto.report, TTABVUE), because this sandbox blocks tmsearch.uspto.gov directly.
 - **Why / impact if wrong:** Run the 5 listed queries yourself, and get an attorney's opinion before filing. This is not legal advice.
 
-### 8
+### 10
 - **Assumption:** Handles and domains are 'no existing use found', not 'confirmed available', because live lookups were blocked.
 - **Why / impact if wrong:** Claim them tonight to settle it. Fallbacks are listed in the Handles & Domains section.
 
-### 9
+### 11
 - **Assumption:** Because 'Healthy' had no real problem, alternatives weren't strictly required; I checked three backups anyway.
 - **Why / impact if wrong:** AI Dad Hopeful Dad is the cleanest backup.
 
-### 10
+### 12
 - **Assumption:** You'll eventually sell coaching (USPTO Class 41) and maybe merch (Class 25); the trademark risk is judged against those.
 - **Why / impact if wrong:** If you never sell merch, Happy Dad's risk drops somewhat. The search and brand-confusion problems remain.
 
-### 11
+### 13
 - **Assumption:** Your connected Metricool brand (ID 6987872) is the one for this project. It currently has no social networks connected, so I couldn't pull personalized best times or schedule posts.
 - **Why / impact if wrong:** Once TikTok and Instagram are connected, I can pull Best Times and schedule posts for you.
 
-### 12
+### 14
 - **Assumption:** TikTok starts as a personal/creator account, not Business, to keep access to commercial trending sounds.
 - **Why / impact if wrong:** Switch to Business later if you need custom thumbnails through Metricool or business tools.
 
-### 13
-- **Assumption:** Free tools first; the only suggested purchases are a clip-on mic (~$20-60), the domain (~$10-20/yr), and optionally PromptSmart (~$9.99/mo).
-- **Why / impact if wrong:** Skip PromptSmart if bullet points work for you.
+### 15
+- **Assumption:** Purchases: a tripod with remote ($20-40), a noise-cancelling clip mic (~$79 on sale), and the domain (~$10-20/yr). Optional: a magnetic gym mount ($25-60) and PromptSmart (~$9.99/mo).
+- **Why / impact if wrong:** Prices come from 2026 reviews and listings and move often; check before buying.
 
-### 14
-- **Assumption:** Content is lived experience, not medical advice; the scripts make no medical claims about ADHD or alcohol.
+### 16
+- **Assumption:** Content is lived experience, not medical advice; the scripts make no medical claims about ADHD.
 - **Why / impact if wrong:** Protects trust in a niche known for misinformation (the ~52% figure).
 
-### 15
+### 17
 - **Assumption:** Trend data is as of Oct 13, 2026; trend-specific items expire within 1-2 weeks.
 - **Why / impact if wrong:** Recheck TikTok Creative Center weekly (Monday, 10 min).
 
-### 16
-- **Assumption:** Guardrails followed: no emails sent, nothing pushed to GitHub, nothing deleted. Files are committed to the local branch only.
+### 18
+- **Assumption:** Per your instruction, scripts, pillars and bios use only research already in this sheet. Filming Logistics is new research, because you asked for it.
+
+### 19
+- **Assumption:** Guardrails followed: no emails sent, nothing pushed to GitHub, nothing deleted. Repo changes are committed locally only.
 - **Why / impact if wrong:** Push when you're ready.
 
-### 17
-- **Assumption:** The Google Sheet is created fresh in your My Drive root (no Sheets editor connector was available, so it was uploaded as one tab with all sections stacked; a multi-tab .xlsx version is in the repo at deliverables/AI_Dad_Launch_Plan.xlsx).
-- **Why / impact if wrong:** Move it into a project folder if you like; the link stays the same.
+### 20
+- **Assumption:** This sheet was updated in place (same file, same link). There's no Google Sheets connector in this session, so I wrote it through your Make account's existing Google connection with a one-off scenario: 'AI Dad: launch sheet writer (Claude, one-off)'. I switched it off after the run and left it in your Make account, because of the no-deletions rule.
+- **Why / impact if wrong:** Delete that scenario in Make whenever you like; it doesn't run on its own. Drive's version history has tonight's earlier version if you ever want it back. RE-CHECK 4 (after writing): I downloaded this sheet and compared all 296 rows to the source. Sheets had auto-converted 20 cells ('$0' became 0, and the calendar dates became date numbers), so I rewrote those as text and re-checked: 0 differences.
 
-### 18
-- **Assumption:** Third-party claims (Metricool free-tier limits, USPTO fee, study figures) are as reported by their sources and flagged 'verify' where I couldn't confirm them first-hand.
-- **Why / impact if wrong:** Check pricing pages before paying for anything.
+### 21
+- **Assumption:** Third-party claims (Metricool free-tier limits, USPTO fee, study figures, gym-chain policies, Instagram reach effects) are as reported by their sources and flagged where I couldn't confirm them first-hand. Product hold-strength claims are vendor marketing.
+- **Why / impact if wrong:** Check pricing and policy pages before relying on them.
+
+### 22
+- **Assumption:** RE-CHECK 1 (automated: hint words, character limits, idea counts, script timing, placeholders, cross-references) caught: all three scripts ran long, about 87, 87 and 100 seconds at a natural speaking pace against the 60-75 s target, and their timestamps didn't match their word counts.
+- **Why / impact if wrong:** Fixed: cut each to 170-180 spoken words (now about 67-73 s) without dropping a specific detail, and re-timed every beat.
+
+### 23
+- **Assumption:** RE-CHECK 1 caught: the Instagram bio was 153 characters (limit 150).
+- **Why / impact if wrong:** Fixed: trimmed to 146 by dropping the emoji and two words.
+
+### 24
+- **Assumption:** RE-CHECK 1 caught: hint words that survived in public copy: 'every morning starts clean' (Script C), 'when I slip' (a Pattern Breaks idea), '5 AM me vs 5 PM me' (an echo of the old story), plus 'Day 1' labels that read like a day count.
+- **Why / impact if wrong:** Fixed: replaced each ('Yesterday doesn't get a vote', 'when the old pattern wins a round', '9 PM', 'First post'). The checker now blocks these words in scripts, bios, pillars and the calendar.
+
+### 25
+- **Assumption:** RE-CHECK 2 (reading for depth and specificity) caught: Scripts A and B used the same '...Yeah' acronym reveal, which would read as a template across one week, and Script C's 'Say it fast, you'll get it' was simply wrong (saying the name fast doesn't spell ADHD).
+- **Why / impact if wrong:** Fixed: A now says 'Yes, the first letters spell exactly what you think'; C says 'The initials are on purpose.'
+
+### 26
+- **Assumption:** RE-CHECK 2 caught: Script A's CTA told viewers not to comment, which throws away an easy engagement signal.
+- **Why / impact if wrong:** Fixed: it now invites a 🚗 comment from anyone who's been there and keeps the DM for the personal part.
+
+### 27
+- **Assumption:** RE-CHECK 2 caught: 7 of the 75 pillar ideas overlapped, contradicted something, or risked too much: 'I'll remember' covered in two pillars (plus a third angle), the gym bag twice, the 3 AM checklist twice, 'my phone stays in the car' contradicting filming on your phone, a drive-home idea that mixed up the gym lot and your front door, and a Pattern Breaks idea (mapping when your pattern shows up) that could reveal the habit's timing on camera.
+- **Why / impact if wrong:** Fixed: replaced with distinct ideas (notifications-off, the worry sort, six cold coffees, school lunches) or reworded ('remind me later', 'I share the method, not my map').
+
+### 28
+- **Assumption:** RE-CHECK 2 caught three accuracy slips in Filming Logistics: 'after the mic, the cheapest upgrade' was backwards (the tripod costs less than the mic), the Instagram help-center claim was broader than the source, and I'd called CapCut's 'Reduce noise' free without checking.
+- **Why / impact if wrong:** Fixed: reworded all three to match the sources, and named the most-cited tripod (EUCOS 62-in, with the TONEOF 68-in as the sturdier option).
+
+### 29
+- **Assumption:** RE-CHECK 3 (consistency across sections) caught: the week-1 calendar put the reply-to-comment video on Tuesday, while the weekly rhythm says Saturday (Tuesday is Pattern Breaks).
+- **Why / impact if wrong:** Fixed: moved it to Sat Oct 17 at 7:00 AM, put a Pattern Breaks idea on Tue Oct 20, and noted that launch week runs the three intro scripts first.
+
+### 30
+- **Assumption:** RE-CHECK 3 caught: three places told you to use each script's Detail check row as your bullet card, but those rows are truth checklists, not delivery cues.
+- **Why / impact if wrong:** Fixed: your cue card is each script's On-screen TEXT column; the Detail check rows are for reading the night before.
+
+### 31
+- **Assumption:** RE-CHECK 3 also re-tested the name recommendation against the corrected story, and matched every script name, pillar name, price and time across sections.
+- **Why / impact if wrong:** No change needed: the name call rests on trademark and search crowding, which didn't change, and the names, prices and times now match everywhere.
 
 
 ## Sources
 
-> Gathered via web search on 2026-10-13. Direct page fetches were blocked by the sandbox network policy.
+> Gathered via web search on 2026-10-13 (filming sources added the night of Oct 13). Direct page fetches were blocked by the sandbox network policy.
 
 - **Trademark**: HAPPY DAD SN 90229564 (Justia): https://trademarks.justia.com/902/29/happy-90229564.html
 - **Trademark**: HAPPY DAD HARD SELTZER SN 90573863 (Justia): https://trademarks.justia.com/905/73/happy-dad-hard-90573863.html
@@ -842,7 +1021,28 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Trends**: October 2026 TikTok trends (NewEngen): https://newengen.com/insights/october-tiktok-trends/
 - **Trends**: TikTok search: dad undiagnosed adhd: https://www.tiktok.com/discover/dad-undiagnosed-adhd
 - **Trends**: ADHD misinformation on TikTok (Euronews, Mar 2026): https://www.euronews.com/2026/03/20/tiktok-leads-social-media-platforms-in-mental-health-misinformation-study-finds
-- **Trends**: Sober-curious parenting (The Bump): https://www.thebump.com/a/sober-curious-parenting
-- **Trends**: Non-alcoholic trends 2026 (Datassential): https://datassential.com/resource/non-alcoholic-beverage-trends/
 - **Trends**: Dad Advice From Bo (Wikipedia): https://en.wikipedia.org/wiki/Dad_Advice_From_Bo
 - **Trends**: Father's Day creative tips 2026 (Ecomdy): https://ecomdymedia.com/blog/father-day-creative-tips
+- **Filming**: Metric Coach: best gym tripod under $25: https://metric.coach/articles/best-gym-tripod-for-phones
+- **Filming**: Muscle Madness HQ: best gym tripods 2026: https://musclemadnesshq.com/best-gym-tripods/
+- **Filming**: Kingsway Gym: gym tripod buying guide: https://kingswaygym.com/gym-tripod/
+- **Filming**: Lisa Johnson Fitness: best tripods for gym 2026: https://www.lisajohnsonfitness.com/best-tripods-for-gym/
+- **Filming**: Blaubeck: magnetic gym phone mount (vendor): https://blaubeck.com/blogs/product-use/finally-a-gym-phone-mount-that-won-t-let-you-down
+- **Filming**: SmallRig 5460 MagSafe gym mount (Adorama listing): https://www.adorama.com/smallrig-5460-magsafe-magnetic-phone-mount-gym-recording/p/sr5460
+- **Filming**: MagSafe gym magnet mount (Amazon listing; steel only): https://www.amazon.com/MagSafe-Magnet-Mount-Squat-Holder/dp/B0GGYZCCP8
+- **Filming**: DJI Mic Mini review (New Atlas): https://newatlas.com/electronics/dji-mic-mini-review/
+- **Filming**: DJI Mic Mini 2S review (TechRadar): https://www.techradar.com/cameras/camera-accessories/dji-mic-mini-2s-review
+- **Filming**: DJI Mic Mini price drop (Kotaku): https://kotaku.com/dji-liquidates-its-mic-mini-at-a-record-low-noise-cancelling-and-hq-audio-now-cost-peanuts-2000639685
+- **Filming**: TikTok Creator Academy: muted videos and the music copyright check: https://www.tiktok.com/creator-academy/article/appeal-muted-video
+- **Filming**: TikTok Discover: audio muted by music near the mic (creator-reported): https://www.tiktok.com/discover/why-is-my-sound-muted-due-to-copyright-restrictions
+- **Filming**: Instagram Help: what audio you can use in reels: https://help.instagram.com/329208821595430
+- **Filming**: Audio unavailable on Reels: fixes (InspireToThrive, 2026): https://inspiretothrive.com/audio-unavailable-on-instagram-reels/
+- **Filming**: Instagram Reels music copyright rules 2026 (LastPlayDistro): https://lastplaydistro.com/blog/instagram-reels-music-copyright-rules-2026-what-artists-creators-must-know
+- **Filming**: Copyrighted music on Instagram, business accounts (Fox Music): https://www.foximusic.com/blog/instagram-reels-music-copyright-legal-guide/
+- **Filming**: Remove background noise in CapCut (guide, Aug 2026): https://capcutguide.com/remove-background-noise-capcut/
+- **Filming**: CapCut vocal isolation on mobile (creator tutorial): https://www.tiktok.com/@adrianvideoimage/video/7468217875396840722
+- **Filming**: Edits app listing: audio enhancement (App Store): https://apps.apple.com/us/app/edits-video-editor/id6738967378
+- **Filming**: Creator report: Edits enhancement glitches at cuts (Threads): https://www.threads.com/@priyamdatta/post/DNxOM-M3h0Q/the-edits-app-by-instagram-has-some-flaws-that-need-to-be-sorted-soon-for-it-to-
+- **Filming**: Gyms to influencers: stop filming (Axios, 2025): https://www.axios.com/2025/05/03/gym-influencer-film-workout-tiktok
+- **Filming**: Everyone's talking about filming in gyms (Health Club Management): https://www.healthclubmanagement.co.uk/health-club-management-features/Everyones-talking-about-filming-in-gyms/38500
+- **Filming**: PureGym filming rule (STV News): https://news.stv.tv/world/gym-fluencers-urged-to-stop-filming-in-public-amid-privacy-concerns
