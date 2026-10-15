@@ -33,8 +33,8 @@ STRICT = [
     r"seltzer", r"\bbottle",
 ]
 SOFT = [
-    r"recover", r"\burge", r"trigger", r"\bday \d+", r"friday night", r"\bclean\b", r"\bslip", r"\b5 ?pm\b",
-    r"(?<!third-)\bparty\b", r"\bbuzz", r"\bhigh\b", r"\b(a|my|the next) fix\b",
+    r"recover", r"\burges?\b", r"trigger", r"\bday \d+", r"friday night", r"\bclean\b", r"\bslip", r"\b5 ?pm\b",
+    r"(?<!third-)\bparty\b", r"\bbuzz", r"\bhigh\b", r"\b(a|my|the next) fix\b", r"not broken",
 ]
 PUBLIC_SECTIONS = {"Scripts", "Bio", "Content Pillars", "Week 1 Calendar"}
 EXEMPT_SECTIONS = {"Name Decision", "Trademark Detail", "Handles & Domains", "Sources"}
@@ -66,7 +66,7 @@ for (platform, field), limit in LIMITS.items():
 
 # 3. Exactly 15 ideas per pillar, no near-duplicate idea titles across pillars.
 ideas = {}
-for name in ["PILLAR_1_IDEAS", "PILLAR_2_IDEAS", "PILLAR_3_IDEAS", "PILLAR_4_IDEAS", "PILLAR_5_IDEAS"]:
+for name in ["PILLAR_1_IDEAS", "PILLAR_2_IDEAS", "PILLAR_3_IDEAS", "PILLAR_4_IDEAS", "PILLAR_5_IDEAS", "PILLAR_6_IDEAS"]:
     lst = getattr(content, name)
     if len(lst) != 15:
         problem(f"[pillars] {name} has {len(lst)} ideas, expected 15")
@@ -76,29 +76,22 @@ for name in ["PILLAR_1_IDEAS", "PILLAR_2_IDEAS", "PILLAR_3_IDEAS", "PILLAR_4_IDE
             problem(f"[pillars] duplicate idea title '{key}' in {name} and {ideas[key]}")
         ideas[key] = name
 
-# 4. Scripts: spoken length 60-75 s at ~2.5 words/s, time ranges in order, every script has a Detail check and CTA.
+# 4. Scripts are hooks and beats only (CLAUDE.md): every video has a HOOK, BEATS, CLOSING THOUGHT, TAGLINE and
+#    both captions; the hook fits the first 3-5 s (~2.5 words/s); the TikTok caption stays short.
+REQUIRED_PARTS = ["HOOK", "BEATS", "CLOSING THOUGHT", "TAGLINE", "TikTok caption", "Instagram caption"]
 spoken = {}
 for r in by_title["Scripts"][3]:
-    script, beat, timing, _, say, _ = r
-    spoken.setdefault(script, {"words": 0, "beats": [], "times": []})
-    spoken[script]["beats"].append(beat)
-    if beat not in ("Post copy", "Detail check"):
-        spoken[script]["words"] += len(say.split())
-        spoken[script]["times"].append(timing)
-for script, info in spoken.items():
-    secs = info["words"] / 2.5
-    if not 55 <= secs <= 78:
-        problem(f"[script] {script}: {info['words']} spoken words ≈ {secs:.0f}s (target 60-75s)")
-    if "Detail check" not in info["beats"]:
-        problem(f"[script] {script}: no Detail check row")
-    if not any("CTA" in b for b in info["beats"]):
-        problem(f"[script] {script}: no soft CTA beat")
-    ends = [int(t.split("-")[1].rstrip("s")) for t in info["times"]]
-    starts = [int(t.split("-")[0]) for t in info["times"]]
-    if starts[0] != 0 or any(starts[i + 1] != ends[i] for i in range(len(ends) - 1)):
-        problem(f"[script] {script}: time ranges don't chain: {info['times']}")
-    if secs and abs(ends[-1] - secs) > 12:
-        problem(f"[script] {script}: timeline ends at {ends[-1]}s but spoken length is ≈{secs:.0f}s")
+    script, part, timing, _, say, _ = r
+    spoken.setdefault(script, {})[part] = say
+for script, parts in spoken.items():
+    for part in REQUIRED_PARTS:
+        if not parts.get(part):
+            problem(f"[script] {script}: no {part} row")
+    hook_words = len(parts.get("HOOK", "").split())
+    if hook_words > 15:
+        problem(f"[script] {script}: hook is {hook_words} words, too long for 3-5 s")
+    if len(parts.get("TikTok caption", "")) > len(parts.get("Instagram caption", "")):
+        problem(f"[script] {script}: TikTok caption is longer than the Instagram one")
 
 # 5. Placeholders filled; no cell that Sheets would mangle (leading apostrophe/equals/plus).
 for r in rows:
@@ -122,7 +115,8 @@ for r in by_title["Sources"][3]:
         problem(f"[sources] not an https URL: {r[2]}")
 
 # 7. Pillar names match everywhere they're mentioned.
-pillar_names = ["5AM Brain", "AI External Brain", "Late-Diagnosis Log", "Pattern Breaks", "ADHD Dad in the Wild"]
+pillar_names = ["5AM Brain", "AI External Brain", "Late-Diagnosis Log", "AI for Your Family", "ADHD Dad in the Wild",
+               "NotebookLM"]
 for name in pillar_names:
     for title in ("Start Here", "Content Pillars"):
         blob = " ".join(by_title[title][1]) + " ".join(c for r in by_title[title][3] for c in r)
@@ -130,8 +124,8 @@ for name in pillar_names:
             problem(f"[xref] pillar '{name}' missing from {title}")
 
 print(f"{len(rows)} rows in sheet layout; placeholders {values}")
-for script, info in spoken.items():
-    print(f"  {script}: {info['words']} spoken words ≈ {info['words'] / 2.5:.0f}s, timeline {info['times'][0]}..{info['times'][-1]}")
+for script, parts in spoken.items():
+    print(f"  {script}: hook {len(parts.get('HOOK', '').split())} words, TikTok caption {len(parts.get('TikTok caption', ''))} chars")
 for k in LIMITS:
     print(f"  {k[0]} {k[1]}: {bw.utf16_len(bw.bio_copy(*k))}/{LIMITS[k]}")
 print(f"{len(problems)} problem(s)")

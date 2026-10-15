@@ -20,7 +20,12 @@ START_HERE = (
     ],
     ["Topic", "Bottom line"],
     [
-        ["WHAT CHANGED TONIGHT",
+        ["WHAT CHANGED (OCT 14)",
+         "CLAUDE.md is now the rulebook. (1) Scripts cut to hooks, beats, a closing thought and a tagline slot; the full "
+         "word-for-word versions are archived in their own tab. (2) Six pillars: Pattern Breaks is out; AI for Your Family and "
+         "NotebookLM are in. (3) First weekly ideas doc is live: https://docs.google.com/document/d/1Zt2vil6u8qryobcELQzVL_rTAWwFum0dVBF9VJu464M/edit (3 researched ideas per pillar + "
+         "15 taglines). (4) A new doc lands every Sunday at 5 AM ET."],
+        ["WHAT CHANGED (OCT 13)",
          "(1) Story corrected everywhere: the account never names the habit. The story is now: the same destructive patterns, "
          "over and over → you finally told your wife something had to change → that was the turning point → ADHD diagnosis and "
          "AI, all inside about a month, about two months ago. (2) All three scripts rewritten for filming at your gym, with "
@@ -68,10 +73,9 @@ START_HERE = (
          "('5:40 AM') second and Script A ('The Parking Lot') third. Film all three Wednesday morning, and pin all three on "
          "TikTok (it allows 3 pinned videos). Captions are burned into every video."],
         ["CONTENT PILLARS",
-         "1) 5AM Brain: early mornings at the gym as ADHD regulation, not hustle. 2) AI External Brain: real prompts, real "
-         "screens. 3) Late-Diagnosis Log: two months in, what the diagnosis changed and didn't. 4) Pattern Breaks: the loop, the "
-         "sentence to your wife, repair. 5) ADHD Dad in the Wild: dry humor with one fix. 15 ideas each = 75 videos, about 15 "
-         "weeks at 5 a week. Each video gives viewers one thing worth saving."],
+         "1) 5AM Brain. 2) AI External Brain (incl. prompting as a skill and the will-NOT list). 3) Late-Diagnosis Log. 4) AI for "
+         "Your Family. 5) ADHD Dad in the Wild. 6) NotebookLM (personal use cases, not tutorials). 15 starter ideas each, plus "
+         "3 freshly researched ideas per pillar in every Sunday doc."],
         ["WHAT I COULDN'T VERIFY",
          "The sandbox only allows web search, so I couldn't directly query USPTO, domain registries, or TikTok/Instagram "
          "profile pages. Trademark findings come from indexed USPTO-data mirrors (Justia, Trademarkia, uspto.report, "
@@ -433,14 +437,14 @@ WEEK1 = (
          "Moved from 7:00 to leave 45 min to edit and proof captions. Post natively in the TikTok app with 'Music copyright check' on; reply for the first hour. Pin it."],
         ["Thu Oct 15", "7:00 AM ET", "TikTok", "Script C: '5:40 AM'", "5AM Brain", "Pin it."],
         ["Thu Oct 15", "8:00 AM ET", "Instagram Reel", "Script B (watermark-free export, Edits captions)", "Intro", "Via Metricool, or in-app if not connected yet"],
-        ["Fri Oct 16", "7:00 AM ET", "TikTok", "Script A: 'The Parking Lot'", "Pattern Breaks", "Pin it."],
+        ["Fri Oct 16", "7:00 AM ET", "TikTok", "Script A: 'The Parking Lot'", "Late-Diagnosis Log", "Pin it."],
         ["Fri Oct 16", "8:00 AM ET", "Instagram Reel", "Script C", "5AM Brain", "Metricool"],
         ["Sat Oct 17", "7:00 AM ET", "TikTok", "Reply-to-comment video (best question from Wed-Fri)", "Comment Answers", "TikTok's 'reply with video' button"],
-        ["Sat Oct 17", "8:00 AM ET", "Instagram Reel", "Script A", "Pattern Breaks", "Metricool"],
+        ["Sat Oct 17", "8:00 AM ET", "Instagram Reel", "Script A", "Late-Diagnosis Log", "Metricool"],
         ["Sat Oct 17", "9:00 AM ET", "Instagram carousel", "Carousel: 'The 3 calls I make between sets' (from Script C)", "5AM Brain", "Saveable checklist"],
-        ["Sun Oct 18", "-", "-", "Batch-film 3-4 videos for next week (pick from the 15-idea lists in Content Pillars)", "-", "Morning gym session, 45 min"],
+        ["Sun Oct 18", "5:00 AM ET", "-", "Weekly ideas doc lands; batch-film 3-4 videos", "-", "Pick from the doc and the starter lists"],
         ["Mon Oct 19", "7:00 AM ET", "TikTok", "AI External Brain #1: 'The prompt I use when I can't start anything'", "AI External Brain", "Put the prompt in the caption so people can copy it"],
-        ["Tue Oct 20", "7:00 AM ET", "TikTok", "Pattern Breaks: 'Apologies with an action attached'", "Pattern Breaks", "Put the formula on screen; it's the saveable part"],
+        ["Tue Oct 20", "7:00 AM ET", "TikTok", "AI for Your Family: 'The reading podcast'", "AI for Your Family", "Flagship story. Hook from the weekly doc; you tell it live, with your wife's OK."],
     ],
 )
 
@@ -449,7 +453,7 @@ WEEK1 = (
 # ---------------------------------------------------------------------------
 TRENDS = (
     "Trends (Oct 2026)",
-    ["What's moving now in dad, parenting and ADHD content, and how to use it without becoming a trend account."],
+    ["Snapshot from Oct 13. Fresh, sourced trend research now arrives every Sunday in the weekly ideas doc: https://docs.google.com/document/d/1Zt2vil6u8qryobcELQzVL_rTAWwFum0dVBF9VJu464M/edit"],
     ["Trend / signal", "Platform", "Evidence", "How AI Dad uses it", "Shelf life"],
     [
         ["Late-diagnosed / undiagnosed ADHD dads", "TikTok", "TikTok search cluster 'dad undiagnosed adhd' is active. Few established creators combine ADHD + dad, so the niche is open.",
@@ -492,141 +496,81 @@ TRENDS = (
 # 10. Scripts
 # ---------------------------------------------------------------------------
 SCRIPT_RULES = [
-    "All three are written for the recommended name. If you keep 'Happy', swap 'Healthy' → 'Happy'; nothing else changes.",
-    "Story rule: the habit is never named, hinted at, or counted in days. The story is the pattern, the sentence to your "
-    "wife, and what came after.",
-    "Details: every script ends with a 'Detail check' row. TRUE lines come from what you told me (or your own setup). SWAP "
-    "lines are specifics I wrote to make it sound like a real person: keep the ones that are true for you, and replace the "
-    "rest with your version.",
-    "Length: 60-75 seconds after jump cuts. Captions: word-by-word captions burned in on every line (CapCut auto-captions, "
-    "proofread). Big on-screen TEXT sits above the captions.",
+    "Per CLAUDE.md: the hook is word for word; the middle is beats only, and you tell the story live in your own words. "
+    "The full word-for-word versions are archived, unchanged, in the 'Archive: full scripts (Oct 13)' tab.",
+    "Structure: hook (first 3-5 s) → beats → closing thought (last ~2 s, changes per video) → your fixed tagline (same "
+    "every video; pick it from the weekly ideas doc).",
+    "Story rule: the habit is never named or hinted at. Beats give the shape; the real details are yours.",
+    "Captions (re-checked Oct 14): TikTok short and hook-first with 3-5 hashtags; Instagram longer, keyword in the first "
+    "sentence, up to 5 targeted hashtags.",
     "Audio: talking parts are recorded where there's no gym music (car, entrance, stairwell, quiet corner). Gym-floor shots "
     "are muted B-roll. See Filming Logistics.",
-    "Recommended order: B first (Wed), C second (Thu), A third (Fri). Film all three Wednesday morning. Pin all three.",
+    "Recommended order: B first, C second, A third. Pin all three.",
 ]
 
 SCRIPTS = (
     "Scripts",
     SCRIPT_RULES,
-    ["Script", "Beat", "Time", "On-screen TEXT", "You say (word for word)", "Shot / delivery"],
+    ["Script", "Part", "Time", "On-screen TEXT", "Hook (word for word) / beats / closing", "Notes"],
     [
+        # --- Script B: The Acronym ---
+        ["B: The Acronym (POST FIRST)", "HOOK", "0-5s", "AI Dad Healthy Dad → A.D.H.D.",
+         "AI Dad. Healthy Dad. ... Did you miss it? My doctor did.",
+         "Outside the gym doors or in a stairwell, no speakers in earshot. Point at the text as it appears. Beat of silence "
+         "before 'Did you miss it?'"],
+        ["B: The Acronym (POST FIRST)", "BEATS", "5-55s", "ADHD dad · late-diagnosed · AI as my external brain",
+         "Beats only; say it your way: (1) who you are: a dad at the gym before the house wakes up. (2) The shape of the "
+         "story: the same patterns over and over → the moment you told your wife something had to change → diagnosis and AI "
+         "inside about a month. (3) One real thing AI changed for you, the one you can't stop telling people about. (4) What "
+         "this account is: mornings, AI as an external brain, AI for your family.",
+         "Energy: 'I need to tell you about this.' No apologizing for the ADHD."],
+        ["B: The Acronym (POST FIRST)", "CLOSING THOUGHT", "~2s", "Just diagnosed? You're right on time.",
+         "Just got the diagnosis? You're right on time.", "Changes per video."],
+        ["B: The Acronym (POST FIRST)", "TAGLINE", "end", "-", "[Your fixed tagline: pick one of the 15 in the weekly ideas doc]", "Same every video."],
+        ["B: The Acronym (POST FIRST)", "TikTok caption", "-", "-",
+         "Read the first letters. 🧠 #adhddad #adultadhd #latediagnosedadhd #dadsoftiktok", "Short; the video does the work."],
+        ["B: The Acronym (POST FIRST)", "Instagram caption", "-", "-",
+         "ADHD dad, diagnosed as an adult, and I need to tell you what AI did for my brain. AI Dad Healthy Dad: read the "
+         "first letters. #adhddad #adultadhd #latediagnosedadhd #aitools #dadlife",
+         "Keyword in the first sentence; 5 hashtags."],
+        # --- Script C: 5:40 AM ---
+        ["C: 5:40 AM", "HOOK", "0-4s", "5:40 AM. The only hour my ADHD brain is quiet.",
+         "5:40 a.m. The only hour my ADHD brain isn't running fourteen tabs.",
+         "Say your real time. Quietest corner, back to a wall, no mirrors."],
+        ["C: 5:40 AM", "BEATS", "4-55s",
+         "Between sets, 3 calls:\n1. The ONE thing that has to happen today\n2. When the old pattern's most likely to show up today (and what I'll do instead)\n3. One thing with my kids. Phone in a drawer.",
+         "Beats only: (1) why this hour: nobody needs anything from you yet. (2) What the gym does for your head, in your "
+         "words (don't claim mornings are scientifically better; the research doesn't say that). (3) Walk through your 3 "
+         "calls between sets. (4) How AI holds those 3 calls for you all day.",
+         "The on-screen list is the part people save."],
+        ["C: 5:40 AM", "CLOSING THOUGHT", "~2s", "Yesterday doesn't get a vote.", "Yesterday doesn't get a vote.",
+         "Changes per video."],
+        ["C: 5:40 AM", "TAGLINE", "end", "-", "[Your fixed tagline: pick one of the 15 in the weekly ideas doc]", "Same every video."],
+        ["C: 5:40 AM", "TikTok caption", "-", "-", "5:40 a.m. brain check. #adhddad #5amclub #adhd #gymtok",
+         "Short; the video does the work."],
+        ["C: 5:40 AM", "Instagram caption", "-", "-",
+         "ADHD morning routine from a dad who gets to the gym before his house wakes up. Not for productivity: for a quiet "
+         "brain. The 3 calls I make between sets are on screen. #adhddad #morningroutine #5amclub #adultadhd #adhd",
+         "Keyword in the first sentence; 5 hashtags."],
         # --- Script A: The Parking Lot ---
         ["A: The Parking Lot", "HOOK", "0-4s", "One sentence to my wife. It's why this account exists.",
          "One sentence to my wife. Two months ago. It's the reason this account exists.",
-         "Driver's seat, gym lot, engine off, still dark. Phone on the dash at eye level. First word on frame one: no 'hey "
-         "guys', no smile yet."],
-        ["A: The Parking Lot", "The loop", "4-15s", "Same pattern. Same apology. Same 'this time's different.'",
-         "For years I ran the same destructive patterns. Same mistake, same apology, same speech about how this time was "
-         "different. I could've given that speech in my sleep. Not a flex.",
-         "Dry on 'Not a flex.' Glance away, then back to the lens."],
-        ["A: The Parking Lot", "The sentence", "15-26s", "“Something has to change. And I think it's me.”",
-         "Then one night I skipped the speech and said, 'Something has to change. And I think it's me.' That was the "
-         "turning point. One sentence I'd dodged for years.",
-         "Slow down. Hold one full second of silence after 'And I think it's me.'"],
-        ["A: The Parking Lot", "The month", "26-40s", "Inside a month: ADHD diagnosis + AI",
-         "Inside a month, a doctor said 'ADHD.' About me. It explained a lot. Excused none of it. And I started using AI "
-         "for the stuff my brain drops. Last night it checked whether this channel's name was trademarked.",
-         "Jump cut between sentences and keep the cuts. Half-smile on 'trademarked.'"],
-        ["A: The Parking Lot", "The channel", "40-50s", "AI Dad. Healthy Dad. (Check the first letters.)",
-         "So: AI Dad, Healthy Dad. Yes, the first letters spell exactly what you think. I'm two months into learning my own "
-         "brain, and I'll show you what's helping, and what isn't.",
-         "Small smirk on 'exactly what you think.' Then straight down the lens."],
-        ["A: The Parking Lot", "Soft CTA", "50-62s", "Been there? 🚗 below. Got a sentence you haven't said yet? DMs open.",
-         "If you've been there, drop a 🚗 in the comments. If you've got your own version of that sentence, the one you "
-         "haven't said yet, DM me. I'll read it right here tomorrow, before I go in.",
-         "Open the car door on the last word and cut as it opens. That's your ending."],
-        ["A: The Parking Lot", "Post copy", "-", "Cover text: 'The sentence that changed everything (ADHD dad)'",
-         "CAPTION: Late-diagnosed ADHD dad. Two months ago I told my wife something had to change. Inside a month: the "
-         "diagnosis, and AI. This account is what happens next. Lived experience, not medical advice. #adhddad "
-         "#latediagnosedadhd #adultadhd #adhd #dadsoftiktok #fatherhood",
-         "Pillar: Pattern Breaks"],
-        ["A: The Parking Lot", "Detail check", "-", "-",
-         "TRUE (from you): the repeating patterns; telling your wife something had to change; that being the turning point; "
-         "the diagnosis and AI inside about a month, about two months ago; the gym before the house wakes up. TRUE (from "
-         "last night): AI checked whether the channel name was trademarked. SWAP if it isn't yours: 'for years'; the "
-         "speech-in-my-sleep line; the exact words of your sentence (use your own; the hook works with any one sentence); "
-         "'one night'. ASSUMES you drive to the gym; if not, film on a bench outside the entrance.",
-         "Read before filming. Your cue card is the On-screen TEXT column."],
-        # --- Script B: The Acronym ---
-        ["B: The Acronym (POST FIRST)", "HOOK", "0-3s", "AI Dad Healthy Dad → A.D.H.D.",
-         "AI Dad. Healthy Dad. Read the first letters.",
-         "Outside the gym doors or in a stairwell, with no speakers in earshot. Point up at the text as it appears. Deadpan."],
-        ["B: The Acronym (POST FIRST)", "The payoff", "3-8s", "I didn't notice either. A doctor did.",
-         "... Yeah. I didn't notice either. A doctor did. About me. Two months ago.",
-         "One beat of silence before 'Yeah.' This line is what makes people stay."],
-        ["B: The Acronym (POST FIRST)", "Who", "8-18s", "ADHD dad · late-diagnosed · at the gym before the house wakes up",
-         "I'm a dad. It's not even six, I'm at the gym before my house wakes up, and I'm finally learning why my brain does "
-         "what it does.",
-         "Each fact pops on screen as you say it."],
-        ["B: The Acronym (POST FIRST)", "The story", "18-30s", "Same patterns → told my wife → turning point → diagnosis + AI",
-         "Short version: same destructive patterns, over and over. Different week, same ending. Then I told my wife something "
-         "had to change. That was the turning point. Inside a month: the diagnosis, and AI.",
-         "Steady pace. Don't rush 'told my wife.'"],
-        ["B: The Acronym (POST FIRST)", "The turn", "30-40s", "AI didn't fix me. It built me a {ROWS}-row spreadsheet.",
-         "AI didn't fix me. I asked it to help launch this account, and it built me a {ROWS}-row spreadsheet. I have ADHD. "
-         "I've read row one.",
-         "Hold up your phone with the sheet open for 2 seconds, then back to camera. Dry: the laugh is theirs, not yours."],
-        ["B: The Acronym (POST FIRST)", "Three things (SAVEABLE)", "40-58s",
-         "1. The gym before the house wakes up\n2. AI as my external brain (real prompts)\n3. Dad life with a brain that finally has a name",
-         "So I asked for the short version. One: the gym before my house wakes up, the only quiet hour I get. Two: AI as my "
-         "external brain, real prompts, real screens. Three: dad life with a brain that finally has a name. Including the "
-         "parts I'm still bad at.",
-         "Fingers up for 1-2-3; each item stacks on screen so people screenshot it. One second of muted B-roll per item: "
-         "the gym clock, your phone screen, your gym bag."],
-        ["B: The Acronym (POST FIRST)", "Soft CTA", "58-67s", "Just diagnosed? Wondering? Say hi 👇",
-         "Dads: just got the diagnosis? Or watching this going 'hang on...'? Say hi in the comments. You don't need it "
-         "figured out. I clearly don't.",
-         "Small smile on 'I clearly don't.' End on the last word."],
-        ["B: The Acronym (POST FIRST)", "Post copy", "-", "Cover text: 'AI Dad Healthy Dad = ADHD'",
-         "CAPTION: ADHD dad here. Late-diagnosed two months ago. At the gym before the house wakes up, using AI as my "
-         "external brain, figuring the rest out on camera. Lived experience, not medical advice. #adhddad "
-         "#latediagnosedadhd #adultadhd #adhdtiktok #dadsoftiktok #5amclub #ai",
-         "Pillar: Intro / all"],
-        ["B: The Acronym (POST FIRST)", "Detail check", "-", "-",
-         "TRUE (from you): the acronym; diagnosed about two months ago; patterns → told your wife → turning point → "
-         "diagnosis and AI inside about a month; the gym before the house wakes up. TRUE (from tonight): AI built you this "
-         "launch spreadsheet, which has {ROWS} rows as of Oct 13 (if you add rows, update the number or say 'a giant "
-         "spreadsheet'). SWAP if it isn't yours: 'It's not even six' (say your real time); 'the only quiet hour I get'; the "
-         "B-roll items (use what's actually there).",
-         "Read before filming. Your cue card is the On-screen TEXT column."],
-        # --- Script C: 5:40 AM ---
-        ["C: 5:40 AM", "HOOK", "0-4s", "5:40 AM. The only hour my ADHD brain shuts up.",
-         "5:40 a.m. The only hour my ADHD brain isn't running fourteen tabs.",
-         "Between sets; a little out of breath is fine. Quietest corner, back to a wall, no mirrors. If gym music is audible "
-         "on playback, re-record your lines in the car and use these shots as muted B-roll."],
-        ["C: 5:40 AM", "Who", "4-15s", "ADHD dad · told my wife something had to change · diagnosis + AI inside a month",
-         "Quick version: I'm a dad. Years of the same destructive patterns. Two months ago I told my wife something had to "
-         "change. Inside a month: an ADHD diagnosis, and AI.",
-         "Sit on the bench. Wipe your face mid-sentence: it reads as real, and it's a natural jump-cut point."],
-        ["C: 5:40 AM", "The insight", "15-27s", "It's not about doing MORE. Nobody needs anything from me yet.",
-         "This hour isn't about getting more done. It's that nobody needs anything from me yet. No questions. No "
-         "notifications. No 'Dad, where's my...' One bar, one decision. Closest my brain gets to quiet.",
-         "Cut to muted B-roll on 'One bar': hands on the barbell, the plates, the empty floor."],
-        ["C: 5:40 AM", "The reset", "27-32s", "My checklist resets at 3 AM. Yesterday doesn't get a vote.",
-         "My checklist resets itself at 3 a.m. Yesterday doesn't get a vote.",
-         "Optional 2-second shot of the checklist on your phone screen."],
-        ["C: 5:40 AM", "The 3 calls (SAVEABLE)", "32-52s",
-         "Between sets, 3 calls:\n1. The ONE thing that has to happen today\n2. When the old pattern's most likely to show up today (and what I'll do instead)\n3. One thing with my kids. Phone in a drawer.",
-         "Between sets I make three calls before the day makes them for me. One: the one thing that has to happen today. "
-         "One, not five. Two: when the old pattern's most likely to show up, and what I'll do instead. Three: one thing with "
-         "my kids, phone in a drawer. Then AI nags me till bedtime.",
-         "Count on your fingers. Each item stacks on screen: this is the part people save."],
-        ["C: 5:40 AM", "Channel + soft CTA", "52-63s", "AI Dad. Healthy Dad. What time did you get up?",
-         "This is AI Dad, Healthy Dad. The initials are on purpose. Up this early too? Drop the time you got up. If not, DM "
-         "me what your mornings look like now. Rough is fine.",
-         "Stand up, last line to camera, walk back to the bar. Cut."],
-        ["C: 5:40 AM", "Post copy", "-", "Cover text: 'The 3 calls I make at 5:40 AM (ADHD dad)'",
-         "CAPTION: ADHD dad morning routine, but not for productivity. It's for getting ahead of my brain before the day "
-         "starts. The 3 calls are on screen; save it for tomorrow. Lived experience, not medical advice. #adhddad #adhd "
-         "#morningroutine #5amclub #adultadhd #dadsoftiktok #gymtok",
-         "Pillar: 5AM Brain"],
-        ["C: 5:40 AM", "Detail check", "-", "-",
-         "TRUE (from you): morning person; gym in the morning; patterns → told your wife → diagnosis and AI inside about a "
-         "month. CHECK (from your own Make account, seen while I checked its Google access): an automation named 'Checklist – "
-         "Daily 3am Refresh'. Keep the 3 a.m. line only if that really resets your checklist; cut it if you'd rather not "
-         "share it. SWAP if it isn't yours: '5:40' (your real time; change the hook text and cover too); 'Dad, where's my...' "
-         "(use what your kids actually ask); 'years' of patterns.",
-         "Read before filming. Your cue card is the On-screen TEXT column."],
+         "Driver's seat, gym lot, engine off. First word on frame one."],
+        ["A: The Parking Lot", "BEATS", "4-55s", "Same patterns → one sentence → diagnosis + AI",
+         "Beats only: (1) the loop, in your words: the same patterns, again and again (never the specific habit). (2) The "
+         "night you told her: say the sentence you actually said. (3) What happened next, fast: the diagnosis and AI inside "
+         "about a month. (4) What you're building here, and why you're fired up about it.",
+         "Slow down on the sentence. Let it sit."],
+        ["A: The Parking Lot", "CLOSING THOUGHT", "~2s", "Your sentence is shorter than you think.",
+         "Your sentence is shorter than you think.", "Changes per video."],
+        ["A: The Parking Lot", "TAGLINE", "end", "-", "[Your fixed tagline: pick one of the 15 in the weekly ideas doc]", "Same every video."],
+        ["A: The Parking Lot", "TikTok caption", "-", "-",
+         "The sentence that started all this. #adhddad #latediagnosedadhd #adultadhd #dadsoftiktok",
+         "Short; the video does the work."],
+        ["A: The Parking Lot", "Instagram caption", "-", "-",
+         "Late-diagnosed ADHD dad: two months ago I told my wife something had to change. Inside a month I had a diagnosis "
+         "and AI in my corner, and I need to tell you about it. #adhddad #latediagnosedadhd #adultadhd #adhd #fatherhood",
+         "Keyword in the first sentence; 5 hashtags."],
     ],
 )
 
@@ -690,14 +634,14 @@ PILLAR_2_IDEAS = [
     "What I will NOT use AI for: talking to my kids, apologizing to my wife, health decisions. Save: my human-only list.",
     "AI as a body double: 'check on me every 10 minutes while I do the dishes'. Save: the prompt.",
     "The email I've been avoiding: AI writes the first sentence, I write the rest. Save: the prompt.",
-    "Planning a kid's birthday backward from the date. Save: the backward-plan prompt.",
+    "Prompting is a skill: the same ask, a lazy prompt vs. a good one, side by side. Save: the 3-part prompt.",
     "My lifting log builds itself every Saturday: the one boring thing I automated first (check: from your Make automation name). Save: how to pick your first automation.",
-    "Prompts that made it worse: the 40-item list, the generic pep talk. Save: how to ask for less.",
+    "Prompts that made it worse, played for laughs: the 40-item list, the generic pep talk. Save: how to ask for less.",
     "Getting ready for a doctor's appointment: AI organizes my notes and questions; the doctor gives the answers. Save: the appointment-prep prompt.",
 ]
 
 PILLAR_3_IDEAS = [
-    "The week after the diagnosis: relief, then a weird kind of grief, then 'now what?' Save: what actually helped that week.",
+    "The week after the diagnosis: what it was actually like, in your words. Save: what actually helped that week.",
     "Explained, not excused: the rule I set the day I found out. Save: the rule, in one line.",
     "What I thought ADHD looked like vs what it looks like on me. Save: my 5 surprises (not a checklist for diagnosing anyone).",
     "The questions I took to my appointment. Save: the list (bring your own to a doctor).",
@@ -715,21 +659,21 @@ PILLAR_3_IDEAS = [
 ]
 
 PILLAR_4_IDEAS = [
-    "The sentence that changed everything, and how to say yours. Save: 3 ways to start the conversation.",
-    "The 3 signs my loop is starting: going quiet, skipping the gym, 'I'll deal with it tomorrow'. Save: build your own early-warning list.",
-    "Apologies with an action attached. Save: the formula (what I did / what it cost you / what I'm doing differently by [date]).",
-    "Why 'this time's different' never worked: promises vs systems. Save: turn one promise into one system.",
-    "The first 10 minutes when the old pattern shows up. Save: my 10-minute plan.",
-    "Telling your partner: what I'd do differently. Save: the do/don't list.",
-    "'I'll remember': why my wife stopped accepting it, and what replaced it. Save: the shared-list setup.",
-    "Shame is not a strategy: why beating myself up kept the loop running. Save: the shame → next step swap.",
-    "Patterns live in calendars: how to map when and where yours shows up (I share the method, not my map). Save: the 7-day pattern map.",
-    "The friend I told second: accountability without a speech. Save: what to ask a friend for.",
-    "Repair with your kids: saying sorry so a kid actually gets it. Save: the kid-sized repair script.",
-    "What week 3 of breaking a pattern actually felt like. Save: what to expect.",
-    "Replace, don't just remove: what I put in the gap. Save: the replacement list.",
-    "The setback video: when the old pattern wins a round, what I do next (film it only when it's real). Save: the setback plan.",
-    "Two months in: what's actually different at home. Save: 3 signs of progress that aren't perfection.",
+    "The reading podcast (flagship): your wife, a teacher, built a NotebookLM podcast that got your son reading. Tell it your way, with her OK.",
+    "The family problem you couldn't fix by trying harder, and the tool that did.",
+    "Hints, not answers: AI at homework time without it doing the homework.",
+    "The family calendar that finally works: how AI built it and who keeps it.",
+    "Picky eaters vs. a week of dinners: AI makes the plan, you make the call.",
+    "The school email pile → a 3-line Sunday brief.",
+    "A bedtime story with your kid's name in it, made together.",
+    "Our house rules for kids and AI: what it can and can't do.",
+    "Your wife's teacher trick: how she uses AI in her classroom (with her OK).",
+    "A hard topic, kid-sized: AI helps you find the words; you say them.",
+    "Planning a kid's birthday backward from the date.",
+    "I don't have to fix everything myself: the handoff mindset.",
+    "Setting a grandparent up with one useful AI tool.",
+    "The chore chart the kids actually follow.",
+    "A day trip planned for a family with ADHD energy.",
 ]
 
 PILLAR_5_IDEAS = [
@@ -751,51 +695,75 @@ PILLAR_5_IDEAS = [
 ]
 
 
+PILLAR_6_IDEAS = [
+    "A podcast about my own ADHD story that says my name.",
+    "My motivational-speaker playlist + my goals → a morning pep episode made for me.",
+    "Two AI hosts debate my brain: the Debate format on my own story.",
+    "Before the appointment: my notes and questions read back in plain language (the doctor still gives the answers).",
+    "My wedding vows and old letters → an anniversary episode.",
+    "A week of gym voice memos → what I actually learned this week.",
+    "A podcast for me, one year from now.",
+    "My kids' school year → an audio yearbook.",
+    "Grandma's recipes → an audio cookbook the kids can listen to.",
+    "Spotify used it for Wrapped. I used it for my brain.",
+    "Let it critique my content plan (the Critique format) and take the hit on camera.",
+    "A Video Overview of my week.",
+    "Hearing my own story told by two strangers' voices: what that felt like.",
+    "The reading podcast, part two: what the kid thinks of it (with OK).",
+    "The one episode I'd play for every newly diagnosed dad.",
+]
+
+
 def numbered(ideas):
     return "\n".join(f"{i}) {idea}" for i, idea in enumerate(ideas, 1))
 
 
 PILLARS = (
     "Content Pillars",
-    ["Weekly rhythm: Mon AI External Brain · Tue Pattern Breaks · Wed 5AM Brain · Thu ADHD Dad in the Wild · Fri Late-Diagnosis Log · "
-     "Sat reply-to-comment video + IG carousel · Sun batch-film. 5 pillars × 15 ideas = 75 videos, about 15 weeks at 5 a week. "
-     "Every video carries one saveable thing (prompt, checklist, or script)."],
-    ["Pillar", "What it is", "Saveable element", "Ready-to-film ideas (15)", "Format"],
+    ["Weekly rhythm: Mon AI External Brain · Tue AI for Your Family · Wed 5AM Brain · Thu ADHD Dad in the Wild · Fri "
+     "Late-Diagnosis Log · Sat NotebookLM + reply-to-comment video · Sun batch-film (the weekly ideas doc lands at 5 AM ET). "
+     "6 pillars × 15 starter ideas; fresh researched ideas arrive every Sunday. Ideas are story shapes: you supply the real "
+     "story live."],
+    ["Pillar", "What it is", "Saveable element", "Starter ideas (15, story shapes)", "Format"],
     [
         ["1. 5AM Brain",
-         "Early mornings at the gym, before the house wakes up, as ADHD regulation, not hustle: quiet before demand, and "
-         "decisions made before the day makes them for you.",
+         "Early mornings at the gym, before the house wakes up, as ADHD regulation, not hustle-culture grind.",
          "Morning checklists and the '3 calls' card",
          numbered(PILLAR_1_IDEAS),
          "Filmed at the gym (talking parts in a music-free spot) or in the car after. Weekly IG carousel."],
         ["2. AI External Brain",
-         "Exactly how you use AI for the ADHD gaps: starting, remembering, planning, follow-through. Real screens and real "
-         "prompts, failures included.",
+         "Real prompts and screens showing how AI fills ADHD gaps, including the 'will NOT use AI for' list and prompting as "
+         "a skill, taught with humor. Most households don't pay for AI yet (about 3%, Bank of America data), so the gap is "
+         "the urgency.",
          "Copy-paste prompts in the caption",
          numbered(PILLAR_2_IDEAS),
          "Talking head + 3-5 s screen recording. Show the prompt, then the result. Never show private info on screen."],
-        ["3. Late-Diagnosis Log (new; replaces the old pillar 3)",
-         "Two months in and counting: what the ADHD diagnosis changed, what it didn't, and what you're still figuring out. "
-         "Honest updates from a late-diagnosed dad. Lived experience, not medical advice.",
+        ["3. Late-Diagnosis Log",
+         "Ongoing, honest updates on what the diagnosis changed and what it didn't. No wins/progress-tracker angle.",
          "Question lists and 'what helped' lists",
          numbered(PILLAR_3_IDEAS),
-         "Weekly on Fridays. Same opener every time: 'Late-diagnosed, week [X].' Car or quiet corner."],
-        ["4. Pattern Breaks",
-         "The loop, the sentence to your wife, and the repair. Practical and specific. The pattern itself is never named, "
-         "and the tools work for any pattern.",
-         "Scripts, sentences and formulas",
+         "Car or quiet corner. Lived experience, not medical advice."],
+        ["4. AI for Your Family",
+         "A dad using AI to solve a family problem he can't fix through effort alone: 'I don't have to fix everything "
+         "myself; I can hand someone the right tool.'",
+         "The tool, the prompt, or the house rule",
          numbered(PILLAR_4_IDEAS),
-         "Talking head, slower pace, car or quiet corner. Strong 'send this to your partner' potential (Instagram sends)."],
+         "Talking head + screen or result shots. Family members only with their OK."],
         ["5. ADHD Dad in the Wild",
-         "Dry-humor everyday moments: lost keys, school forms, fourteen tabs at bedtime. Each one ends with one actual fix.",
+         "Dry-humor everyday chaos, one concrete fix per video. The easiest on-ramp for new viewers.",
          "The one fix at the end",
          numbered(PILLAR_5_IDEAS),
-         "POV / skit-lite / voiceover over B-roll. The easiest on-ramp for new viewers."],
+         "POV / skit-lite / voiceover over B-roll."],
+        ["6. NotebookLM",
+         "Not a feature tutorial. Each video is one powerful, personal use case, told for the feeling, not the buttons.",
+         "The use case itself",
+         numbered(PILLAR_6_IDEAS),
+         "Play a few seconds of the generated audio, then your reaction. Check the audio's music-free before posting."],
         ["Recurring format: Comment Answers",
          "Reply to the best comment or DM question with a video, so the audience fills your calendar for you.",
          "The answer itself",
          "Use TikTok's 'reply with video' on the top question each week. Turn DM themes into posts (anonymized).",
-         "Saturdays. Keeps you from running dry by week 2."],
+         "Saturdays, alongside NotebookLM."],
     ],
 )
 
@@ -870,12 +838,25 @@ ASSUMPTIONS = (
         ["16", "Content is lived experience, not medical advice; the scripts make no medical claims about ADHD.", "Protects trust in a niche known for misinformation (the ~52% figure)."],
         ["17", "Trend data is as of Oct 13, 2026; trend-specific items expire within 1-2 weeks.", "Recheck TikTok Creative Center weekly (Monday, 10 min)."],
         ["18", "Per your instruction, scripts, pillars and bios use only research already in this sheet. Filming Logistics is new research, because you asked for it.", "-"],
-        ["19", "Guardrails followed: no emails sent, nothing pushed to GitHub, nothing deleted. Repo changes are committed locally only.", "Push when you're ready."],
+        ["19", "Guardrails followed: no emails sent and nothing deleted. On Oct 14 you asked me to push, so the branch claude/ai-dad-happy-dad-launch-r4xdw5 is on GitHub with all its commits.", "-"],
         ["20", "This sheet was updated in place (same file, same link). There's no Google Sheets connector in this session, so I wrote it through your Make account's existing Google connection with a one-off scenario: 'AI Dad: launch sheet writer (Claude, one-off)'. I switched it off after the run and left it in your Make account, because of the no-deletions rule.", "Delete that scenario in Make whenever you like; it doesn't run on its own. Drive's version history has tonight's earlier version if you ever want it back. "
          "RE-CHECK 4 (after writing): I downloaded this sheet and compared all 296 rows to the source. Sheets had auto-converted 20 "
          "cells ('$0' became 0, and the calendar dates became date numbers), so I rewrote those as text and re-checked: 0 differences."],
         ["21", "Third-party claims (Metricool free-tier limits, USPTO fee, study figures, gym-chain policies, Instagram reach effects) are as reported by their sources and flagged where I couldn't confirm them first-hand. Product hold-strength claims are vendor marketing.", "Check pricing and policy pages before relying on them."],
-    ] + RECHECK_LOG,
+    ] + RECHECK_LOG + [
+["32", "Oct 14: CLAUDE.md adopted. Scripts now carry only the hook (word for word), beats, a closing thought and a tagline slot. The full versions are archived unchanged in the 'Archive: full scripts (Oct 13)' tab.",
+     "The archive's SWAP lines are invented details; don't film them as written."],
+    ["33", "Six pillars per CLAUDE.md. Pattern Breaks was dropped; the origin story still lives in Script A's beats.",
+     "Its old starter ideas are gone from the main tab (they're in this sheet's version history)."],
+    ["34", "Weekly research uses web search and third-party roundups, because this sandbox can't open TikTok Creative Center or Instagram. Every claim names its source, and a pillar with no verified trend says so (this week: NotebookLM).",
+     "Check the 7-day hashtags in Creative Center yourself before filming."],
+    ["35", "The weekly doc is a new Google Doc every Sunday at 5 AM ET in your Drive, titled 'AI Dad Weekly Ideas · Week of ...'. A scheduled task (4:52 AM ET Sundays, first run Oct 18) starts a fresh cloud session that does the research and writes the doc; it never edits this sheet.",
+     "ONE-TIME SETUP: the task was created without a Google Drive connection or the repo attached (this session couldn't pass them on). "
+     "In claude.ai, open the scheduled task 'AI Dad weekly ideas doc (Sun 5 AM ET)' and add the Google Drive connector and this repo. "
+     "Until then it saves the doc as an HTML file instead."],
+    ["36", "The tagline is a placeholder until you pick one of the 15; then it's fixed on every video.", "-"],
+]
+,
 )
 
 # ---------------------------------------------------------------------------
@@ -951,6 +932,19 @@ SOURCES = (
         ["Filming", "Creator report: Edits enhancement glitches at cuts (Threads)", "https://www.threads.com/@priyamdatta/post/DNxOM-M3h0Q/the-edits-app-by-instagram-has-some-flaws-that-need-to-be-sorted-soon-for-it-to-"],
         ["Filming", "Gyms to influencers: stop filming (Axios, 2025)", "https://www.axios.com/2025/05/03/gym-influencer-film-workout-tiktok"],
         ["Filming", "Everyone's talking about filming in gyms (Health Club Management)", "https://www.healthclubmanagement.co.uk/health-club-management-features/Everyones-talking-about-filming-in-gyms/38500"],
+        ["Weekly (Oct 14)", "CDC MMWR 73(40): ADHD in adults", "https://www.cdc.gov/mmwr/volumes/73/wr/mm7340a1.htm"],
+        ["Weekly (Oct 14)", "ADDitude: half diagnosed in adulthood", "https://www.additudemag.com/adult-adhd-diagnosis-cdc-report/"],
+        ["Weekly (Oct 14)", "NPR: a handful of Americans pay for AI", "https://www.npr.org/2026/06/04/nx-s1-5791661/chatgpt-gemini-claude-subscription-revenue-openai"],
+        ["Weekly (Oct 14)", "Moneywise: BofA, 3% of households pay for AI", "https://moneywise.com/news/top-stories/ai-subscribers-households-bank-america-2026"],
+        ["Weekly (Oct 14)", "National Literacy Trust: AI and literacy 2026", "https://literacytrust.org.uk/research-services/research-reports/young-people-teachers-and-parents-use-of-ai-to-support-literacy-in-2026/"],
+        ["Weekly (Oct 14)", "Digital Trends: parents worry about AI reliance", "https://www.digitaltrends.com/computing/parents-fear-kids-are-becoming-too-dependent-on-ai-while-schools-struggle-to-keep-up-survey-finds/"],
+        ["Weekly (Oct 14)", "JOGH 2025: physical activity and adult ADHD", "https://jogh.org/2025/jogh-15-04025"],
+        ["Weekly (Oct 14)", "Single exercise session meta-analysis (2025)", "https://pmc.ncbi.nlm.nih.gov/articles/PMC12220223/"],
+        ["Weekly (Oct 14)", "NotebookLM guide 2026 (Audio Overview formats)", "https://toolchase.com/blog/notebooklm-complete-guide/"],
+        ["Weekly (Oct 14)", "NotebookLM (Wikipedia)", "https://en.wikipedia.org/wiki/NotebookLM"],
+        ["Weekly (Oct 14)", "Instagram hashtags 2026 (Inro)", "https://www.inro.social/blog/instagram-hashtags-relevant-2025"],
+        ["Weekly (Oct 14)", "Caption length guide (SocialPilot)", "https://www.socialpilot.co/blog/ideal-social-media-caption-length"],
+        ["Weekly (Oct 14)", "TikTok trends October 2026 (Ramdam)", "https://www.ramd.am/blog/trends-tiktok"],
         ["Filming", "PureGym filming rule (STV News)", "https://news.stv.tv/world/gym-fluencers-urged-to-stop-filming-in-public-amid-privacy-concerns"],
     ],
 )
