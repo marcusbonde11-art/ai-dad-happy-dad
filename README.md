@@ -9,7 +9,7 @@ Platforms: TikTok first, then Instagram Reels. First post: Wednesday, Oct 14, 20
 |---|---|
 | [`docs/LAUNCH_PLAN.md`](docs/LAUNCH_PLAN.md) | The full plan: name decision, trademark detail, tool stack, filming logistics, timing, trends, 3 first-post scripts (hooks and beats), bios, 6 content pillars (15 ideas each), assumptions with the re-check log, sources |
 | `deliverables/AI_Dad_Launch_Plan.xlsx` | Same plan, one tab per section |
-| `deliverables/AI_Dad_Launch_Plan.csv` | Single-tab layout, sections stacked: exactly what's in the project Google Sheet |
+| `deliverables/AI_Dad_Launch_Plan.csv` | Single-tab skim layout: sections stacked, one short fact per row. Exactly what's in the project Google Sheet |
 | `deliverables/sheet_paste.html` | The same single-tab layout as an HTML table, used to update the Google Sheet in place |
 | `tools/content.py` | Source of truth for all plan content |
 | `tools/build_workbook.py` | Rebuilds the .xlsx, .csv, .html and Markdown from `content.py` |

@@ -34,7 +34,7 @@ START_HERE = (
          "'Filming Logistics' section: tripod verdict and the gym-music copyright risk. (6) Re-check log at the end of "
          "Assumptions."],
         ["NAME DECISION",
-         "Go with AI DAD HEALTHY DAD. 'AI Dad Happy Dad' contains the whole of HAPPY DAD, a brand owned by Happy Dad, LLC (the "
+         "Go with AI DAD HEALTHY DAD. The name 'AI Dad Happy Dad' contains the whole of HAPPY DAD, a brand owned by Happy Dad, LLC (the "
          "Nelk / Full Send hard seltzer). It has live filings in Class 33 (hard seltzer) and a registration covering Class 25 "
          "(clothing and hats), about 23 filings in all, and it keeps adding new HAPPY ___ marks. It markets to young men on "
          "TikTok and Instagram, the same apps you'll be on. Search 'happy dad' and you get their product, not you. For "
@@ -110,7 +110,7 @@ NAME_DECISION = (
          "channels, not your message, so your story doesn't move the legal risk either way. On the brand side: #happydad is "
          "seltzer content, people may assume a parody or an affiliate deal, and an account about breaking destructive "
          "patterns would spend its first videos explaining that it isn't a drinks brand.",
-         "No drinks-brand association. 'Healthy' fits a story about breaking patterns, early mornings and the gym.",
+         "No drinks-brand association. The word 'Healthy' fits a story about breaking patterns, early mornings and the gym.",
          "Healthy"],
         ["2", "Domain",
          "aidadhappydad.com: no live site found in search (likely unregistered; verify at a registrar).",
@@ -628,7 +628,7 @@ PILLAR_2_IDEAS = [
     "The school flyer trick: photo of the flyer, AI turns it into reminders. Save: the 3-step workflow.",
     "The worry sort: voice-memo everything on my mind, and AI sorts it into today / this week / not mine. Save: the sorting prompt.",
     "I asked AI if my channel name was trademarked: what it found, and what it said I still had to check myself. Save: the 'verify it yourself' list.",
-    "AI built me a {ROWS}-row spreadsheet. Here's how I made it useful: 'just tell me this week's 3 things'. Save: the shrink-it prompt.",
+    "AI built me a spreadsheet with {ROWS} rows. Here's how I made it useful: 'just tell me this week's 3 things'. Save: the shrink-it prompt.",
     "The 'am I sliding?' check-in: one sentence to AI when the old pattern starts, and it asks me 3 questions back. Save: the 3 questions.",
     "'Remind me later' → a real calendar event in 10 seconds, hands-free. Save: the dictation phrasing that works.",
     "What I will NOT use AI for: talking to my kids, apologizing to my wife, health decisions. Save: my human-only list.",
@@ -850,10 +850,9 @@ ASSUMPTIONS = (
      "Its old starter ideas are gone from the main tab (they're in this sheet's version history)."],
     ["34", "Weekly research uses web search and third-party roundups, because this sandbox can't open TikTok Creative Center or Instagram. Every claim names its source, and a pillar with no verified trend says so (this week: NotebookLM).",
      "Check the 7-day hashtags in Creative Center yourself before filming."],
-    ["35", "The weekly doc is a new Google Doc every Sunday at 5 AM ET in your Drive, titled 'AI Dad Weekly Ideas · Week of ...'. A scheduled task (4:52 AM ET Sundays, first run Oct 18) starts a fresh cloud session that does the research and writes the doc; it never edits this sheet.",
-     "ONE-TIME SETUP: the task was created without a Google Drive connection or the repo attached (this session couldn't pass them on). "
-     "In claude.ai, open the scheduled task 'AI Dad weekly ideas doc (Sun 5 AM ET)' and add the Google Drive connector and this repo. "
-     "Until then it saves the doc as an HTML file instead."],
+    ["35", "The weekly doc is a new Google Doc every Sunday at 5 AM ET in your Drive, titled 'AI Dad Weekly Ideas · Week of ...'. "
+     "It comes from a routine you set up yourself at claude.ai/code/routines (Sundays 4:52 AM ET), using the prompt in docs/weekly_routine_prompt.md. It never edits this sheet.",
+     "The scheduled task I first created didn't show up in your account, so I deleted it. Give the routine Google Drive as its only connector and attach this repo."],
     ["36", "The tagline is a placeholder until you pick one of the 15; then it's fixed on every video.", "-"],
 ]
 ,

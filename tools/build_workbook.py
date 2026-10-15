@@ -10,6 +10,7 @@ Outputs:
 import csv
 import html
 import os
+import re
 import sys
 
 from openpyxl import Workbook
@@ -41,17 +42,147 @@ def bio_copy(platform, field):
     raise KeyError((platform, field))
 
 
+SHORT = 90  # cells this short are already one fact; leave them whole
+KEEP_WHOLE = {("Bio", 2)}  # bio copy must stay paste-exact
+ABBREV = ("e.g.", "i.e.", "vs.", "a.m.", "p.m.", "No.", "Opp.", "etc.", "Cl.", "approx.", "St.", "U.S.", "Univ.", "Inc.")
+
+
+def _split_top(text, is_cut):
+    """Split text at positions where is_cut(text, i) is true, ignoring anything inside parentheses or quotes."""
+    parts, depth, start = [], 0, 0
+    for i, ch in enumerate(text):
+        if ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth = max(0, depth - 1)
+        elif depth == 0 and is_cut(text, i):
+            parts.append(text[start:i + 1].strip())
+            start = i + 1
+    parts.append(text[start:].strip())
+    return [p for p in parts if p]
+
+
+def _sentence_end(text, i):
+    if text[i] not in ".!?" or i + 2 >= len(text) or text[i + 1] != " ":
+        return False
+    nxt = text[i + 2]
+    if not (nxt.isupper() or nxt.isdigit() or nxt in "'(\"$#@~"):
+        return False
+    before = text[:i + 1]
+    if any(before.endswith(a) for a in ABBREV):
+        return False
+    word = before.split()[-1] if before.split() else ""
+    if word[:-1].isdigit() and before.strip() == word:  # "1. The ONE thing": a list number, not a sentence
+        return False
+    return not (len(word) <= 2 and word[0].isupper())  # initials like "J."
+
+
+def split_facts(text):
+    """One cell -> a list of short lines, one fact each. Text is never reworded, only split."""
+    text = str(text)
+    if len(text) <= SHORT and "\n" not in text:
+        return [text]
+    lines = []
+    for chunk in text.split("\n"):
+        chunk = chunk.strip()
+        if not chunk:
+            continue
+        # Inline numbered lists: "(1) ... (2) ..."
+        pieces = re.split(r"\s(?=\(\d+\)\s)", chunk)
+        for piece in pieces:
+            for sent in _split_top(piece, _sentence_end):
+                # Arrow chains read better one step per line.
+                if sent.count(" → ") >= 2 and len(sent) > SHORT:
+                    steps = sent.split(" → ")
+                    lines.append(steps[0])
+                    lines.extend("→ " + st for st in steps[1:])
+                    continue
+                # Independent clauses joined by semicolons.
+                semi = _split_top(sent, lambda t, i: t[i] == ";" and i + 1 < len(t) and t[i + 1] == " ")
+                if len(sent) > SHORT and len(semi) > 1 and all(len(x) > 20 for x in semi):
+                    parts = semi
+                else:
+                    parts = [sent]
+                for part in parts:
+                    lines.extend(_shorten(part))
+    # Sheets swallows a leading apostrophe, so a line that opens with a quote gets a list dot in front.
+    return ["· " + x if x.startswith("'") else x for x in lines] or [""]
+
+
+LONG = 130  # a single line longer than this gets one more pass
+
+
+def _shorten(line):
+    """Second pass for a still-long line: '·' lists, a lead-in colon, then ', and/but/so' joins."""
+    if len(line) <= LONG:
+        return [line]
+    if line.count(" · ") >= 2:
+        head, *items = line.split(" · ")
+        if ": " in head and len(head.split(": ", 1)[0]) < 60:
+            lead, first = head.split(": ", 1)
+            return [lead + ":"] + ["· " + x for x in [first] + items]
+        return [head] + ["· " + x for x in items]
+    depth = 0
+    for i, ch in enumerate(line):
+        depth += ch == "("
+        depth -= ch == ")" and depth > 0
+        if depth == 0 and line.startswith(": ", i) and 12 <= i <= 130 and "http" not in line[max(0, i - 6):i]:
+            return [line[:i + 1]] + _shorten(line[i + 2:])
+    cut = None
+    depth = 0
+    for i, ch in enumerate(line):
+        depth += ch == "("
+        depth -= ch == ")" and depth > 0
+        if depth == 0 and i > 40 and len(line) - i > 30 and any(line.startswith(j, i) for j in (", and ", ", but ", ", so ", ", because ", ", which ")):
+            if cut is None or abs(i - len(line) / 2) < abs(cut - len(line) / 2):
+                cut = i
+    if cut is not None:
+        return _shorten(line[:cut + 1]) + _shorten(line[cut + 2:])
+    # Last resort for a long comma list: one item per line.
+    items = _split_top(line, lambda t, i: t[i] == "," and t.startswith(", ", i))
+    # A quote mark not between two letters (so not "I'll") opens or closes a quote; never cut inside one.
+    quotes = lambda x: len(re.findall(r"(?<![A-Za-z])'|'(?![A-Za-z])", x))
+    if len(items) >= 3 and all(len(x) > 12 and quotes(x) % 2 == 0 for x in items):
+        return [items[0]] + ["· " + x for x in items[1:]]
+    return [line]
+
+
 def stacked_rows(tabs):
-    """The single-tab Google Sheet layout: every section stacked, in order."""
-    rows = [["AI DAD HEALTHY DAD: LAUNCH PLAN (sections below, in order)"],
-            ["Sections: " + " · ".join(t[0] for t in tabs)]]
+    """The single-tab Google Sheet layout: every section stacked, one short fact per row.
+
+    A record whose long cells split into several lines spreads down over several rows (each column reads
+    straight down), followed by a blank spacer row so records stay visually separate."""
+    rows = [["AI DAD HEALTHY DAD: LAUNCH PLAN"],
+            ["Sections, in order:"]]
+    rows.extend(["", "· " + t[0]] for t in tabs)
     for title, intro, header, body in tabs:
         rows.append([])
         rows.append([f"■ {title.upper()}"])
-        rows.extend([line] for line in intro)
+        for line in intro:
+            rows.extend([f] for f in split_facts(line))
         rows.append(list(header))
-        rows.extend(list(r) for r in body)
+        for record in body:
+            cols = [[str(c)] if (title, j) in KEEP_WHOLE else split_facts(c) for j, c in enumerate(record)]
+            height = max(len(c) for c in cols)
+            for k in range(height):
+                rows.append([c[k] if k < len(c) else "" for c in cols])
+            if height > 1:
+                rows.append([])
+    while rows and not rows[-1]:
+        rows.pop()
     return rows
+
+
+def section_layout(rows):
+    """Row indexes (0-based) of section-title rows and table-header rows, for sheet formatting."""
+    titles = [i for i, r in enumerate(rows) if r and str(r[0]).startswith("■ ")]
+    headers = []
+    for t in titles:
+        i = t + 1
+        while i < len(rows) and len(rows[i]) < 2:
+            i += 1
+        headers.append(i)
+    return titles, headers
 
 
 def fill_placeholders(tabs):
@@ -60,8 +191,7 @@ def fill_placeholders(tabs):
         "{TT_BIO_LEN}": str(utf16_len(bio_copy("TikTok", "Bio"))),
         "{IG_NAME_LEN}": str(utf16_len(bio_copy("Instagram", "Name"))),
         "{IG_BIO_LEN}": str(utf16_len(bio_copy("Instagram", "Bio"))),
-        # Filling text never adds rows, so the count is stable.
-        "{ROWS}": str(len(stacked_rows(tabs))),
+        "{ROWS}": "000",  # set below, once the layout is known
     }
 
     def fill(cell):
@@ -70,6 +200,10 @@ def fill_placeholders(tabs):
             cell = cell.replace(key, val)
         return cell
 
+    # A 3-digit row count never changes how a cell splits, so one dry run gives the final count.
+    dry = [(fill(t), [fill(i) for i in intro], [fill(h) for h in header], [[fill(c) for c in r] for r in body])
+           for t, intro, header, body in tabs]
+    values["{ROWS}"] = str(len(stacked_rows(dry)))
     return [(fill(t), [fill(i) for i in intro], [fill(h) for h in header], [[fill(c) for c in r] for r in body])
             for t, intro, header, body in tabs], values
 
