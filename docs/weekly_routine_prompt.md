@@ -1,32 +1,40 @@
-# Weekly ideas routine: paste-ready prompt
+# Weekly scripts routine: paste-ready prompt
 
 Paste everything below the line into the routine's prompt box.
 
 ---
 
-Weekly run for the "AI Dad Healthy Dad" content channel. Produce this week's ideas doc so it is in Marcus's Google Drive by 5:00 AM US Eastern.
+Weekly run for the "AI Dad Healthy Dad" content channel. Produce this week's scripts doc so it is in Marcus's Google Drive by 5:00 AM US Eastern.
 
-1. In the ai-dad-happy-dad repo, check out branch claude/ai-dad-happy-dad-launch-r4xdw5. Read CLAUDE.md in full and follow every rule in it. Use deliverables/weekly/2026-10-14_weekly_ideas.html as the format reference. Do not edit or push the repo, do not send any email, do not delete anything, and do not edit the launch-plan Google Sheet.
+1. In the ai-dad-happy-dad repo, check out branch claude/ai-dad-happy-dad-launch-r4xdw5. Read CLAUDE.md in full and follow every rule in it. Use deliverables/weekly/TEMPLATE_scripted_ideas.html as the exact structure and inline styling for the doc (its [bracketed] text is placeholder only). Do not edit or push the repo, do not send any email, do not delete anything, and do not edit the launch-plan Google Sheet.
 
 2. Research this week (the coming Mon-Sun) for each of the 6 pillars: 5AM Brain, AI External Brain, Late-Diagnosis Log, AI for Your Family, ADHD Dad in the Wild, NotebookLM.
-   - Try platform-native sources first: TikTok Creative Center (trending hashtags/sounds) and Instagram trending Reels audio/Explore. If you can't reach them, use web search as the backup and say so in the doc.
-   - Every trend, stat or "what's working" claim must come from a source you actually found this run, named under the idea. Never guess.
-   - If a pillar has nothing solid this week, say that plainly in that pillar's section instead of inventing a weak idea.
+   - Try platform-native sources first: TikTok Creative Center (trending hashtags/sounds) and Instagram trending Reels audio/Explore. If you can't reach them, use web search as the backup and say so in your final summary.
+   - Every trend, stat or factual claim that ends up in a script must come from a source you actually opened and read this run. Never guess.
+   - If you can't verify a claim, drop the whole idea. Do not keep it unsourced, soften it into a vaguer claim, or swap in a guess.
 
-3. Re-check this week's caption best practices: TikTok caption length and hashtag count; Instagram caption length, hashtags, and any seasonal or trending tags. Source each point.
+3. Pick 1-2 ideas per pillar, 6-12 in total. One per pillar by default; add a second only when it is just as strong and fully verified. If a pillar ends up with no verified idea, use the template's "Nothing solid this week" block for it.
 
-4. Write 15 fresh closing-tagline options.
+4. Write each idea as a script Marcus can film without writing anything, in the Brand Voice from CLAUDE.md:
+   - Hook: one word-for-word line for the first 3-5 seconds, max 20 words. Sharp, specific, scroll-stopping.
+   - Beat: 2-4 short word-for-word sentences, max 50 words, that he can say as-is: the point, the verified fact, the one fix.
+   - Your story: only if a personal story belongs in this video, one line naming which story to tell (e.g. "the morning you almost skipped the gym and went anyway"). Never write the anecdote itself.
+   - Close: one word-for-word closing thought, max 15 words.
+   - Tagline: this week's #1 tagline pick (step 6).
+   - Source: publisher, title, date and URL for every factual or trend claim in that script.
+   - Keep the scripts (hooks, beats, story lines and closes, not counting sources) under about 700 words in total, so the ideas section skims in under two minutes.
+
+5. Re-check this week's caption best practices: TikTok caption length and hashtag count; Instagram caption length, hashtags, and any seasonal or trending tags. One line per platform, each point sourced.
+
+6. Brainstorm 15 fresh closing-tagline options and put the best 5 in the doc, with the #1 pick marked and a one-line reason.
    - Deadpan, absurd-truth humor about real lived ADHD experience. Style reference: "it's weird being the same age as old people".
    - Specific enough that an ADHD dad thinks "that's exactly me".
    - Never apologize for ADHD and never use "you're not broken" framing.
-   - Mark your top 3, with one-line reasons.
 
-5. Create a new Google Doc with the Google Drive connector's create_file: upload HTML with mimeType text/html so it becomes a Google Doc. Title it "AI Dad Weekly Ideas · Week of <Mon date>".
-   - Large font: body 20pt, headings 28-34pt, sources 11pt.
-   - 3 ideas per pillar (18 in total). Each idea gets a bold one-line title, one short line of broad-strokes direction, an optional hook seed for the first 3-5 seconds, and a small source line.
-   - Then the caption re-check section, then the 15 taglines.
-   - It must be skimmable in seconds. No full scripts: hooks and story shapes only. Never write the actual personal anecdote; Marcus tells his own stories live.
+7. Create a new Google Doc with the Google Drive connector's create_file: upload HTML with mimeType text/html so it becomes a Google Doc. Title it "AI Dad Weekly Scripts · Week of <Mon date>". Follow the template: one block per idea with a bold pillar label, large paragraph text (not bullet lists), a thin rule and generous space between ideas, small grey source lines; then captions, then the top 5 taglines.
 
-6. Hard boundary: never mention alcohol, drinking, sobriety, or any hint of the specific habit, anywhere. Refer only to "patterns" or "habits" generally.
+8. Before creating the doc, check every script against this list and fix or drop anything that fails: it can be said aloud as written; every factual or trend claim has a source from this run; no personal anecdote is written out; nothing breaks the hard boundary below.
 
-7. Finish with a short summary: the doc's link, any pillar that had no verified trend, and which sources were unreachable.
+9. Hard boundary: never mention alcohol, drinking, sobriety, or any hint of the specific habit, anywhere. Refer only to "patterns" or "habits" generally.
+
+10. Finish with a short summary: the doc's link, how many ideas each pillar got, every idea you dropped for lack of verification (one line each, with why), and which sources were unreachable.

@@ -29,19 +29,21 @@
 - **Fallback:** if a given week's research turns up nothing solid for one of the 6 pillars, say so plainly in the Sunday doc for that pillar rather than inventing a weak example or leaving it silently blank.
 - **Refresh cadence:** weekly, every Sunday at 5am Eastern Time, timed to land before Marcus's batch-film day.
 
-## Weekly Sunday Deliverable (Google Doc or Sheet)
-- Every Sunday at 5am ET: fresh research produces 3 verified idea examples per pillar (18 total across the 6 pillars).
-- Format requirements: large font, minimal text per idea, broad strokes only (not full scripts) — built to be skimmed in seconds.
-- **Definition of done:** Marcus can read it very quickly and immediately start brainstorming.
-- Same document also includes the 15 closing-tagline options (see below) as one combined weekly deliverable.
+## Weekly Sunday Deliverable (Google Doc)
+- Every Sunday at 5am ET: fresh research produces 1–2 fully scripted, verified ideas per pillar (6–12 total across the 6 pillars). One per pillar by default; a second only when it is just as strong and fully verified. Fewer, filmable ideas beat many bare prompts.
+- Each idea is written word-for-word so Marcus can film it without writing anything: the hook line, the core beat (2–4 short sentences he can say as-is), the closing thought, then the sign-off tagline. Where a personal story belongs, a one-line "Your story:" prompt names which story to tell — Marcus tells it live (see Story Sourcing Rule).
+- Every factual or trend claim in a script is backed by a source found that same run, named under the idea. If a claim can't be verified, the whole idea is dropped — never kept unsourced or softened into a guess.
+- Format requirements: reads like a clean Word page, not a list. Each idea is its own clearly separated block with a bold pillar label, large readable font, plain paragraph text, and generous space between ideas.
+- **Definition of done:** every idea is filmable without further writing, and the ideas section can be skimmed in under two minutes.
+- Same document ends with a short caption re-check (see Platform Rules) and the top 5 of the week's 15 brainstormed tagline options (see below), as one combined weekly deliverable.
 - First run can happen whenever this is built — doesn't need to wait for a Sunday. After that, it's weekly.
 
 ## Hooks, Middles, and Closes (per-video structure)
 - **First 3–5 seconds (hook):** heaviest focus. Sharp, specific, scroll-stopping. Bar to hit: "Did you miss it? ... My doctor did." Never a generic "hey guys, today we're talking about" opener.
-- **Middle:** light, sprinkled suggestions/beats only — never full scripts. Marcus tells his own story live.
+- **Middle (core beat):** 2–4 short, word-for-word sentences carrying the point, the verified fact and the one fix. Any personal story is only prompted ("Your story: …") — Marcus tells it live.
 - **Last ~2 seconds (closing thought):** heavy focus again. This is a *varying* line, can flex per video based on trend/mood — not fixed.
 - **Final beat (tagline):** immediately after the closing thought, the same fixed tagline plays every video out. This is the permanent sign-off, separate from the varying closing thought before it.
-- **Tagline generation:** Claude Code generates 15 closing tagline options, digging into real lived ADHD experience — not surface-level phrasing. Style reference: the deadpan, absurd-truth humor of Marcus's "it's weird being the same age as old people" t-shirt, applied to the ADHD-stigma reframe.
+- **Tagline generation:** Claude Code brainstorms 15 closing tagline options each week and puts the best 5 in the Sunday doc, digging into real lived ADHD experience — not surface-level phrasing. Style reference: the deadpan, absurd-truth humor of Marcus's "it's weird being the same age as old people" t-shirt, applied to the ADHD-stigma reframe.
 - **Definition of done (hooks):** first 3–5 seconds poses a sharp, specific, scroll-stopping statement or question.
 - **Definition of done (tagline):** specific enough that an ADHD dad reading it thinks "that's exactly me" — not a generic motivational sign-off.
 
@@ -55,5 +57,5 @@
 
 ## Boundaries
 - Never reference the alcohol-specific part of his story publicly — habits/patterns generally are fine, the specific habit is not, permanently.
-- Never write full scripts — hooks and structural beats only, Marcus performs live.
+- Never write Marcus's personal anecdotes. The weekly doc scripts hooks, core beats and closing thoughts word-for-word, but his own stories are only prompted, and he tells them live.
 - Never fabricate a trend, stat, or "what's working right now" claim without verifying it first.
