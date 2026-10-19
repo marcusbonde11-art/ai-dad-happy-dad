@@ -4,8 +4,14 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 
 ## Start Here
 
-> AI Dad ___ Dad: launch plan. Research done 2026-10-13; updated the night of Oct 13. First post: Wednesday, Oct 14, 2026, morning.
+> AI Dad ___ Dad: launch plan. Research done 2026-10-13; updated Oct 19: tease first, reveal on Wed Nov 4. First teaser post: Wednesday, Oct 21, 2026, morning.
 > Read this section first. Every section below has the detail behind it.
+
+### WHAT CHANGED (OCT 19)
+- **Bottom line:** (1) Launch is now tease-then-reveal. For the first 2 weeks (12 posts, Wed Oct 21 to Tue Nov 3) you show real moments and results and never explain the why: no 'ADHD', no 'AI'. Wed Nov 4 is the reveal (Script B, 'The Acronym'). See the new 'Launch Phases' section for why 2 weeks. (2) The calendar is now the 'Launch Calendar'. (3) New teaser-phase bios. (4) The weekly routine can no longer create a second doc for the same week.
+
+### LAUNCH: TEASE FIRST
+- **Bottom line:** Weeks 1-2: results without the how. Week 3: the reveal. Each teaser must work on its own (a real moment, a real result, a clean ending) because a brand-new account's viewers mostly see one video, not the series. If people keep asking 'how?' in the comments, reveal early (rule in Launch Phases).
 
 ### WHAT CHANGED (OCT 14)
 - **Bottom line:** CLAUDE.md is now the rulebook. (1) Scripts cut to hooks, beats, a closing thought and a tagline slot; the full word-for-word versions are archived in their own tab. (2) Six pillars: Pattern Breaks is out; AI for Your Family and NotebookLM are in. (3) First weekly ideas doc is live: https://docs.google.com/document/d/1Zt2vil6u8qryobcELQzVL_rTAWwFum0dVBF9VJu464M/edit (3 researched ideas per pillar + 15 taglines). (4) A new doc lands every Sunday at 5 AM ET.
@@ -32,7 +38,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Bottom line:** First post (Wed): TikTok at 7:30 AM ET, which leaves 45 minutes after the gym to edit and proof captions. From Thursday: TikTok at 7:00 AM ET, Instagram Reels the next morning at 8:00 AM ET (in line with Hootsuite's morning window and Hopper's 7-8 AM Reels finding). Week 3: test one evening slot (6-8 PM, Metricool's TikTok study). After about 3 weeks of posts, switch to Metricool's personalized 'Best times' for your own audience.
 
 ### FIRST POST
-- **Bottom line:** Post Script B ('The Acronym') first: it has the strongest 1-second hook and explains the channel. Post Script C ('5:40 AM') second and Script A ('The Parking Lot') third. Film all three Wednesday morning, and pin all three on TikTok (it allows 3 pinned videos). Captions are burned into every video.
+- **Bottom line:** First post is a teaser (Wed Oct 21): a real moment, no explanation. Script B ('The Acronym') moves to reveal day, Wed Nov 4, with Script A ('The Parking Lot') on Thu Nov 5 and Script C ('5:40 AM') on Fri Nov 6. Pin all three after the reveal (TikTok allows 3 pinned videos). Captions are burned into every video.
 
 ### CONTENT PILLARS
 - **Bottom line:** 1) 5AM Brain. 2) AI External Brain (incl. prompting as a skill and the will-NOT list). 3) Late-Diagnosis Log. 4) AI for Your Family. 5) ADHD Dad in the Wild. 6) NotebookLM (personal use cases, not tutorials). 15 starter ideas each, plus 3 freshly researched ideas per pillar in every Sunday doc.
@@ -443,94 +449,175 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Why for you:** Turn each week's best tip into a 5-7 slide checklist people save.
 
 
-## Week 1 Calendar
+## Launch Phases
 
-> TikTok first, Instagram next day. Reply to every comment within the first 60 minutes of each post. Launch week runs the three intro scripts Wed-Fri; the weekly rhythm in Content Pillars starts Monday.
+> Phase 1 teases real-life moments and results without explaining the mechanism. Phase 2 reveals it: the AI-and-ADHD angle. The phase length below was chosen from research on new accounts (sources in the Sources section, marked 'Launch phases'). No study measures teaser length directly, so the call is reasoned from what is known.
 
-### Tue Oct 13
+### Phase 1: teaser length
+- **Decision:** 2 weeks, 12 posts: Wed Oct 21 to Tue Nov 3, Monday to Saturday at 7:00 AM ET. Sundays are for filming.
+- **Why:** Short on purpose. A brand-new account has no audience to keep in suspense: most viewers see one video, not the series. TikTok matches videos to viewers using captions, sounds, hashtags and what people watch (TikTok newsroom), so every week without 'ADHD dad' in the words is a week the app can't tell who your videos are for. Practitioner guidance on teasers says 2-3 weeks before interest wears out; one curiosity-marketing piece says people check out after 2 weeks. I took the low end.
+
+### Why not shorter
+- **Decision:** Not 1 week (6 posts).
+- **Why:** New-account guides describe roughly the first 10-20 videos as the test phase where the app is still working out who to show you to (a creator rule of thumb, not TikTok data). 12 teasers sit inside that window and give enough posts for a returning viewer to notice a pattern before the reveal lands on video 13.
+
+### Reveal early if
+- **Decision:** After at least 6 teasers, if 3 or more posts get comments asking how or why, reveal on the next posting day.
+- **Why:** Those comments are the curiosity the teaser phase exists to create. Once it shows up, cashing it in beats making people wait.
+
+### Never stretch it
+- **Decision:** Don't extend Phase 1 because views are low.
+- **Why:** Low views in weeks 1-2 are normal for any new account: growth guides put meaningful traction at about 90 days of consistent posting. Keeping the mystery longer won't fix that, and it keeps your search words hidden.
+
+### Phase 2: reveal
+- **Decision:** Wed Nov 4 Script B ('The Acronym') · Thu Nov 5 Script A ('The Parking Lot') · Fri Nov 6 Script C ('5:40 AM') · Sat Nov 7 reply video to the best 'how?' comment from Phase 1.
+- **Why:** The account name is already the clue (the initials spell ADHD), so B pays it off. Switch both bios to the reveal versions the morning of Nov 4. Pin B, A and C.
+
+### Phase 3: normal rhythm
+- **Decision:** From Mon Nov 9: the 6-pillar weekly rhythm in Content Pillars.
+- **Why:** Each teaser maps to a pillar, so every Phase 1 moment gets a full 'here's how' video later.
+
+### Teaser rules
+- **Decision:** Show a real moment and a real result. Say what changed, never why. No 'ADHD', 'AI', 'diagnosis' or app names in the video, captions, on-screen text or hashtags. End each teaser with a line like 'More on that soon.'
+- **Why:** The mystery has to come from the result, not from withholding the point: each video still has to be worth watching on its own.
+
+### Teaser honesty
+- **Decision:** Only real results, no invented timelines. If someone asks how, reply: 'Telling the whole story on Nov 4.' Never deny it or make up a different reason.
+- **Why:** Teasing builds trust only if the reveal matches the hints.
+
+### Hard boundary (still)
+- **Decision:** Teasers never hint at the specific habit. 'Something changed' is about mornings, family and focus, nothing more.
+- **Why:** Per CLAUDE.md. Vague mystery copy can read as a hint, so keep every teaser on a visible result.
+
+### Teaser hashtags
+- **Decision:** Results and dad tags only, e.g. #dadsoftiktok #dadlife #5amclub #morningroutine. Re-check them weekly.
+- **Why:** Keeps the mechanism hidden while still giving the app words to match you on.
+
+
+## Launch Calendar
+
+> TikTok first, Instagram the next morning. Reply to every comment within the first 60 minutes. Teasers follow the rules in Launch Phases; each slot gives the story shape, and you film your real version.
+
+### Tue Oct 20
 - **Time (ET):** Evening
-- **Post:** Claim handles + domain, connect Metricool, set bios, pack the filming kit
-- **Notes:** Read each script's Detail check row tonight and swap anything that isn't true for you.
+- **Post:** Set the teaser-phase bios (see Bio); film teasers 1-3
+- **Notes:** If Scripts B, C or A are already live, see Assumptions 37.
 
-### Wed Oct 14
-- **Time (ET):** 5:30-6:45 AM ET
-- **Post:** Film at the gym: Script A in the car first, then B and C (talking parts in a music-free spot, B-roll on the floor)
-- **Notes:** Film all three now; post only B today.
-
-### Wed Oct 14
-- **Time (ET):** 7:30 AM ET
-- **Platform:** TikTok
-- **Post:** Script B: 'The Acronym'
-- **Pillar:** Intro
-- **Notes:** Moved from 7:00 to leave 45 min to edit and proof captions. Post natively in the TikTok app with 'Music copyright check' on; reply for the first hour. Pin it.
-
-### Thu Oct 15
+### Wed Oct 21
 - **Time (ET):** 7:00 AM ET
 - **Platform:** TikTok
-- **Post:** Script C: '5:40 AM'
-- **Pillar:** 5AM Brain
+- **Post:** Teaser 1: The empty gym before sunrise: what your mornings look like now. Don't say why.
+- **Phase:** 1 · Tease
 - **Notes:** Pin it.
 
-### Thu Oct 15
-- **Time (ET):** 8:00 AM ET
-- **Platform:** Instagram Reel
-- **Post:** Script B (watermark-free export, Edits captions)
-- **Pillar:** Intro
-- **Notes:** Via Metricool, or in-app if not connected yet
+### Thu Oct 22
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 2: A moment your son read something he couldn't before (with your wife's OK). Don't say what helped.
+- **Phase:** 1 · Tease
 
-### Fri Oct 16
+### Fri Oct 23
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 3: Keys on the hook, found first try. The result, played completely straight.
+- **Phase:** 1 · Tease
+
+### Sat Oct 24
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 4: The email or task you'd been avoiding for weeks: sent. Show the 'sent' screen with private info covered.
+- **Phase:** 1 · Tease
+- **Notes:** Sunday: batch-film the next teasers.
+
+### Mon Oct 26
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 5: A conversation a couple of months ago changed how you run your day. Say that much and stop.
+- **Phase:** 1 · Tease
+
+### Tue Oct 27
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 6: Two seconds of audio that says your name, then your face reacting. Cut before you explain.
+- **Phase:** 1 · Tease
+
+### Wed Oct 28
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 7: What your wife noticed changed first (only with her OK). Her words, not the reason.
+- **Phase:** 1 · Tease
+
+### Thu Oct 29
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 8: The family calendar on the fridge that's actually up to date this week.
+- **Phase:** 1 · Tease
+
+### Fri Oct 30
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 9: Halloween costume sorted before Oct 30 (post Thu Oct 29). Deadpan.
+- **Phase:** 1 · Tease
+
+### Sat Oct 31
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 10: A week of 5 AM sessions in 10 seconds. One line: 'Still going.'
+- **Phase:** 1 · Tease
+- **Notes:** Also check: 3+ posts with 'how?' comments? Then reveal Mon Nov 2.
+
+### Mon Nov 2
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 11: Things you don't forget anymore, as an on-screen list. No explanation.
+- **Phase:** 1 · Tease
+
+### Tue Nov 3
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Teaser 12: The day before the reveal: 'Tomorrow I'll tell you what changed. Read my name slowly.'
+- **Phase:** 1 · Tease
+
+### Wed Nov 4
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Script B: 'The Acronym'
+- **Phase:** 2 · Reveal
+- **Notes:** Switch both bios to the reveal versions first. Post natively with 'Music copyright check' on; reply for the first hour. Pin it.
+
+### Thu Nov 5
 - **Time (ET):** 7:00 AM ET
 - **Platform:** TikTok
 - **Post:** Script A: 'The Parking Lot'
-- **Pillar:** Late-Diagnosis Log
+- **Phase:** 2 · Reveal
 - **Notes:** Pin it.
 
-### Fri Oct 16
-- **Time (ET):** 8:00 AM ET
-- **Platform:** Instagram Reel
-- **Post:** Script C
-- **Pillar:** 5AM Brain
-- **Notes:** Metricool
-
-### Sat Oct 17
+### Fri Nov 6
 - **Time (ET):** 7:00 AM ET
 - **Platform:** TikTok
-- **Post:** Reply-to-comment video (best question from Wed-Fri)
-- **Pillar:** Comment Answers
+- **Post:** Script C: '5:40 AM'
+- **Phase:** 2 · Reveal
+- **Notes:** Pin it.
+
+### Sat Nov 7
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** Reply video to the best 'how?' comment from the teaser phase
+- **Phase:** 2 · Reveal
 - **Notes:** TikTok's 'reply with video' button
 
-### Sat Oct 17
-- **Time (ET):** 8:00 AM ET
+### Mon Nov 9
+- **Time (ET):** 7:00 AM ET
+- **Platform:** TikTok
+- **Post:** AI External Brain: 'The prompt I use when I can't start anything'
+- **Phase:** 3 · Rhythm
+- **Notes:** Weekly pillar rhythm starts. Put the prompt in the caption so people can copy it.
+
+### Every day
+- **Time (ET):** 8:00 AM ET (next day)
 - **Platform:** Instagram Reel
-- **Post:** Script A
-- **Pillar:** Late-Diagnosis Log
-- **Notes:** Metricool
-
-### Sat Oct 17
-- **Time (ET):** 9:00 AM ET
-- **Platform:** Instagram carousel
-- **Post:** Carousel: 'The 3 calls I make between sets' (from Script C)
-- **Pillar:** 5AM Brain
-- **Notes:** Saveable checklist
-
-### Sun Oct 18
-- **Time (ET):** 5:00 AM ET
-- **Post:** Weekly ideas doc lands; batch-film 3-4 videos
-- **Notes:** Pick from the doc and the starter lists
-
-### Mon Oct 19
-- **Time (ET):** 7:00 AM ET
-- **Platform:** TikTok
-- **Post:** AI External Brain #1: 'The prompt I use when I can't start anything'
-- **Pillar:** AI External Brain
-- **Notes:** Put the prompt in the caption so people can copy it
-
-### Tue Oct 20
-- **Time (ET):** 7:00 AM ET
-- **Platform:** TikTok
-- **Post:** AI for Your Family: 'The reading podcast'
-- **Pillar:** AI for Your Family
-- **Notes:** Flagship story. Hook from the weekly doc; you tell it live, with your wife's OK.
+- **Post:** Yesterday's TikTok (watermark-free export, Edits captions)
+- **Notes:** Via Metricool, or in-app if not connected yet
 
 
 ## Trends (Oct 2026)
@@ -599,7 +686,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 > Story rule: the habit is never named or hinted at. Beats give the shape; the real details are yours.
 > Captions (re-checked Oct 14): TikTok short and hook-first with 3-5 hashtags; Instagram longer, keyword in the first sentence, up to 5 targeted hashtags.
 > Audio: talking parts are recorded where there's no gym music (car, entrance, stairwell, quiet corner). Gym-floor shots are muted B-roll. See Filming Logistics.
-> Recommended order: B first, C second, A third. Pin all three.
+> These three are the reveal-week videos: B on Wed Nov 4, A on Thu Nov 5, C on Fri Nov 6. Don't post them during the teaser phase (see Launch Phases). Pin all three after the reveal.
 
 ### B: The Acronym (POST FIRST)
 - **Part:** HOOK
@@ -718,10 +805,22 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 > Sharpened with the trend terms already in this sheet: 'late-diagnosed', 'ADHD dad', '5AM', 'external brain', and 'lived experience, not medical advice' (the misinformation-backlash trend). Name fields are what both apps search hardest. Character counts are checked against platform limits.
 
 ### TikTok
+- **Field:** Name (teaser phase, to Nov 3)
+- **Copy (paste exactly):** AI Dad Healthy Dad
+- **Chars / limit:** 18 of 30
+- **Notes:** Leaves out 'ADHD Dad' until the reveal. The name itself is the clue: the initials spell ADHD.
+
+### TikTok
+- **Field:** Bio (teaser phase, to Nov 3)
+- **Copy (paste exactly):** Dad · 5AM gym · results first<br>The how: Nov 4 · DMs open
+- **Chars / limit:** 55 of 80
+- **Notes:** Promises results now and the how on a date, without saying what the how is.
+
+### TikTok
 - **Field:** Name
 - **Copy (paste exactly):** ADHD Dad | AI Dad Healthy Dad
 - **Chars / limit:** 29 of 30
-- **Notes:** Searchable. 'ADHD Dad' first so it shows in search previews.
+- **Notes:** From Nov 4 (reveal). Searchable: 'ADHD Dad' first so it shows in search previews.
 
 ### TikTok
 - **Field:** Username
@@ -732,7 +831,19 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Field:** Bio
 - **Copy (paste exactly):** Late-diagnosed ADHD dad · 5AM gym<br>AI = my external brain · DMs open
 - **Chars / limit:** 67 of 80
-- **Notes:** Each term comes from this sheet's trend list (late-diagnosed, ADHD dad, 5AM, external brain). Soft CTA = 'DMs open'.
+- **Notes:** From Nov 4 (reveal). Each term comes from this sheet's trend list (late-diagnosed, ADHD dad, 5AM, external brain). Soft CTA = 'DMs open'.
+
+### Instagram
+- **Field:** Name (teaser phase, to Nov 3)
+- **Copy (paste exactly):** AI Dad Healthy Dad
+- **Chars / limit:** 18 of 64
+- **Notes:** Instagram allows 2 name changes in 14 days: this one now, the reveal name on Nov 4.
+
+### Instagram
+- **Field:** Bio (teaser phase, to Nov 3)
+- **Copy (paste exactly):** Dad · 5AM gym before the house wakes up<br>A lot changed in about a month<br>Results first. The how: Nov 4<br>DMs open
+- **Chars / limit:** 109 of 150
+- **Notes:** Same idea as TikTok, with room for one more line.
 
 ### Instagram
 - **Field:** Name
@@ -749,16 +860,16 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Field:** Bio
 - **Copy (paste exactly):** Late-diagnosed ADHD dad<br>5AM gym before the house wakes up<br>AI = my external brain, real prompts<br>Real dad, no AI faces · not medical advice<br>DMs open
 - **Chars / limit:** 146 of 150
-- **Notes:** Lines 1-3 are search terms. Line 4 is the trust signal: the misinformation-backlash trend, and 'AI Dad' shouldn't read as an AI persona. Category: Digital creator. Add the link once aidadhealthydad.com is live.
+- **Notes:** From Nov 4 (reveal). Lines 1-3 are search terms. Line 4 is the trust signal: the misinformation-backlash trend, and 'AI Dad' shouldn't read as an AI persona. Category: Digital creator. Add the link once aidadhealthydad.com is live.
 
 ### Both
 - **Field:** Pinned / Highlights
-- **Copy (paste exactly):** Pin Scripts B, C, A on TikTok. Instagram Highlights: 'Start Here', '5AM Gym', 'AI Prompts', 'Diagnosis Log'.
+- **Copy (paste exactly):** From Nov 4: pin Scripts B, A, C on TikTok. Instagram Highlights: 'Start Here', '5AM Gym', 'AI Prompts', 'Diagnosis Log'.
 
 
 ## Content Pillars
 
-> Weekly rhythm: Mon AI External Brain · Tue AI for Your Family · Wed 5AM Brain · Thu ADHD Dad in the Wild · Fri Late-Diagnosis Log · Sat NotebookLM + reply-to-comment video · Sun batch-film (the weekly ideas doc lands at 5 AM ET). 6 pillars × 15 starter ideas; fresh researched ideas arrive every Sunday. Ideas are story shapes: you supply the real story live.
+> From Mon Nov 9 (after the teaser phase and reveal week; see Launch Phases). Weekly rhythm: Mon AI External Brain · Tue AI for Your Family · Wed 5AM Brain · Thu ADHD Dad in the Wild · Fri Late-Diagnosis Log · Sat NotebookLM + reply-to-comment video · Sun batch-film (the weekly ideas doc lands at 5 AM ET). 6 pillars × 15 starter ideas; fresh researched ideas arrive every Sunday. Ideas are story shapes: you supply the real story live.
 
 ### 1. 5AM Brain
 - **What it is:** Early mornings at the gym, before the house wakes up, as ADHD regulation, not hustle-culture grind.
@@ -769,7 +880,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ### 2. AI External Brain
 - **What it is:** Real prompts and screens showing how AI fills ADHD gaps, including the 'will NOT use AI for' list and prompting as a skill, taught with humor. Most households don't pay for AI yet (about 3%, Bank of America data), so the gap is the urgency.
 - **Saveable element:** Copy-paste prompts in the caption
-- **Starter ideas (15, story shapes):** 1) The prompt I use when I can't start anything: 'give me a 2-minute first step'. Save: the prompt.<br>2) Brain dump → 3 things in 30 seconds: voice memo in, top 3 out. Save: the prompt.<br>3) The school flyer trick: photo of the flyer, AI turns it into reminders. Save: the 3-step workflow.<br>4) The worry sort: voice-memo everything on my mind, and AI sorts it into today / this week / not mine. Save: the sorting prompt.<br>5) I asked AI if my channel name was trademarked: what it found, and what it said I still had to check myself. Save: the 'verify it yourself' list.<br>6) AI built me a spreadsheet with 864 rows. Here's how I made it useful: 'just tell me this week's 3 things'. Save: the shrink-it prompt.<br>7) The 'am I sliding?' check-in: one sentence to AI when the old pattern starts, and it asks me 3 questions back. Save: the 3 questions.<br>8) 'Remind me later' → a real calendar event in 10 seconds, hands-free. Save: the dictation phrasing that works.<br>9) What I will NOT use AI for: talking to my kids, apologizing to my wife, health decisions. Save: my human-only list.<br>10) AI as a body double: 'check on me every 10 minutes while I do the dishes'. Save: the prompt.<br>11) The email I've been avoiding: AI writes the first sentence, I write the rest. Save: the prompt.<br>12) Prompting is a skill: the same ask, a lazy prompt vs. a good one, side by side. Save: the 3-part prompt.<br>13) My lifting log builds itself every Saturday: the one boring thing I automated first (check: from your Make automation name). Save: how to pick your first automation.<br>14) Prompts that made it worse, played for laughs: the 40-item list, the generic pep talk. Save: how to ask for less.<br>15) Getting ready for a doctor's appointment: AI organizes my notes and questions; the doctor gives the answers. Save: the appointment-prep prompt.
+- **Starter ideas (15, story shapes):** 1) The prompt I use when I can't start anything: 'give me a 2-minute first step'. Save: the prompt.<br>2) Brain dump → 3 things in 30 seconds: voice memo in, top 3 out. Save: the prompt.<br>3) The school flyer trick: photo of the flyer, AI turns it into reminders. Save: the 3-step workflow.<br>4) The worry sort: voice-memo everything on my mind, and AI sorts it into today / this week / not mine. Save: the sorting prompt.<br>5) I asked AI if my channel name was trademarked: what it found, and what it said I still had to check myself. Save: the 'verify it yourself' list.<br>6) AI built me a spreadsheet with 973 rows. Here's how I made it useful: 'just tell me this week's 3 things'. Save: the shrink-it prompt.<br>7) The 'am I sliding?' check-in: one sentence to AI when the old pattern starts, and it asks me 3 questions back. Save: the 3 questions.<br>8) 'Remind me later' → a real calendar event in 10 seconds, hands-free. Save: the dictation phrasing that works.<br>9) What I will NOT use AI for: talking to my kids, apologizing to my wife, health decisions. Save: my human-only list.<br>10) AI as a body double: 'check on me every 10 minutes while I do the dishes'. Save: the prompt.<br>11) The email I've been avoiding: AI writes the first sentence, I write the rest. Save: the prompt.<br>12) Prompting is a skill: the same ask, a lazy prompt vs. a good one, side by side. Save: the 3-part prompt.<br>13) My lifting log builds itself every Saturday: the one boring thing I automated first (check: from your Make automation name). Save: how to pick your first automation.<br>14) Prompts that made it worse, played for laughs: the 40-item list, the generic pep talk. Save: how to ask for less.<br>15) Getting ready for a doctor's appointment: AI organizes my notes and questions; the doctor gives the answers. Save: the appointment-prep prompt.
 - **Format:** Talking head + 3-5 s screen recording. Show the prompt, then the result. Never show private info on screen.
 
 ### 3. Late-Diagnosis Log
@@ -942,11 +1053,23 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Why / impact if wrong:** Check the 7-day hashtags in Creative Center yourself before filming.
 
 ### 35
-- **Assumption:** The weekly doc is a new Google Doc every Sunday at 5 AM ET in your Drive, titled 'AI Dad Weekly Ideas · Week of ...'. It comes from a routine you set up yourself at claude.ai/code/routines (Sundays 4:52 AM ET), using the prompt in docs/weekly_routine_prompt.md. It never edits this sheet.
+- **Assumption:** The weekly doc is a new Google Doc every Sunday at 5 AM ET in your Drive, titled 'AI Dad Weekly Scripts · Week of ...'. It comes from a routine you set up yourself at claude.ai/code/routines (Sundays 4:52 AM ET), using the prompt in docs/weekly_routine_prompt.md. It never edits this sheet.
 - **Why / impact if wrong:** The scheduled task I first created didn't show up in your account, so I deleted it. Give the routine Google Drive as its only connector and attach this repo.
 
 ### 36
 - **Assumption:** The tagline is a placeholder until you pick one of the 15; then it's fixed on every video.
+
+### 37
+- **Assumption:** The teaser plan assumes Scripts B, C and A haven't been posted yet (the old calendar had them on Oct 14-16).
+- **Why / impact if wrong:** If any are live, the reveal already happened on that account: either make them private before teaser 1, or skip Phase 1 and keep the normal rhythm.
+
+### 38
+- **Assumption:** Phase 1 length (2 weeks, 12 posts) is a judgment call. No study measures teaser length for new accounts; it rests on TikTok's description of how videos get matched, new-account guides (test phase of about 10-20 videos, traction about 90 days) and practitioner teaser advice (2-3 weeks). Those numbers come from search summaries, not pages I opened.
+- **Why / impact if wrong:** Use the 'reveal early' rule, and don't stretch Phase 1 for low views.
+
+### 39
+- **Assumption:** Oct 19: three 'Weekly Scripts · Week of Oct 19' docs came from three separate manual runs of the routine on Oct 18, each creating a fresh doc. The 3:00 PM one was kept; the other two and the superseded Oct 18 'Weekly Ideas' doc went to Drive's trash. The routine now checks Drive first and won't make a second doc for the same week.
+- **Why / impact if wrong:** To deliberately regenerate a week, run it with the word REDO; the old doc is renamed '(old)', never deleted.
 
 
 ## Sources
@@ -1031,4 +1154,11 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Weekly (Oct 14)**: Instagram hashtags 2026 (Inro): https://www.inro.social/blog/instagram-hashtags-relevant-2025
 - **Weekly (Oct 14)**: Caption length guide (SocialPilot): https://www.socialpilot.co/blog/ideal-social-media-caption-length
 - **Weekly (Oct 14)**: TikTok trends October 2026 (Ramdam): https://www.ramd.am/blog/trends-tiktok
+- **Launch phases**: TikTok newsroom: how TikTok recommends videos #ForYou: https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you/
+- **Launch phases**: Buffer: how often to post on TikTok (11M+ posts, Oct 2025): https://buffer.com/resources/how-often-should-you-post-on-tiktok/
+- **Launch phases**: Socialync: TikTok algorithm tips for new accounts 2026 (test phase, ~video 15-30 breakout): https://www.socialync.io/blog/tiktok-algorithm-tips-new-accounts-2026
+- **Launch phases**: ContentLoop: new-account traction ~90 days (growth guide): https://contentloop.it.com/?p=1411
+- **Launch phases**: VBJ column 'Tease, please': teaser 2-3 weeks before launch: https://www.vbjusa.com/opinion/columns/marketing-strategic-communication-column/column-tease-please/
+- **Launch phases**: ZoomSphere: teaser timelines past 2 weeks lose people (unsourced claim): https://www.zoomsphere.com/blog/is-your-teaser-a-hook-or-just-a-delay-tactic
+- **Launch phases**: Descript: the curiosity gap (open it, then close it): https://www.descript.com/blog/article/the-youtubers-guide-to-the-curiosity-gap-how-to-keep-your-audiences-interest
 - **Filming**: PureGym filming rule (STV News): https://news.stv.tv/world/gym-fluencers-urged-to-stop-filming-in-public-amid-privacy-concerns

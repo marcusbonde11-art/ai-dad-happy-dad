@@ -36,7 +36,7 @@ SOFT = [
     r"recover", r"\burges?\b", r"trigger", r"\bday \d+", r"friday night", r"\bclean\b", r"\bslip", r"\b5 ?pm\b",
     r"(?<!third-)\bparty\b", r"\bbuzz", r"\bhigh\b", r"\b(a|my|the next) fix\b", r"not broken",
 ]
-PUBLIC_SECTIONS = {"Scripts", "Bio", "Content Pillars", "Week 1 Calendar"}
+PUBLIC_SECTIONS = {"Scripts", "Bio", "Content Pillars", "Launch Calendar", "Launch Phases"}
 EXEMPT_SECTIONS = {"Name Decision", "Trademark Detail", "Handles & Domains", "Sources"}
 EXEMPT_PHRASES = [
     # Start Here's name-decision summary describes the third-party brand, not the user's story.
@@ -59,6 +59,17 @@ for title, intro, header, body in tabs:
 
 # 2. Bio character limits (counted as the apps do: an emoji counts as 2).
 LIMITS = {("TikTok", "Name"): 30, ("TikTok", "Bio"): 80, ("Instagram", "Name"): 64, ("Instagram", "Bio"): 150}
+T = " (teaser phase, to Nov 3)"
+LIMITS.update({("TikTok", "Name" + T): 30, ("TikTok", "Bio" + T): 80, ("Instagram", "Name" + T): 64, ("Instagram", "Bio" + T): 150})
+# Teaser-phase copy must not give away the mechanism.
+for (platform, field) in [k for k in LIMITS if k[1].endswith(T)]:
+    m = re.search(r"\bADHD\b|\bAI\b|diagnos|NotebookLM|ChatGPT|Claude", bw.bio_copy(platform, field))
+    if m and "Name" not in field:
+        problem(f"[teaser] {platform} {field} reveals '{m.group(0)}'")
+for shape in content.TEASER_SHAPES:
+    m = re.search(r"\bADHD\b|\bAI\b|diagnos|NotebookLM|ChatGPT|Claude|doctor", shape)
+    if m:
+        problem(f"[teaser] shape reveals '{m.group(0)}': {shape[:60]}")
 for (platform, field), limit in LIMITS.items():
     n = bw.utf16_len(bw.bio_copy(platform, field))
     if n > limit:
@@ -103,7 +114,7 @@ for r in rows:
 
 # 6. Cross-references: script names used in Start Here and the calendar exist; sources are https.
 script_names = {s.split(": ", 1)[0]: s.split(": ", 1)[1].replace(" (POST FIRST)", "") for s in spoken}
-for title in ("Start Here", "Week 1 Calendar"):
+for title in ("Start Here", "Launch Calendar"):
     for r in by_title[title][3]:
         for cell in r:
             # "Script B ('The Acronym')" in Start Here, "Script B: 'The Acronym'" in the calendar.

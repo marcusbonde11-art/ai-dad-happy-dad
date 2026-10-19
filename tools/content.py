@@ -15,11 +15,20 @@ RESEARCH_DATE = "2026-10-13"
 START_HERE = (
     "Start Here",
     [
-        "AI Dad ___ Dad: launch plan. Research done " + RESEARCH_DATE + "; updated the night of Oct 13. First post: Wednesday, Oct 14, 2026, morning.",
+        "AI Dad ___ Dad: launch plan. Research done " + RESEARCH_DATE + "; updated Oct 19: tease first, reveal on Wed Nov 4. First teaser post: Wednesday, Oct 21, 2026, morning.",
         "Read this section first. Every section below has the detail behind it.",
     ],
     ["Topic", "Bottom line"],
     [
+        ["WHAT CHANGED (OCT 19)",
+         "(1) Launch is now tease-then-reveal. For the first 2 weeks (12 posts, Wed Oct 21 to Tue Nov 3) you show real moments "
+         "and results and never explain the why: no 'ADHD', no 'AI'. Wed Nov 4 is the reveal (Script B, 'The Acronym'). See "
+         "the new 'Launch Phases' section for why 2 weeks. (2) The calendar is now the 'Launch Calendar'. (3) New teaser-phase "
+         "bios. (4) The weekly routine can no longer create a second doc for the same week."],
+        ["LAUNCH: TEASE FIRST",
+         "Weeks 1-2: results without the how. Week 3: the reveal. Each teaser must work on its own (a real moment, a real "
+         "result, a clean ending) because a brand-new account's viewers mostly see one video, not the series. If people keep "
+         "asking 'how?' in the comments, reveal early (rule in Launch Phases)."],
         ["WHAT CHANGED (OCT 14)",
          "CLAUDE.md is now the rulebook. (1) Scripts cut to hooks, beats, a closing thought and a tagline slot; the full "
          "word-for-word versions are archived in their own tab. (2) Six pillars: Pattern Breaks is out; AI for Your Family and "
@@ -69,9 +78,9 @@ START_HERE = (
          "Hopper's 7-8 AM Reels finding). Week 3: test one evening slot (6-8 PM, Metricool's TikTok study). After about 3 weeks "
          "of posts, switch to Metricool's personalized 'Best times' for your own audience."],
         ["FIRST POST",
-         "Post Script B ('The Acronym') first: it has the strongest 1-second hook and explains the channel. Post Script C "
-         "('5:40 AM') second and Script A ('The Parking Lot') third. Film all three Wednesday morning, and pin all three on "
-         "TikTok (it allows 3 pinned videos). Captions are burned into every video."],
+         "First post is a teaser (Wed Oct 21): a real moment, no explanation. Script B ('The Acronym') moves to reveal day, "
+         "Wed Nov 4, with Script A ('The Parking Lot') on Thu Nov 5 and Script C ('5:40 AM') on Fri Nov 6. Pin all three "
+         "after the reveal (TikTok allows 3 pinned videos). Captions are burned into every video."],
         ["CONTENT PILLARS",
          "1) 5AM Brain. 2) AI External Brain (incl. prompting as a skill and the will-NOT list). 3) Late-Diagnosis Log. 4) AI for "
          "Your Family. 5) ADHD Dad in the Wild. 6) NotebookLM (personal use cases, not tutorials). 15 starter ideas each, plus "
@@ -423,28 +432,104 @@ TIMING = (
     ],
 )
 
-WEEK1 = (
-    "Week 1 Calendar",
-    ["TikTok first, Instagram next day. Reply to every comment within the first 60 minutes of each post. Launch week runs "
-     "the three intro scripts Wed-Fri; the weekly rhythm in Content Pillars starts Monday."],
-    ["Date", "Time (ET)", "Platform", "Post", "Pillar", "Notes"],
+LAUNCH_PHASES = (
+    "Launch Phases",
+    ["Phase 1 teases real-life moments and results without explaining the mechanism. Phase 2 reveals it: the AI-and-ADHD "
+     "angle. The phase length below was chosen from research on new accounts (sources in the Sources section, marked "
+     "'Launch phases'). No study measures teaser length directly, so the call is reasoned from what is known."],
+    ["Item", "Decision", "Why"],
     [
-        ["Tue Oct 13", "Evening", "-", "Claim handles + domain, connect Metricool, set bios, pack the filming kit", "-",
-         "Read each script's Detail check row tonight and swap anything that isn't true for you."],
-        ["Wed Oct 14", "5:30-6:45 AM ET", "-", "Film at the gym: Script A in the car first, then B and C (talking parts in a music-free spot, B-roll on the floor)", "-",
-         "Film all three now; post only B today."],
-        ["Wed Oct 14", "7:30 AM ET", "TikTok", "Script B: 'The Acronym'", "Intro",
-         "Moved from 7:00 to leave 45 min to edit and proof captions. Post natively in the TikTok app with 'Music copyright check' on; reply for the first hour. Pin it."],
-        ["Thu Oct 15", "7:00 AM ET", "TikTok", "Script C: '5:40 AM'", "5AM Brain", "Pin it."],
-        ["Thu Oct 15", "8:00 AM ET", "Instagram Reel", "Script B (watermark-free export, Edits captions)", "Intro", "Via Metricool, or in-app if not connected yet"],
-        ["Fri Oct 16", "7:00 AM ET", "TikTok", "Script A: 'The Parking Lot'", "Late-Diagnosis Log", "Pin it."],
-        ["Fri Oct 16", "8:00 AM ET", "Instagram Reel", "Script C", "5AM Brain", "Metricool"],
-        ["Sat Oct 17", "7:00 AM ET", "TikTok", "Reply-to-comment video (best question from Wed-Fri)", "Comment Answers", "TikTok's 'reply with video' button"],
-        ["Sat Oct 17", "8:00 AM ET", "Instagram Reel", "Script A", "Late-Diagnosis Log", "Metricool"],
-        ["Sat Oct 17", "9:00 AM ET", "Instagram carousel", "Carousel: 'The 3 calls I make between sets' (from Script C)", "5AM Brain", "Saveable checklist"],
-        ["Sun Oct 18", "5:00 AM ET", "-", "Weekly ideas doc lands; batch-film 3-4 videos", "-", "Pick from the doc and the starter lists"],
-        ["Mon Oct 19", "7:00 AM ET", "TikTok", "AI External Brain #1: 'The prompt I use when I can't start anything'", "AI External Brain", "Put the prompt in the caption so people can copy it"],
-        ["Tue Oct 20", "7:00 AM ET", "TikTok", "AI for Your Family: 'The reading podcast'", "AI for Your Family", "Flagship story. Hook from the weekly doc; you tell it live, with your wife's OK."],
+        ["Phase 1: teaser length",
+         "2 weeks, 12 posts: Wed Oct 21 to Tue Nov 3, Monday to Saturday at 7:00 AM ET. Sundays are for filming.",
+         "Short on purpose. A brand-new account has no audience to keep in suspense: most viewers see one video, not the "
+         "series. TikTok matches videos to viewers using captions, sounds, hashtags and what people watch (TikTok newsroom), "
+         "so every week without 'ADHD dad' in the words is a week the app can't tell who your videos are for. Practitioner "
+         "guidance on teasers says 2-3 weeks before interest wears out; one curiosity-marketing piece says people check out "
+         "after 2 weeks. I took the low end."],
+        ["Why not shorter",
+         "Not 1 week (6 posts).",
+         "New-account guides describe roughly the first 10-20 videos as the test phase where the app is still working out "
+         "who to show you to (a creator rule of thumb, not TikTok data). 12 teasers sit inside that window and give enough "
+         "posts for a returning viewer to notice a pattern before the reveal lands on video 13."],
+        ["Reveal early if",
+         "After at least 6 teasers, if 3 or more posts get comments asking how or why, reveal on the next posting day.",
+         "Those comments are the curiosity the teaser phase exists to create. Once it shows up, cashing it in beats making "
+         "people wait."],
+        ["Never stretch it",
+         "Don't extend Phase 1 because views are low.",
+         "Low views in weeks 1-2 are normal for any new account: growth guides put meaningful traction at about 90 days of "
+         "consistent posting. Keeping the mystery longer won't fix that, and it keeps your search words hidden."],
+        ["Phase 2: reveal",
+         "Wed Nov 4 Script B ('The Acronym') · Thu Nov 5 Script A ('The Parking Lot') · Fri Nov 6 Script C ('5:40 AM') · "
+         "Sat Nov 7 reply video to the best 'how?' comment from Phase 1.",
+         "The account name is already the clue (the initials spell ADHD), so B pays it off. Switch both bios to the "
+         "reveal versions the morning of Nov 4. Pin B, A and C."],
+        ["Phase 3: normal rhythm",
+         "From Mon Nov 9: the 6-pillar weekly rhythm in Content Pillars.",
+         "Each teaser maps to a pillar, so every Phase 1 moment gets a full 'here's how' video later."],
+        ["Teaser rules",
+         "Show a real moment and a real result. Say what changed, never why. No 'ADHD', 'AI', 'diagnosis' or app names in "
+         "the video, captions, on-screen text or hashtags. End each teaser with a line like 'More on that soon.'",
+         "The mystery has to come from the result, not from withholding the point: each video still has to be worth "
+         "watching on its own."],
+        ["Teaser honesty",
+         "Only real results, no invented timelines. If someone asks how, reply: 'Telling the whole story on Nov 4.' Never "
+         "deny it or make up a different reason.",
+         "Teasing builds trust only if the reveal matches the hints."],
+        ["Hard boundary (still)",
+         "Teasers never hint at the specific habit. 'Something changed' is about mornings, family and focus, nothing more.",
+         "Per CLAUDE.md. Vague mystery copy can read as a hint, so keep every teaser on a visible result."],
+        ["Teaser hashtags",
+         "Results and dad tags only, e.g. #dadsoftiktok #dadlife #5amclub #morningroutine. Re-check them weekly.",
+         "Keeps the mechanism hidden while still giving the app words to match you on."],
+    ],
+)
+
+TEASER_SHAPES = [
+    "The empty gym before sunrise: what your mornings look like now. Don't say why.",
+    "A moment your son read something he couldn't before (with your wife's OK). Don't say what helped.",
+    "Keys on the hook, found first try. The result, played completely straight.",
+    "The email or task you'd been avoiding for weeks: sent. Show the 'sent' screen with private info covered.",
+    "A conversation a couple of months ago changed how you run your day. Say that much and stop.",
+    "Two seconds of audio that says your name, then your face reacting. Cut before you explain.",
+    "What your wife noticed changed first (only with her OK). Her words, not the reason.",
+    "The family calendar on the fridge that's actually up to date this week.",
+    "Halloween costume sorted before Oct 30 (post Thu Oct 29). Deadpan.",
+    "A week of 5 AM sessions in 10 seconds. One line: 'Still going.'",
+    "Things you don't forget anymore, as an on-screen list. No explanation.",
+    "The day before the reveal: 'Tomorrow I'll tell you what changed. Read my name slowly.'",
+]
+
+WEEK1 = (
+    "Launch Calendar",
+    ["TikTok first, Instagram the next morning. Reply to every comment within the first 60 minutes. Teasers follow the "
+     "rules in Launch Phases; each slot gives the story shape, and you film your real version."],
+    ["Date", "Time (ET)", "Platform", "Post", "Phase", "Notes"],
+    [
+        ["Tue Oct 20", "Evening", "-", "Set the teaser-phase bios (see Bio); film teasers 1-3", "-",
+         "If Scripts B, C or A are already live, see Assumptions 37."],
+        ["Wed Oct 21", "7:00 AM ET", "TikTok", "Teaser 1: " + TEASER_SHAPES[0], "1 · Tease", "Pin it."],
+        ["Thu Oct 22", "7:00 AM ET", "TikTok", "Teaser 2: " + TEASER_SHAPES[1], "1 · Tease", ""],
+        ["Fri Oct 23", "7:00 AM ET", "TikTok", "Teaser 3: " + TEASER_SHAPES[2], "1 · Tease", ""],
+        ["Sat Oct 24", "7:00 AM ET", "TikTok", "Teaser 4: " + TEASER_SHAPES[3], "1 · Tease", "Sunday: batch-film the next teasers."],
+        ["Mon Oct 26", "7:00 AM ET", "TikTok", "Teaser 5: " + TEASER_SHAPES[4], "1 · Tease", ""],
+        ["Tue Oct 27", "7:00 AM ET", "TikTok", "Teaser 6: " + TEASER_SHAPES[5], "1 · Tease", ""],
+        ["Wed Oct 28", "7:00 AM ET", "TikTok", "Teaser 7: " + TEASER_SHAPES[6], "1 · Tease", ""],
+        ["Thu Oct 29", "7:00 AM ET", "TikTok", "Teaser 8: " + TEASER_SHAPES[7], "1 · Tease", ""],
+        ["Fri Oct 30", "7:00 AM ET", "TikTok", "Teaser 9: " + TEASER_SHAPES[8], "1 · Tease", ""],
+        ["Sat Oct 31", "7:00 AM ET", "TikTok", "Teaser 10: " + TEASER_SHAPES[9], "1 · Tease", "Also check: 3+ posts with 'how?' comments? Then reveal Mon Nov 2."],
+        ["Mon Nov 2", "7:00 AM ET", "TikTok", "Teaser 11: " + TEASER_SHAPES[10], "1 · Tease", ""],
+        ["Tue Nov 3", "7:00 AM ET", "TikTok", "Teaser 12: " + TEASER_SHAPES[11], "1 · Tease", ""],
+        ["Wed Nov 4", "7:00 AM ET", "TikTok", "Script B: 'The Acronym'", "2 · Reveal",
+         "Switch both bios to the reveal versions first. Post natively with 'Music copyright check' on; reply for the first hour. Pin it."],
+        ["Thu Nov 5", "7:00 AM ET", "TikTok", "Script A: 'The Parking Lot'", "2 · Reveal", "Pin it."],
+        ["Fri Nov 6", "7:00 AM ET", "TikTok", "Script C: '5:40 AM'", "2 · Reveal", "Pin it."],
+        ["Sat Nov 7", "7:00 AM ET", "TikTok", "Reply video to the best 'how?' comment from the teaser phase", "2 · Reveal",
+         "TikTok's 'reply with video' button"],
+        ["Mon Nov 9", "7:00 AM ET", "TikTok", "AI External Brain: 'The prompt I use when I can't start anything'", "3 · Rhythm",
+         "Weekly pillar rhythm starts. Put the prompt in the caption so people can copy it."],
+        ["Every day", "8:00 AM ET (next day)", "Instagram Reel", "Yesterday's TikTok (watermark-free export, Edits captions)", "-",
+         "Via Metricool, or in-app if not connected yet"],
     ],
 )
 
@@ -505,7 +590,8 @@ SCRIPT_RULES = [
     "sentence, up to 5 targeted hashtags.",
     "Audio: talking parts are recorded where there's no gym music (car, entrance, stairwell, quiet corner). Gym-floor shots "
     "are muted B-roll. See Filming Logistics.",
-    "Recommended order: B first, C second, A third. Pin all three.",
+    "These three are the reveal-week videos: B on Wed Nov 4, A on Thu Nov 5, C on Fri Nov 6. Don't post them during "
+    "the teaser phase (see Launch Phases). Pin all three after the reveal.",
 ]
 
 SCRIPTS = (
@@ -584,10 +670,17 @@ BIO = (
      "hardest. Character counts are checked against platform limits."],
     ["Platform", "Field", "Copy (paste exactly)", "Chars / limit", "Notes"],
     [
-        ["TikTok", "Name", "ADHD Dad | AI Dad Healthy Dad", "29 of 30", "Searchable. 'ADHD Dad' first so it shows in search previews."],
+        ["TikTok", "Name (teaser phase, to Nov 3)", "AI Dad Healthy Dad", "{TT_TNAME_LEN} of 30",
+         "Leaves out 'ADHD Dad' until the reveal. The name itself is the clue: the initials spell ADHD."],
+        ["TikTok", "Bio (teaser phase, to Nov 3)", "Dad · 5AM gym · results first\nThe how: Nov 4 · DMs open", "{TT_TBIO_LEN} of 80",
+         "Promises results now and the how on a date, without saying what the how is."],
+        ["TikTok", "Name", "ADHD Dad | AI Dad Healthy Dad", "29 of 30", "From Nov 4 (reveal). Searchable: 'ADHD Dad' first so it shows in search previews."],
         ["TikTok", "Username", "@aidadhealthydad", "16 of 24", ""],
         ["TikTok", "Bio", "Late-diagnosed ADHD dad · 5AM gym\nAI = my external brain · DMs open", "{TT_BIO_LEN} of 80",
-         "Each term comes from this sheet's trend list (late-diagnosed, ADHD dad, 5AM, external brain). Soft CTA = 'DMs open'."],
+         "From Nov 4 (reveal). Each term comes from this sheet's trend list (late-diagnosed, ADHD dad, 5AM, external brain). Soft CTA = 'DMs open'."],
+        ["Instagram", "Name (teaser phase, to Nov 3)", "AI Dad Healthy Dad", "{IG_TNAME_LEN} of 64",
+         "Instagram allows 2 name changes in 14 days: this one now, the reveal name on Nov 4."],
+        ["Instagram", "Bio (teaser phase, to Nov 3)", "Dad · 5AM gym before the house wakes up\nA lot changed in about a month\nResults first. The how: Nov 4\nDMs open", "{IG_TBIO_LEN} of 150", "Same idea as TikTok, with room for one more line."],
         ["Instagram", "Name", "AI Dad Healthy Dad | Late-Diagnosed ADHD Dad", "{IG_NAME_LEN} of 64",
          "Instagram searches the name field hardest, so it carries the top trend term. Instagram limits name changes (twice "
          "in 14 days), so set it once."],
@@ -595,9 +688,9 @@ BIO = (
         ["Instagram", "Bio",
          "Late-diagnosed ADHD dad\n5AM gym before the house wakes up\nAI = my external brain, real prompts\nReal dad, no AI faces · not medical advice\nDMs open",
          "{IG_BIO_LEN} of 150",
-         "Lines 1-3 are search terms. Line 4 is the trust signal: the misinformation-backlash trend, and 'AI Dad' shouldn't "
+         "From Nov 4 (reveal). Lines 1-3 are search terms. Line 4 is the trust signal: the misinformation-backlash trend, and 'AI Dad' shouldn't "
          "read as an AI persona. Category: Digital creator. Add the link once aidadhealthydad.com is live."],
-        ["Both", "Pinned / Highlights", "Pin Scripts B, C, A on TikTok. Instagram Highlights: 'Start Here', '5AM Gym', 'AI Prompts', 'Diagnosis Log'.", "-", ""],
+        ["Both", "Pinned / Highlights", "From Nov 4: pin Scripts B, A, C on TikTok. Instagram Highlights: 'Start Here', '5AM Gym', 'AI Prompts', 'Diagnosis Log'.", "-", ""],
     ],
 )
 
@@ -720,7 +813,7 @@ def numbered(ideas):
 
 PILLARS = (
     "Content Pillars",
-    ["Weekly rhythm: Mon AI External Brain · Tue AI for Your Family · Wed 5AM Brain · Thu ADHD Dad in the Wild · Fri "
+    ["From Mon Nov 9 (after the teaser phase and reveal week; see Launch Phases). Weekly rhythm: Mon AI External Brain · Tue AI for Your Family · Wed 5AM Brain · Thu ADHD Dad in the Wild · Fri "
      "Late-Diagnosis Log · Sat NotebookLM + reply-to-comment video · Sun batch-film (the weekly ideas doc lands at 5 AM ET). "
      "6 pillars × 15 starter ideas; fresh researched ideas arrive every Sunday. Ideas are story shapes: you supply the real "
      "story live."],
@@ -850,10 +943,21 @@ ASSUMPTIONS = (
      "Its old starter ideas are gone from the main tab (they're in this sheet's version history)."],
     ["34", "Weekly research uses web search and third-party roundups, because this sandbox can't open TikTok Creative Center or Instagram. Every claim names its source, and a pillar with no verified trend says so (this week: NotebookLM).",
      "Check the 7-day hashtags in Creative Center yourself before filming."],
-    ["35", "The weekly doc is a new Google Doc every Sunday at 5 AM ET in your Drive, titled 'AI Dad Weekly Ideas · Week of ...'. "
+    ["35", "The weekly doc is a new Google Doc every Sunday at 5 AM ET in your Drive, titled 'AI Dad Weekly Scripts · Week of ...'. "
      "It comes from a routine you set up yourself at claude.ai/code/routines (Sundays 4:52 AM ET), using the prompt in docs/weekly_routine_prompt.md. It never edits this sheet.",
      "The scheduled task I first created didn't show up in your account, so I deleted it. Give the routine Google Drive as its only connector and attach this repo."],
     ["36", "The tagline is a placeholder until you pick one of the 15; then it's fixed on every video.", "-"],
+    ["37", "The teaser plan assumes Scripts B, C and A haven't been posted yet (the old calendar had them on Oct 14-16).",
+     "If any are live, the reveal already happened on that account: either make them private before teaser 1, or skip "
+     "Phase 1 and keep the normal rhythm."],
+    ["38", "Phase 1 length (2 weeks, 12 posts) is a judgment call. No study measures teaser length for new accounts; it rests "
+     "on TikTok's description of how videos get matched, new-account guides (test phase of about 10-20 videos, traction "
+     "about 90 days) and practitioner teaser advice (2-3 weeks). Those numbers come from search summaries, not pages I opened.",
+     "Use the 'reveal early' rule, and don't stretch Phase 1 for low views."],
+    ["39", "Oct 19: three 'Weekly Scripts · Week of Oct 19' docs came from three separate manual runs of the routine on Oct 18, "
+     "each creating a fresh doc. The 3:00 PM one was kept; the other two and the superseded Oct 18 'Weekly Ideas' doc went to "
+     "Drive's trash. The routine now checks Drive first and won't make a second doc for the same week.",
+     "To deliberately regenerate a week, run it with the word REDO; the old doc is renamed '(old)', never deleted."],
 ]
 ,
 )
@@ -944,9 +1048,16 @@ SOURCES = (
         ["Weekly (Oct 14)", "Instagram hashtags 2026 (Inro)", "https://www.inro.social/blog/instagram-hashtags-relevant-2025"],
         ["Weekly (Oct 14)", "Caption length guide (SocialPilot)", "https://www.socialpilot.co/blog/ideal-social-media-caption-length"],
         ["Weekly (Oct 14)", "TikTok trends October 2026 (Ramdam)", "https://www.ramd.am/blog/trends-tiktok"],
+        ["Launch phases", "TikTok newsroom: how TikTok recommends videos #ForYou", "https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you/"],
+        ["Launch phases", "Buffer: how often to post on TikTok (11M+ posts, Oct 2025)", "https://buffer.com/resources/how-often-should-you-post-on-tiktok/"],
+        ["Launch phases", "Socialync: TikTok algorithm tips for new accounts 2026 (test phase, ~video 15-30 breakout)", "https://www.socialync.io/blog/tiktok-algorithm-tips-new-accounts-2026"],
+        ["Launch phases", "ContentLoop: new-account traction ~90 days (growth guide)", "https://contentloop.it.com/?p=1411"],
+        ["Launch phases", "VBJ column 'Tease, please': teaser 2-3 weeks before launch", "https://www.vbjusa.com/opinion/columns/marketing-strategic-communication-column/column-tease-please/"],
+        ["Launch phases", "ZoomSphere: teaser timelines past 2 weeks lose people (unsourced claim)", "https://www.zoomsphere.com/blog/is-your-teaser-a-hook-or-just-a-delay-tactic"],
+        ["Launch phases", "Descript: the curiosity gap (open it, then close it)", "https://www.descript.com/blog/article/the-youtubers-guide-to-the-curiosity-gap-how-to-keep-your-audiences-interest"],
         ["Filming", "PureGym filming rule (STV News)", "https://news.stv.tv/world/gym-fluencers-urged-to-stop-filming-in-public-amid-privacy-concerns"],
     ],
 )
 
-TABS = [START_HERE, NAME_DECISION, TRADEMARK, HANDLES, ALTERNATIVES, TOOLS, FILMING, TIMING, WEEK1, TRENDS,
+TABS = [START_HERE, NAME_DECISION, TRADEMARK, HANDLES, ALTERNATIVES, TOOLS, FILMING, TIMING, LAUNCH_PHASES, WEEK1, TRENDS,
         SCRIPTS, BIO, PILLARS, ASSUMPTIONS, SOURCES]

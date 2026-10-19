@@ -191,6 +191,10 @@ def fill_placeholders(tabs):
         "{TT_BIO_LEN}": str(utf16_len(bio_copy("TikTok", "Bio"))),
         "{IG_NAME_LEN}": str(utf16_len(bio_copy("Instagram", "Name"))),
         "{IG_BIO_LEN}": str(utf16_len(bio_copy("Instagram", "Bio"))),
+        "{TT_TNAME_LEN}": str(utf16_len(bio_copy("TikTok", "Name (teaser phase, to Nov 3)"))),
+        "{TT_TBIO_LEN}": str(utf16_len(bio_copy("TikTok", "Bio (teaser phase, to Nov 3)"))),
+        "{IG_TNAME_LEN}": str(utf16_len(bio_copy("Instagram", "Name (teaser phase, to Nov 3)"))),
+        "{IG_TBIO_LEN}": str(utf16_len(bio_copy("Instagram", "Bio (teaser phase, to Nov 3)"))),
         "{ROWS}": "000",  # set below, once the layout is known
     }
 
