@@ -59,17 +59,18 @@ for title, intro, header, body in tabs:
 
 # 2. Bio character limits (counted as the apps do: an emoji counts as 2).
 LIMITS = {("TikTok", "Name"): 30, ("TikTok", "Bio"): 80, ("Instagram", "Name"): 64, ("Instagram", "Bio"): 150}
-T = " (teaser phase, to Nov 3)"
-LIMITS.update({("TikTok", "Name" + T): 30, ("TikTok", "Bio" + T): 80, ("Instagram", "Name" + T): 64, ("Instagram", "Bio" + T): 150})
-# Teaser-phase copy must not give away the mechanism.
+T = " (teaser, to Oct 27)"
+LIMITS.update({("TikTok", "Bio" + T): 80, ("Instagram", "Bio" + T): 150})
+# Teaser copy may say ADHD and AI, but must not name a tool or show the workflow.
+TOOLS = r"NotebookLM|ChatGPT|Claude|Gemini|Copilot|Perplexity|\bprompts?\b"
 for (platform, field) in [k for k in LIMITS if k[1].endswith(T)]:
-    m = re.search(r"\bADHD\b|\bAI\b|diagnos|NotebookLM|ChatGPT|Claude", bw.bio_copy(platform, field))
-    if m and "Name" not in field:
-        problem(f"[teaser] {platform} {field} reveals '{m.group(0)}'")
-for shape in content.TEASER_SHAPES:
-    m = re.search(r"\bADHD\b|\bAI\b|diagnos|NotebookLM|ChatGPT|Claude|doctor", shape)
+    m = re.search(TOOLS, bw.bio_copy(platform, field))
     if m:
-        problem(f"[teaser] shape reveals '{m.group(0)}': {shape[:60]}")
+        problem(f"[teaser] {platform} {field} names '{m.group(0)}'")
+for shape in content.TEASER_SHAPES:
+    m = re.search(TOOLS, shape)
+    if m:
+        problem(f"[teaser] shape names '{m.group(0)}': {shape[:60]}")
 for (platform, field), limit in LIMITS.items():
     n = bw.utf16_len(bw.bio_copy(platform, field))
     if n > limit:
