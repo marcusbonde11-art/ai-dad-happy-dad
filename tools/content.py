@@ -493,8 +493,8 @@ TEASER_SHAPES = [
     "A conversation a couple of months ago changed how you run your day. Say that much and stop.",
     "Two seconds of audio that says your name, then your face reacting. Cut before you explain.",
     "What your wife noticed changed first (only with her OK). Her words, not the reason.",
+    "Halloween costume sorted before Oct 30. Deadpan.",
     "The family calendar on the fridge that's actually up to date this week.",
-    "Halloween costume sorted before Oct 30 (post Thu Oct 29). Deadpan.",
     "A week of 5 AM sessions in 10 seconds. One line: 'Still going.'",
     "Things you don't forget anymore, as an on-screen list. No explanation.",
     "The day before the reveal: 'Tomorrow I'll tell you what changed. Read my name slowly.'",
@@ -572,7 +572,7 @@ TRENDS = (
          "Platform rule"],
         ["TikTok keyword search", "TikTok",
          "TikTok reads captions, on-screen text and speech for keywords. Guides say to put the keyword early.",
-         "Say 'ADHD dad' in the first 3 seconds, put it in the first on-screen text, and in the first line of the caption.",
+         "From the reveal on (not in teasers): say 'ADHD dad' in the first 3 seconds, put it in the first on-screen text, and in the first line of the caption.",
          "Platform rule"],
     ],
 )
@@ -600,22 +600,22 @@ SCRIPTS = (
     ["Script", "Part", "Time", "On-screen TEXT", "Hook (word for word) / beats / closing", "Notes"],
     [
         # --- Script B: The Acronym ---
-        ["B: The Acronym (POST FIRST)", "HOOK", "0-5s", "AI Dad Healthy Dad → A.D.H.D.",
+        ["B: The Acronym (REVEAL DAY)", "HOOK", "0-5s", "AI Dad Healthy Dad → A.D.H.D.",
          "AI Dad. Healthy Dad. ... Did you miss it? My doctor did.",
          "Outside the gym doors or in a stairwell, no speakers in earshot. Point at the text as it appears. Beat of silence "
          "before 'Did you miss it?'"],
-        ["B: The Acronym (POST FIRST)", "BEATS", "5-55s", "ADHD dad · late-diagnosed · AI as my external brain",
+        ["B: The Acronym (REVEAL DAY)", "BEATS", "5-55s", "ADHD dad · late-diagnosed · AI as my external brain",
          "Beats only; say it your way: (1) who you are: a dad at the gym before the house wakes up. (2) The shape of the "
          "story: the same patterns over and over → the moment you told your wife something had to change → diagnosis and AI "
          "inside about a month. (3) One real thing AI changed for you, the one you can't stop telling people about. (4) What "
          "this account is: mornings, AI as an external brain, AI for your family.",
          "Energy: 'I need to tell you about this.' No apologizing for the ADHD."],
-        ["B: The Acronym (POST FIRST)", "CLOSING THOUGHT", "~2s", "Just diagnosed? You're right on time.",
+        ["B: The Acronym (REVEAL DAY)", "CLOSING THOUGHT", "~2s", "Just diagnosed? You're right on time.",
          "Just got the diagnosis? You're right on time.", "Changes per video."],
-        ["B: The Acronym (POST FIRST)", "TAGLINE", "end", "-", "[Your fixed tagline: pick one of the 15 in the weekly ideas doc]", "Same every video."],
-        ["B: The Acronym (POST FIRST)", "TikTok caption", "-", "-",
+        ["B: The Acronym (REVEAL DAY)", "TAGLINE", "end", "-", "[Your fixed tagline: pick one of the 15 in the weekly ideas doc]", "Same every video."],
+        ["B: The Acronym (REVEAL DAY)", "TikTok caption", "-", "-",
          "Read the first letters. 🧠 #adhddad #adultadhd #latediagnosedadhd #dadsoftiktok", "Short; the video does the work."],
-        ["B: The Acronym (POST FIRST)", "Instagram caption", "-", "-",
+        ["B: The Acronym (REVEAL DAY)", "Instagram caption", "-", "-",
          "ADHD dad, diagnosed as an adult, and I need to tell you what AI did for my brain. AI Dad Healthy Dad: read the "
          "first letters. #adhddad #adultadhd #latediagnosedadhd #aitools #dadlife",
          "Keyword in the first sentence; 5 hashtags."],
@@ -682,8 +682,8 @@ BIO = (
          "Instagram allows 2 name changes in 14 days: this one now, the reveal name on Nov 4."],
         ["Instagram", "Bio (teaser phase, to Nov 3)", "Dad · 5AM gym before the house wakes up\nA lot changed in about a month\nResults first. The how: Nov 4\nDMs open", "{IG_TBIO_LEN} of 150", "Same idea as TikTok, with room for one more line."],
         ["Instagram", "Name", "AI Dad Healthy Dad | Late-Diagnosed ADHD Dad", "{IG_NAME_LEN} of 64",
-         "Instagram searches the name field hardest, so it carries the top trend term. Instagram limits name changes (twice "
-         "in 14 days), so set it once."],
+         "From Nov 4 (reveal). Instagram searches the name field hardest, so it carries the top trend term. This is the "
+         "second of the two name changes Instagram allows in 14 days, so get it right first time."],
         ["Instagram", "Username", "@aidadhealthydad", "16 of 30", ""],
         ["Instagram", "Bio",
          "Late-diagnosed ADHD dad\n5AM gym before the house wakes up\nAI = my external brain, real prompts\nReal dad, no AI faces · not medical advice\nDMs open",

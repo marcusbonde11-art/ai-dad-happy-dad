@@ -113,7 +113,7 @@ for r in rows:
             problem(f"[sheets] cell starts with {c[:1]!r}: {c[:60]}")
 
 # 6. Cross-references: script names used in Start Here and the calendar exist; sources are https.
-script_names = {s.split(": ", 1)[0]: s.split(": ", 1)[1].replace(" (POST FIRST)", "") for s in spoken}
+script_names = {s.split(": ", 1)[0]: re.sub(r" \(.*\)$", "", s.split(": ", 1)[1]) for s in spoken}
 for title in ("Start Here", "Launch Calendar"):
     for r in by_title[title][3]:
         for cell in r:

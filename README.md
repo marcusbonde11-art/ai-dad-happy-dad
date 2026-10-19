@@ -14,6 +14,7 @@ Platforms: TikTok first, then Instagram Reels. First post: Wednesday, Oct 14, 20
 | `tools/content.py` | Source of truth for all plan content |
 | `tools/build_workbook.py` | Rebuilds the .xlsx, .csv, .html and Markdown from `content.py` |
 | `tools/check_content.py` | Review pass 1: hint words, bio limits, idea counts (6 pillars), hook/beats/closing/tagline/caption structure, cross-references |
+| `docs/weekly_routine_prompt.md` | The weekly routine prompt (paste into claude.ai/code/routines). Includes the one-doc-per-week check |
 | `deliverables/weekly/` | Local copies of the Sunday weekly ideas docs (3 sourced ideas per pillar + 15 taglines) |
 | `tools/verify_sheet.py` | Compares a CSV export of the Google Sheet against the source, cell by cell |
 

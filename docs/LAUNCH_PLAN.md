@@ -550,13 +550,13 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ### Thu Oct 29
 - **Time (ET):** 7:00 AM ET
 - **Platform:** TikTok
-- **Post:** Teaser 8: The family calendar on the fridge that's actually up to date this week.
+- **Post:** Teaser 8: Halloween costume sorted before Oct 30. Deadpan.
 - **Phase:** 1 · Tease
 
 ### Fri Oct 30
 - **Time (ET):** 7:00 AM ET
 - **Platform:** TikTok
-- **Post:** Teaser 9: Halloween costume sorted before Oct 30 (post Thu Oct 29). Deadpan.
+- **Post:** Teaser 9: The family calendar on the fridge that's actually up to date this week.
 - **Phase:** 1 · Tease
 
 ### Sat Oct 31
@@ -675,7 +675,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ### TikTok keyword search
 - **Platform:** TikTok
 - **Evidence:** TikTok reads captions, on-screen text and speech for keywords. Guides say to put the keyword early.
-- **How AI Dad uses it:** Say 'ADHD dad' in the first 3 seconds, put it in the first on-screen text, and in the first line of the caption.
+- **How AI Dad uses it:** From the reveal on (not in teasers): say 'ADHD dad' in the first 3 seconds, put it in the first on-screen text, and in the first line of the caption.
 - **Shelf life:** Platform rule
 
 
@@ -688,39 +688,39 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 > Audio: talking parts are recorded where there's no gym music (car, entrance, stairwell, quiet corner). Gym-floor shots are muted B-roll. See Filming Logistics.
 > These three are the reveal-week videos: B on Wed Nov 4, A on Thu Nov 5, C on Fri Nov 6. Don't post them during the teaser phase (see Launch Phases). Pin all three after the reveal.
 
-### B: The Acronym (POST FIRST)
+### B: The Acronym (REVEAL DAY)
 - **Part:** HOOK
 - **Time:** 0-5s
 - **On-screen TEXT:** AI Dad Healthy Dad → A.D.H.D.
 - **Hook (word for word) / beats / closing:** AI Dad. Healthy Dad. ... Did you miss it? My doctor did.
 - **Notes:** Outside the gym doors or in a stairwell, no speakers in earshot. Point at the text as it appears. Beat of silence before 'Did you miss it?'
 
-### B: The Acronym (POST FIRST)
+### B: The Acronym (REVEAL DAY)
 - **Part:** BEATS
 - **Time:** 5-55s
 - **On-screen TEXT:** ADHD dad · late-diagnosed · AI as my external brain
 - **Hook (word for word) / beats / closing:** Beats only; say it your way: (1) who you are: a dad at the gym before the house wakes up. (2) The shape of the story: the same patterns over and over → the moment you told your wife something had to change → diagnosis and AI inside about a month. (3) One real thing AI changed for you, the one you can't stop telling people about. (4) What this account is: mornings, AI as an external brain, AI for your family.
 - **Notes:** Energy: 'I need to tell you about this.' No apologizing for the ADHD.
 
-### B: The Acronym (POST FIRST)
+### B: The Acronym (REVEAL DAY)
 - **Part:** CLOSING THOUGHT
 - **Time:** ~2s
 - **On-screen TEXT:** Just diagnosed? You're right on time.
 - **Hook (word for word) / beats / closing:** Just got the diagnosis? You're right on time.
 - **Notes:** Changes per video.
 
-### B: The Acronym (POST FIRST)
+### B: The Acronym (REVEAL DAY)
 - **Part:** TAGLINE
 - **Time:** end
 - **Hook (word for word) / beats / closing:** [Your fixed tagline: pick one of the 15 in the weekly ideas doc]
 - **Notes:** Same every video.
 
-### B: The Acronym (POST FIRST)
+### B: The Acronym (REVEAL DAY)
 - **Part:** TikTok caption
 - **Hook (word for word) / beats / closing:** Read the first letters. 🧠 #adhddad #adultadhd #latediagnosedadhd #dadsoftiktok
 - **Notes:** Short; the video does the work.
 
-### B: The Acronym (POST FIRST)
+### B: The Acronym (REVEAL DAY)
 - **Part:** Instagram caption
 - **Hook (word for word) / beats / closing:** ADHD dad, diagnosed as an adult, and I need to tell you what AI did for my brain. AI Dad Healthy Dad: read the first letters. #adhddad #adultadhd #latediagnosedadhd #aitools #dadlife
 - **Notes:** Keyword in the first sentence; 5 hashtags.
@@ -849,7 +849,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 - **Field:** Name
 - **Copy (paste exactly):** AI Dad Healthy Dad | Late-Diagnosed ADHD Dad
 - **Chars / limit:** 44 of 64
-- **Notes:** Instagram searches the name field hardest, so it carries the top trend term. Instagram limits name changes (twice in 14 days), so set it once.
+- **Notes:** From Nov 4 (reveal). Instagram searches the name field hardest, so it carries the top trend term. This is the second of the two name changes Instagram allows in 14 days, so get it right first time.
 
 ### Instagram
 - **Field:** Username
@@ -880,7 +880,7 @@ Generated from `tools/content.py`. The same content lives in the project Google 
 ### 2. AI External Brain
 - **What it is:** Real prompts and screens showing how AI fills ADHD gaps, including the 'will NOT use AI for' list and prompting as a skill, taught with humor. Most households don't pay for AI yet (about 3%, Bank of America data), so the gap is the urgency.
 - **Saveable element:** Copy-paste prompts in the caption
-- **Starter ideas (15, story shapes):** 1) The prompt I use when I can't start anything: 'give me a 2-minute first step'. Save: the prompt.<br>2) Brain dump → 3 things in 30 seconds: voice memo in, top 3 out. Save: the prompt.<br>3) The school flyer trick: photo of the flyer, AI turns it into reminders. Save: the 3-step workflow.<br>4) The worry sort: voice-memo everything on my mind, and AI sorts it into today / this week / not mine. Save: the sorting prompt.<br>5) I asked AI if my channel name was trademarked: what it found, and what it said I still had to check myself. Save: the 'verify it yourself' list.<br>6) AI built me a spreadsheet with 973 rows. Here's how I made it useful: 'just tell me this week's 3 things'. Save: the shrink-it prompt.<br>7) The 'am I sliding?' check-in: one sentence to AI when the old pattern starts, and it asks me 3 questions back. Save: the 3 questions.<br>8) 'Remind me later' → a real calendar event in 10 seconds, hands-free. Save: the dictation phrasing that works.<br>9) What I will NOT use AI for: talking to my kids, apologizing to my wife, health decisions. Save: my human-only list.<br>10) AI as a body double: 'check on me every 10 minutes while I do the dishes'. Save: the prompt.<br>11) The email I've been avoiding: AI writes the first sentence, I write the rest. Save: the prompt.<br>12) Prompting is a skill: the same ask, a lazy prompt vs. a good one, side by side. Save: the 3-part prompt.<br>13) My lifting log builds itself every Saturday: the one boring thing I automated first (check: from your Make automation name). Save: how to pick your first automation.<br>14) Prompts that made it worse, played for laughs: the 40-item list, the generic pep talk. Save: how to ask for less.<br>15) Getting ready for a doctor's appointment: AI organizes my notes and questions; the doctor gives the answers. Save: the appointment-prep prompt.
+- **Starter ideas (15, story shapes):** 1) The prompt I use when I can't start anything: 'give me a 2-minute first step'. Save: the prompt.<br>2) Brain dump → 3 things in 30 seconds: voice memo in, top 3 out. Save: the prompt.<br>3) The school flyer trick: photo of the flyer, AI turns it into reminders. Save: the 3-step workflow.<br>4) The worry sort: voice-memo everything on my mind, and AI sorts it into today / this week / not mine. Save: the sorting prompt.<br>5) I asked AI if my channel name was trademarked: what it found, and what it said I still had to check myself. Save: the 'verify it yourself' list.<br>6) AI built me a spreadsheet with 974 rows. Here's how I made it useful: 'just tell me this week's 3 things'. Save: the shrink-it prompt.<br>7) The 'am I sliding?' check-in: one sentence to AI when the old pattern starts, and it asks me 3 questions back. Save: the 3 questions.<br>8) 'Remind me later' → a real calendar event in 10 seconds, hands-free. Save: the dictation phrasing that works.<br>9) What I will NOT use AI for: talking to my kids, apologizing to my wife, health decisions. Save: my human-only list.<br>10) AI as a body double: 'check on me every 10 minutes while I do the dishes'. Save: the prompt.<br>11) The email I've been avoiding: AI writes the first sentence, I write the rest. Save: the prompt.<br>12) Prompting is a skill: the same ask, a lazy prompt vs. a good one, side by side. Save: the 3-part prompt.<br>13) My lifting log builds itself every Saturday: the one boring thing I automated first (check: from your Make automation name). Save: how to pick your first automation.<br>14) Prompts that made it worse, played for laughs: the 40-item list, the generic pep talk. Save: how to ask for less.<br>15) Getting ready for a doctor's appointment: AI organizes my notes and questions; the doctor gives the answers. Save: the appointment-prep prompt.
 - **Format:** Talking head + 3-5 s screen recording. Show the prompt, then the result. Never show private info on screen.
 
 ### 3. Late-Diagnosis Log

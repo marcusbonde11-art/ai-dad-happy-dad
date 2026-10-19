@@ -419,8 +419,8 @@ Tue Oct 27,7:00 AM ET,TikTok,"Teaser 6: Two seconds of audio that says your name
 Wed Oct 28,7:00 AM ET,TikTok,Teaser 7: What your wife noticed changed first (only with her OK).,1 · Tease,
 ,,,"Her words, not the reason.",,
 
-Thu Oct 29,7:00 AM ET,TikTok,Teaser 8: The family calendar on the fridge that's actually up to date this week.,1 · Tease,
-Fri Oct 30,7:00 AM ET,TikTok,Teaser 9: Halloween costume sorted before Oct 30 (post Thu Oct 29). Deadpan.,1 · Tease,
+Thu Oct 29,7:00 AM ET,TikTok,Teaser 8: Halloween costume sorted before Oct 30. Deadpan.,1 · Tease,
+Fri Oct 30,7:00 AM ET,TikTok,Teaser 9: The family calendar on the fridge that's actually up to date this week.,1 · Tease,
 Sat Oct 31,7:00 AM ET,TikTok,Teaser 10: A week of 5 AM sessions in 10 seconds. One line: 'Still going.',1 · Tease,Also check: 3+ posts with 'how?' comments? Then reveal Mon Nov 2.
 Mon Nov 2,7:00 AM ET,TikTok,"Teaser 11: Things you don't forget anymore, as an on-screen list. No explanation.",1 · Tease,
 Tue Nov 3,7:00 AM ET,TikTok,Teaser 12: The day before the reveal: 'Tomorrow I'll tell you what changed.,1 · Tease,
@@ -466,8 +466,8 @@ Two Fishes debate format,TikTok,"October 2026 roundup: used to argue a take, oft
 Instagram: sends + originality,IG,"Mosseri-attributed signals: watch time, likes per reach, sends per reach.",Make videos people DM to their partner ('send this to your wife').,Platform rule
 ,,Accounts that mostly repost lose recommendations.,"Always upload a clean original, never a TikTok download.",
 
-TikTok keyword search,TikTok,"TikTok reads captions, on-screen text and speech for keywords.","Say 'ADHD dad' in the first 3 seconds, put it in the first on-screen text, and in the first line of the caption.",Platform rule
-,,Guides say to put the keyword early.,,
+TikTok keyword search,TikTok,"TikTok reads captions, on-screen text and speech for keywords.",From the reveal on (not in teasers):,Platform rule
+,,Guides say to put the keyword early.,"say 'ADHD dad' in the first 3 seconds, put it in the first on-screen text, and in the first line of the caption.",
 
 
 ■ SCRIPTS
@@ -489,11 +489,11 @@ See Filming Logistics.
 Don't post them during the teaser phase (see Launch Phases).
 Pin all three after the reveal.
 Script,Part,Time,On-screen TEXT,Hook (word for word) / beats / closing,Notes
-B: The Acronym (POST FIRST),HOOK,0-5s,AI Dad Healthy Dad → A.D.H.D.,AI Dad. Healthy Dad. ... Did you miss it? My doctor did.,"Outside the gym doors or in a stairwell, no speakers in earshot."
+B: The Acronym (REVEAL DAY),HOOK,0-5s,AI Dad Healthy Dad → A.D.H.D.,AI Dad. Healthy Dad. ... Did you miss it? My doctor did.,"Outside the gym doors or in a stairwell, no speakers in earshot."
 ,,,,,Point at the text as it appears.
 ,,,,,Beat of silence before 'Did you miss it?'
 
-B: The Acronym (POST FIRST),BEATS,5-55s,ADHD dad · late-diagnosed · AI as my external brain,Beats only; say it your way:,Energy: 'I need to tell you about this.' No apologizing for the ADHD.
+B: The Acronym (REVEAL DAY),BEATS,5-55s,ADHD dad · late-diagnosed · AI as my external brain,Beats only; say it your way:,Energy: 'I need to tell you about this.' No apologizing for the ADHD.
 ,,,,(1) who you are: a dad at the gym before the house wakes up.,
 ,,,,(2) The shape of the story: the same patterns over and over,
 ,,,,→ the moment you told your wife something had to change,
@@ -501,10 +501,10 @@ B: The Acronym (POST FIRST),BEATS,5-55s,ADHD dad · late-diagnosed · AI as my e
 ,,,,"(3) One real thing AI changed for you, the one you can't stop telling people about.",
 ,,,,"(4) What this account is: mornings, AI as an external brain, AI for your family.",
 
-B: The Acronym (POST FIRST),CLOSING THOUGHT,~2s,Just diagnosed? You're right on time.,Just got the diagnosis? You're right on time.,Changes per video.
-B: The Acronym (POST FIRST),TAGLINE,end,-,[Your fixed tagline: pick one of the 15 in the weekly ideas doc],Same every video.
-B: The Acronym (POST FIRST),TikTok caption,-,-,Read the first letters. 🧠 #adhddad #adultadhd #latediagnosedadhd #dadsoftiktok,Short; the video does the work.
-B: The Acronym (POST FIRST),Instagram caption,-,-,"ADHD dad, diagnosed as an adult, and I need to tell you what AI did for my brain.",Keyword in the first sentence; 5 hashtags.
+B: The Acronym (REVEAL DAY),CLOSING THOUGHT,~2s,Just diagnosed? You're right on time.,Just got the diagnosis? You're right on time.,Changes per video.
+B: The Acronym (REVEAL DAY),TAGLINE,end,-,[Your fixed tagline: pick one of the 15 in the weekly ideas doc],Same every video.
+B: The Acronym (REVEAL DAY),TikTok caption,-,-,Read the first letters. 🧠 #adhddad #adultadhd #latediagnosedadhd #dadsoftiktok,Short; the video does the work.
+B: The Acronym (REVEAL DAY),Instagram caption,-,-,"ADHD dad, diagnosed as an adult, and I need to tell you what AI did for my brain.",Keyword in the first sentence; 5 hashtags.
 ,,,,AI Dad Healthy Dad: read the first letters.,
 ,,,,#adhddad #adultadhd #latediagnosedadhd #aitools #dadlife,
 
@@ -562,8 +562,9 @@ Instagram,"Bio (teaser phase, to Nov 3)","Dad · 5AM gym before the house wakes 
 A lot changed in about a month
 Results first. The how: Nov 4
 DMs open",109 of 150,"Same idea as TikTok, with room for one more line."
-Instagram,Name,AI Dad Healthy Dad | Late-Diagnosed ADHD Dad,44 of 64,"Instagram searches the name field hardest, so it carries the top trend term."
-,,,,"Instagram limits name changes (twice in 14 days), so set it once."
+Instagram,Name,AI Dad Healthy Dad | Late-Diagnosed ADHD Dad,44 of 64,From Nov 4 (reveal).
+,,,,"Instagram searches the name field hardest, so it carries the top trend term."
+,,,,"This is the second of the two name changes Instagram allows in 14 days, so get it right first time."
 
 Instagram,Username,@aidadhealthydad,16 of 30,
 Instagram,Bio,"Late-diagnosed ADHD dad
@@ -633,7 +634,7 @@ Pillar,What it is,Saveable element,"Starter ideas (15, story shapes)",Format
 ,,,Save: the sorting prompt.,
 ,,,"5) I asked AI if my channel name was trademarked: what it found, and what it said I still had to check myself.",
 ,,,Save: the 'verify it yourself' list.,
-,,,6) AI built me a spreadsheet with 973 rows.,
+,,,6) AI built me a spreadsheet with 974 rows.,
 ,,,Here's how I made it useful: 'just tell me this week's 3 things'.,
 ,,,Save: the shrink-it prompt.,
 ,,,"7) The 'am I sliding?' check-in: one sentence to AI when the old pattern starts, and it asks me 3 questions back.",
