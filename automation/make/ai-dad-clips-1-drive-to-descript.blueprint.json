@@ -90,7 +90,7 @@
         "designer": {
           "x": 600,
           "y": 0,
-          "name": "Read file size (metadata only, no download)"
+          "name": "Read file size + extension (metadata only, no download)"
         }
       }
     },
@@ -110,13 +110,13 @@
           "flow": [
             {
               "id": 10,
-              "module": "google-drive:getAFile",
+              "module": "google-drive:shareAFileFolder",
               "version": 4,
               "parameters": {
                 "__IMTCONN__": 11845960
               },
               "filter": {
-                "name": "Fits Make file-size limit",
+                "name": "Fits the direct-download limit",
                 "conditions": [
                   [
                     {
@@ -128,14 +128,18 @@
                 ]
               },
               "mapper": {
-                "select": "map",
-                "file": "{{1.id}}"
+                "destination": "drive",
+                "select": "file",
+                "file": "{{1.id}}",
+                "role": "reader",
+                "type": "anyone",
+                "allowFileDiscovery": false
               },
               "metadata": {
                 "designer": {
                   "x": 1200,
                   "y": -150,
-                  "name": "Download recording privately (Drive connection, no sharing)"
+                  "name": "Link-share recording (anyone with the link, viewer, not searchable) so Descript can fetch it"
                 }
               }
             },
@@ -144,7 +148,7 @@
               "module": "http:ActionSendData",
               "version": 3,
               "parameters": {
-                "handleErrors": true,
+                "handleErrors": false,
                 "useNewZLibDeCompress": true
               },
               "mapper": {
@@ -159,7 +163,7 @@
                 "qs": [],
                 "bodyType": "raw",
                 "contentType": "application/json",
-                "data": "{\"project_name\": \"AI Dad – {{1.name}}\", \"folder_name\": \"{{2.DESCRIPT_FOLDER}}\", \"add_media\": {\"recording\": {\"content_type\": \"{{1.mimeType}}\", \"file_size\": {{3.size}}, \"language\": \"en\"}}, \"add_compositions\": [{\"name\": \"Full – {{1.name}}\", \"width\": 1080, \"height\": 1920, \"clips\": [{\"media\": \"recording\"}]}], \"callback_url\": \"{{2.DESCRIPT_CALLBACK_URL}}\"}",
+                "data": "{\"project_name\": \"AI Dad – {{1.name}} – {{1.id}}\", \"folder_name\": \"{{2.DESCRIPT_FOLDER}}\", \"team_access\": \"view\", \"add_media\": {\"recording-{{1.id}}.{{ifempty(3.fileExtension; \\\"mp4\\\")}}\": {\"url\": \"https://drive.usercontent.google.com/download?id={{1.id}}&export=download&confirm=t\", \"language\": \"en\"}}, \"add_compositions\": [{\"name\": \"Full – {{1.name}}\", \"width\": 1080, \"height\": 1920, \"clips\": [{\"media\": \"recording-{{1.id}}.{{ifempty(3.fileExtension; \\\"mp4\\\")}}\"}]}], \"callback_url\": \"{{2.DESCRIPT_CALLBACK_URL}}\"}",
                 "parseResponse": true,
                 "serializeUrl": false,
                 "shareCookies": false,
@@ -174,79 +178,120 @@
                 "designer": {
                   "x": 1500,
                   "y": -150,
-                  "name": "Descript: create project + get signed upload URL (direct upload)"
+                  "name": "Descript: create project + import recording from its Drive link (URL import; never throws, status checked next)"
                 }
               }
             },
             {
               "id": 12,
-              "module": "http:ActionSendData",
-              "version": 3,
-              "parameters": {
-                "handleErrors": true,
-                "useNewZLibDeCompress": true
-              },
-              "mapper": {
-                "url": "{{11.data.upload_urls.recording.upload_url}}",
-                "method": "put",
-                "headers": [],
-                "qs": [],
-                "bodyType": "raw",
-                "contentType": "custom",
-                "customContentType": "application/octet-stream",
-                "data": "{{10.data}}",
-                "parseResponse": false,
-                "timeout": 300,
-                "serializeUrl": false,
-                "shareCookies": false,
-                "rejectUnauthorized": true,
-                "followRedirect": true,
-                "followAllRedirects": false,
-                "useQuerystring": false,
-                "gzip": true,
-                "useMtls": false
-              },
+              "module": "builtin:BasicRouter",
+              "version": 1,
+              "mapper": null,
               "metadata": {
                 "designer": {
                   "x": 1800,
-                  "y": -150,
-                  "name": "PUT the bytes to Descript (import + transcription start on arrival)"
-                }
-              }
-            },
-            {
-              "id": 13,
-              "module": "google-sheets:addRow",
-              "version": 2,
-              "parameters": {
-                "__IMTCONN__": 11391947
-              },
-              "mapper": {
-                "mode": "map",
-                "insertUnformatted": false,
-                "valueInputOption": "USER_ENTERED",
-                "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
-                "sheetId": "Sheet1",
-                "tableFirstRow": "A1:Z1",
-                "values": {
-                  "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                  "1": "1. Uploaded to Descript · transcribing",
-                  "2": "ok",
-                  "3": "{{1.name}}",
-                  "4": "{{1.id}}",
-                  "5": "{{11.data.project_id}}",
-                  "6": "{{11.data.project_url}}",
-                  "7": "{{11.data.job_id}}",
-                  "15": "Recording ({{round(3.size / 1048576)}} MB) was downloaded through your private Drive connection and uploaded straight to Descript. Nothing was link-shared. The clip step starts when Descript calls back into scenario 2."
+                  "y": -150
                 }
               },
-              "metadata": {
-                "designer": {
-                  "x": 2100,
-                  "y": -150,
-                  "name": "Log → Review Log sheet"
+              "routes": [
+                {
+                  "flow": [
+                    {
+                      "id": 13,
+                      "module": "google-sheets:addRow",
+                      "version": 2,
+                      "parameters": {
+                        "__IMTCONN__": 11391947
+                      },
+                      "mapper": {
+                        "mode": "map",
+                        "insertUnformatted": false,
+                        "valueInputOption": "USER_ENTERED",
+                        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+                        "sheetId": "Sheet1",
+                        "tableFirstRow": "A1:Z1",
+                        "values": {
+                          "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+                          "1": "1. Uploaded to Descript · transcribing",
+                          "2": "ok",
+                          "3": "{{1.name}}",
+                          "4": "{{1.id}}",
+                          "5": "{{11.data.project_id}}",
+                          "6": "{{11.data.project_url}}",
+                          "7": "{{11.data.job_id}}",
+                          "15": "Recording ({{round(3.size / 1048576)}} MB) was link-shared as viewer (anyone with the link, not searchable; permission id {{10.id}}) and Descript was told to fetch it from {{3.webViewLink}} . Descript pulls the file itself, so nothing passes through Make. To make the recording private again once row 2 appears: Drive → file → Share → remove 'Anyone with the link'. The clip step starts when Descript calls back into scenario 2."
+                        }
+                      },
+                      "metadata": {
+                        "designer": {
+                          "x": 2100,
+                          "y": -250,
+                          "name": "Log → Review Log sheet"
+                        }
+                      },
+                      "filter": {
+                        "name": "Descript accepted (2xx)",
+                        "conditions": [
+                          [
+                            {
+                              "a": "{{11.statusCode}}",
+                              "o": "number:less",
+                              "b": "300"
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "flow": [
+                    {
+                      "id": 14,
+                      "module": "google-sheets:addRow",
+                      "version": 2,
+                      "parameters": {
+                        "__IMTCONN__": 11391947
+                      },
+                      "mapper": {
+                        "mode": "map",
+                        "insertUnformatted": false,
+                        "valueInputOption": "USER_ENTERED",
+                        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+                        "sheetId": "Sheet1",
+                        "tableFirstRow": "A1:Z1",
+                        "values": {
+                          "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+                          "1": "1. ERROR – Descript rejected the import",
+                          "2": "failed",
+                          "3": "{{1.name}}",
+                          "4": "{{1.id}}",
+                          "15": "Descript answered HTTP {{11.statusCode}}: {{11.data.message}} {{11.data.error}}. Nothing was imported; the recording stays in Drive (it is link-shared as viewer, permission id {{10.id}}, remove 'Anyone with the link' in Drive if you want). Fix the cause (token, folder, payload) and drop the file in again to retry."
+                        }
+                      },
+                      "metadata": {
+                        "designer": {
+                          "x": 2100,
+                          "y": -50,
+                          "name": "Log → error row (file is NOT retried)"
+                        }
+                      },
+                      "filter": {
+                        "name": "Descript rejected it (non-2xx)",
+                        "conditions": [
+                          [
+                            {
+                              "a": "{{11.statusCode}}",
+                              "o": "number:greaterorequal",
+                              "b": "300"
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  ]
                 }
-              }
+              ]
             }
           ]
         },
@@ -268,11 +313,11 @@
                 "tableFirstRow": "A1:Z1",
                 "values": {
                   "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                  "1": "1. SKIPPED – recording too large for Make",
+                  "1": "1. SKIPPED – recording over 100 MB",
                   "2": "needs you",
                   "3": "{{1.name}}",
                   "4": "{{1.id}}",
-                  "15": "This file is {{round(3.size / 1048576)}} MB. The Make Core plan moves files up to 100 MB only, and this pipeline never link-shares recordings, so it was skipped. Options: trim or re-export it under 100 MB and drop it in again, or import it into Descript by hand (the rest of the pipeline will not run for a manual import). Nothing was changed in Drive."
+                  "15": "This file is {{round(3.size / 1048576)}} MB. Google Drive only serves direct downloads of files up to 100 MB; above that it returns a 'can't scan for viruses' page instead of the video, which Descript cannot import from. So it was skipped. Options: trim or re-export it under 100 MB and drop it in again, or import it into Descript by hand (the rest of the pipeline will not run for a manual import). Nothing was changed in Drive."
                 }
               },
               "metadata": {
@@ -283,7 +328,7 @@
                 }
               },
               "filter": {
-                "name": "Too large for the Make plan",
+                "name": "Too large for a direct Drive download link",
                 "conditions": [
                   [
                     {

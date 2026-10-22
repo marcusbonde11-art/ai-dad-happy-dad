@@ -1,9 +1,11 @@
 # Automated clip pipeline: Drive → Descript → Claude → Review Log (→ Metricool, optional)
 
 Built 2026-10-20 from Prompt Library row 13; wired into Make and reworked on 2026-10-21 (row 13b).
-Status: **built and wired in Make, both scenarios OFF, waiting on one thing from Marcus: the Descript
-API token** (see "What is left" below). No Metricool token is needed: the Metricool steps are
-switched off and the pipeline writes everything you need to post by hand into the Review Log.
+Descript import fixed on 2026-10-22 (URL import instead of direct upload, see "How it works").
+Status: **both scenarios ON and verified end to end for step 1** (a 73 MB test recording produced a
+Review Log row "1. Uploaded to Descript · transcribing" with a real project ID). No Metricool token
+is needed: the Metricool steps are switched off and the pipeline writes everything you need to post
+by hand into the Review Log.
 
 ## What exists
 
@@ -28,12 +30,14 @@ Dad name. Rename the folders if you like; only the folder IDs matter to Make.
 ```
 Phone → Drive "Raw Recordings" folder
    │  (scenario 1, polls every 15 min; everything uploaded in that window runs as one batch)
-   ├─ read the file size (metadata only)
-   ├─ ≤ 100 MB: download it through your private Drive connection
-   │            POST descriptapi.com/v1/jobs/import/project_media (direct-upload mode)
-   │            PUT the bytes to Descript's signed upload URL     ← nothing is link-shared
-   │            log row "1. Uploaded to Descript · transcribing"
-   └─ > 100 MB: log row "1. SKIPPED – recording too large for Make" (needs you), nothing else happens
+   ├─ read the file size + extension (metadata only)
+   ├─ ≤ 100 MB: link-share the file (anyone with the link, viewer, not searchable)
+   │            POST descriptapi.com/v1/jobs/import/project_media (URL import: Descript fetches
+   │              https://drive.usercontent.google.com/download?id=<file>&export=download&confirm=t
+   │              itself; that URL serves the bytes with HTTP Range support, which Descript needs)
+   │            2xx → log row "1. Uploaded to Descript · transcribing"
+   │            anything else → log row "1. ERROR – Descript rejected the import" (file is not retried)
+   └─ > 100 MB: log row "1. SKIPPED – recording over 100 MB" (needs you), nothing else happens
 Descript → calls back scenario 2's webhook when each job finishes
    │  job_type = import  → POST /jobs/agent (Underlord picks the best 20–60 s moment,
    │                        new 9:16 composition "AI Dad Clip", filler words out, Studio Sound,
@@ -53,10 +57,16 @@ Descript → calls back scenario 2's webhook when each job finishes
 ```
 
 Guardrails baked in:
-- **Recordings are never link-shared.** Scenario 1 moves the file to Descript through your
-  authorised Drive connection and Descript's signed upload URL. The only time anything is
-  link-shared is the finished clip, and only when `METRICOOL_ENABLED` is true (Metricool needs a
-  fetchable URL).
+- **Recordings are link-shared as viewer, not searchable, so Descript can fetch them.** Descript's
+  URL import needs a URL its servers can reach, and Google Drive has no expiring "anyone" links, so
+  scenario 1 turns on "Anyone with the link · Viewer" (file discovery off) right before the import
+  call. Nothing passes through Make any more. The Review Log row says it was shared and how to undo
+  it; once row 2 ("Transcribed") appears Descript has its own copy and you can remove the link
+  sharing in Drive. The finished clip is link-shared only when `METRICOOL_ENABLED` is true.
+- **Why not Descript's direct-upload mode (the first build)?** It exists and the payload shape was
+  fine; every run was failing with 400 because `folder_name` requires `team_access` ("view",
+  "comment" or "edit"). That field is now sent (`team_access: "view"`), and the URL import mode was
+  kept because it removes the 100 MB-through-Make limit and the double transfer.
 - **Metricool is off by default.** `METRICOOL_ENABLED` in scenario 2's CONFIG is the single switch.
   While it is false, modules 43 and 46–50 never run and nothing is scheduled or published. When you
   pick a Metricool plan: paste `METRICOOL_USER_TOKEN`, set `METRICOOL_ENABLED` to true, save.
@@ -72,17 +82,17 @@ Guardrails baked in:
    - Scenario 2 (link above) → click module 2 "CONFIG" → variable `DESCRIPT_API_TOKEN` → replace
      the placeholder → OK → save the scenario.
    - Scenario 1 (link above) → click module 2 "CONFIG" → variable `DESCRIPT_API_TOKEN` → same
-     token → OK → save.
-2. **Tell Claude Code the token is in**, or do it yourself: turn **scenario 2 on first**, then
-   scenario 1 (webhook scenarios must be on to receive callbacks). The first time scenario 1 runs,
-   Make may ask where to start watching; choose "From now on" (both folders are empty today, so
-   either answer is safe).
+     token → OK → save. *(Done 2026-10-22: both tokens are in and both scenarios are on.)*
+2. **Scenario order.** Scenario 2 must be on before scenario 1 (webhook scenarios must be on to
+   receive callbacks). Both are on today.
 3. **Test with one short video (under 100 MB, roughly 60–90 s of 1080p phone footage).** Drop it
    into Raw Recordings. Within 15 minutes the Review Log gets row "1. Uploaded to Descript". Rows
    2, 3 and 4 follow as Descript finishes each job (a few minutes each). Row 4 has the clip link
    (column P), the transcript (I), the Descript share link (J), the TikTok caption (L), the
    Instagram caption (M) and the suggested post times (N, O). Download the clip from the Clips
-   (auto) folder and post it by hand.
+   (auto) folder and post it by hand. *(Step 1 verified 2026-10-22 with
+   "20261020_070757 pipeline-test.mp4", a copy of a real recording; rows 2–4 depend on Descript's
+   callbacks.)*
 4. **Tune.** All knobs live in scenario 2's CONFIG module: posting times and day offsets,
    `MAX_CLIP_SECONDS` (90), `IG_HASHTAG_HINTS` (update from the Sunday doc's caption re-check),
    `CLIP_COMPOSITION_NAME`, `METRICOOL_ENABLED`, `METRICOOL_AUTO_PUBLISH`. Scenario 1's CONFIG
@@ -91,6 +101,8 @@ Guardrails baked in:
 Re-importing a blueprint from `automation/make/` later? Paste the webhook URL (Make → Webhooks →
 "AI Dad Clips – Descript callback") into `DESCRIPT_CALLBACK_URL` in both CONFIG modules, and pick
 the Google Drive connection in scenario 1 modules 1, 3 and 10 and scenario 2 modules 42 and 43.
+Scenario 1's CONFIG also needs `team_access` left as "view" in module 11's body (Descript rejects
+`folder_name` without it).
 
 ## Posting times (why 10:00 ET)
 
@@ -107,16 +119,16 @@ offsets. Revisit after ~3 weeks of posting when Metricool has your own data.
 
 ## Limits and things to verify on the first run
 
-- **100 MB per recording.** Make's Core plan moves files up to 100 MB per operation (Pro 250 MB,
-  Teams 500 MB). Because recordings are no longer link-shared, every raw file passes through Make
-  on its way to Descript. At typical phone settings (1080p/30, HEVC) that is roughly 90 seconds to
-  2 minutes of footage; at 4K it is well under a minute. Larger files are logged as "SKIPPED" and
-  left untouched. Options if this bites: film in 1080p, trim before uploading, upgrade Make to
-  Pro, or ask Claude Code to add an opt-in "share the link for 10 minutes, then revoke" fallback
-  for big files (deliberately not built, per the no-link-sharing rule).
-- **Data transfer.** Make Core includes about 5 GB of transfer per 10 000 operations per month.
-  Each video costs roughly 2× the recording size (download + upload) plus the clip (~30–60 MB),
-  so ~20 recordings of 90 MB a month would use most of it.
+- **100 MB per recording.** The limit is now Google's, not Make's: Drive serves a direct download
+  only for files it can virus-scan (up to 100 MB); above that the download URL returns a warning
+  page instead of the video and Descript cannot import it. At typical phone settings (1080p/30,
+  HEVC) 100 MB is roughly 90 seconds to 2 minutes of footage; at 4K it is well under a minute.
+  Larger files are logged as "SKIPPED" and left untouched. Options if this bites: film in 1080p,
+  trim before uploading, or ask Claude Code to route big files through a host that serves them
+  without the interstitial. `MAX_UPLOAD_BYTES` in scenario 1's CONFIG holds the cap.
+- **Data transfer.** Raw recordings no longer pass through Make (Descript fetches them from Drive),
+  so scenario 1 uses almost no transfer. Scenario 2 still downloads each rendered clip (~30–60 MB)
+  to save it in Drive.
 - **Underlord creating a new composition.** Descript's docs show prompts like "create a 30-second
   highlight reel" and "add captions" but do not spell out creating a named composition. The
   prompt asks for a new composition called "AI Dad Clip" and falls back to trimming the existing
@@ -129,6 +141,10 @@ offsets. Revisit after ~3 weeks of posting when Metricool has your own data.
 - **Batching.** "Wait 15 minutes, then batch" is implemented as a 15-minute poll: every file that
   landed in the same window runs in one execution. A file still uploading at poll time is picked
   up next window. Make Core allows a 1-minute minimum, so you can tighten this later.
+- **Descript errors do not retry.** Module 11 never throws; a non-2xx answer is logged as
+  "1. ERROR – Descript rejected the import" with Descript's message and the file is considered
+  handled (drop it in again to retry). Before this change a failing import re-ran every 15 minutes
+  and re-downloaded the file each time.
 - **Make usage.** Roughly 25 operations per video across both scenarios, plus 1 per idle poll
   (~96/day, ~2 900/month on a 10 000/month Core plan). Setting scenario 1 to run only 5:00–23:00 ET
   (Scheduling → advanced) cuts that by a quarter.
