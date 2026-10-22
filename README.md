@@ -16,7 +16,9 @@ Platforms: TikTok first, then Instagram Reels. First post: Wednesday, Oct 14, 20
 | `tools/check_content.py` | Review pass 1: hint words, bio limits, idea counts (6 pillars), hook/beats/closing/tagline/caption structure, cross-references |
 | `deliverables/weekly/` | Local copies of the Sunday weekly ideas docs (3 sourced ideas per pillar + 15 taglines) |
 | [`docs/CLIP_PIPELINE.md`](docs/CLIP_PIPELINE.md) | Automated clip pipeline (Drive → Descript → Claude → Review Log, Metricool optional): what exists in Make, what is left, limits |
+| [`docs/BEST_TAKE_PICKER.md`](docs/BEST_TAKE_PICKER.md) | Multiple takes of one recording: how they are grouped, scored by Claude (hook/content 65 · delivery 35, ABA Ch. 29 + Gary Vee grounding) and the best one picked; failure handling; test results |
 | `automation/make/` | Make.com blueprints for the two clip-pipeline scenarios (placeholders only, no tokens or webhook URLs) |
+| `automation/make/best-take-scoring-prompt.txt` | The take-scoring prompt verbatim (the Claude module in scenario 2/2) |
 | `tools/verify_sheet.py` | Compares a CSV export of the Google Sheet against the source, cell by cell |
 
 The project Google Sheet is **AI Dad Healthy Dad: Launch Plan (Oct 2026)** in the owner's Google Drive.

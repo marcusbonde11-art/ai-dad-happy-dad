@@ -1,320 +1,579 @@
 {
-  "name": "AI Dad Clips 1/2 – Drive watch → Descript import",
-  "flow": [
-    {
-      "id": 1,
-      "module": "google-drive:watchFilesInAFolder",
-      "version": 4,
-      "parameters": {
-        "__IMTCONN__": 11845960,
-        "select": "create",
-        "destination": "drive",
-        "folderId": "1fAVvXFnkZPAaHAP0gFWCHTyyFSLMM_Fa",
-        "mimeType": "all",
-        "limit": 20
-      },
-      "mapper": {},
-      "metadata": {
-        "designer": {
-          "x": 0,
-          "y": 0,
-          "name": "Watch 'AI Dad Happy Dad - Raw Recordings' (every 15 min)"
-        }
+ "name": "AI Dad Clips 1/2 – Drive watch → Descript import",
+ "flow": [
+  {
+   "id": 1,
+   "mapper": {},
+   "module": "google-drive:watchFilesInAFolder",
+   "version": 4,
+   "metadata": {
+    "designer": {
+     "x": 0,
+     "y": 0,
+     "name": "Watch 'AI Dad Happy Dad - Raw Recordings' (every 15 min)"
+    }
+   },
+   "parameters": {
+    "limit": 20,
+    "select": "create",
+    "folderId": "/1fAVvXFnkZPAaHAP0gFWCHTyyFSLMM_Fa",
+    "mimeType": "all",
+    "__IMTCONN__": 11845960,
+    "destination": "drive"
+   }
+  },
+  {
+   "id": 30,
+   "module": "builtin:BasicAggregator",
+   "version": 1,
+   "parameters": {
+    "feeder": 1
+   },
+   "filter": {
+    "name": "Only video or audio files",
+    "conditions": [
+     [
+      {
+       "a": "{{1.mimeType}}",
+       "b": "video/",
+       "o": "text:startwith"
       }
-    },
+     ],
+     [
+      {
+       "a": "{{1.mimeType}}",
+       "b": "audio/",
+       "o": "text:startwith"
+      }
+     ]
+    ]
+   },
+   "mapper": {
+    "id": "{{1.id}}",
+    "name": "{{1.name}}",
+    "mimeType": "{{1.mimeType}}",
+    "createdTime": "{{1.createdTime}}",
+    "webViewLink": "{{1.webViewLink}}"
+   },
+   "metadata": {
+    "designer": {
+     "x": 300,
+     "y": 0,
+     "name": "Collect every recording in this poll (takes dropped together = one group)"
+    }
+   }
+  },
+  {
+   "id": 2,
+   "mapper": {
+    "variables": [
+     {
+      "name": "DESCRIPT_API_TOKEN",
+      "value": "PASTE_DESCRIPT_API_TOKEN_HERE"
+     },
+     {
+      "name": "DESCRIPT_CALLBACK_URL",
+      "value": "PASTE_THIS_SCENARIOS_WEBHOOK_URL_HERE"
+     },
+     {
+      "name": "DESCRIPT_FOLDER",
+      "value": "AI Dad Healthy Dad/Auto clips"
+     },
+     {
+      "name": "MAX_UPLOAD_BYTES",
+      "value": "100000000"
+     }
+    ]
+   },
+   "module": "util:SetVariables",
+   "version": 1,
+   "metadata": {
+    "designer": {
+     "x": 600,
+     "y": 0,
+     "name": "CONFIG – paste Descript token + webhook URL (sits AFTER the aggregator on purpose: Make cannot read modules that were aggregated away)"
+    }
+   },
+   "parameters": {}
+  },
+  {
+   "id": 32,
+   "module": "util:SetVariables",
+   "version": 1,
+   "parameters": {},
+   "mapper": {
+    "variables": [
+     {
+      "name": "BATCH_SIZE",
+      "value": "{{if(length(get(map(30.array; \"id\"); 1)) > 0; length(30.array); 0)}}"
+     },
+     {
+      "name": "GROUP_KEY",
+      "value": "G-{{formatDate(now; \"YYYYMMDD-HHmm\"; \"America/New_York\")}}-{{substring(get(map(30.array; \"id\"); 1); 0; 6)}}"
+     }
+    ]
+   },
+   "metadata": {
+    "designer": {
+     "x": 900,
+     "y": 0,
+     "name": "Batch size + take-group key (2+ files in one poll = takes of the same piece)"
+    }
+   }
+  },
+  {
+   "id": 31,
+   "module": "builtin:BasicFeeder",
+   "version": 1,
+   "parameters": {},
+   "mapper": {
+    "array": "{{30.array}}"
+   },
+   "metadata": {
+    "designer": {
+     "x": 1200,
+     "y": 0,
+     "name": "One recording at a time"
+    }
+   }
+  },
+  {
+   "id": 33,
+   "module": "util:SetVariables",
+   "version": 1,
+   "parameters": {},
+   "filter": {
+    "name": "Has a file (skip the empty bundle an empty poll produces)",
+    "conditions": [
+     [
+      {
+       "a": "{{31.id}}",
+       "o": "exist"
+      }
+     ]
+    ]
+   },
+   "mapper": {
+    "variables": [
+     {
+      "name": "TAKE_GROUP",
+      "value": "{{if(32.BATCH_SIZE >= 2; 32.GROUP_KEY; emptystring)}}"
+     },
+     {
+      "name": "TAKE_NO",
+      "value": "{{if(32.BATCH_SIZE >= 2; 31.`__IMTINDEX__`; emptystring)}}"
+     },
+     {
+      "name": "TAKES_IN_GROUP",
+      "value": "{{if(32.BATCH_SIZE >= 2; 32.BATCH_SIZE; emptystring)}}"
+     },
+     {
+      "name": "ROW_STATUS",
+      "value": "{{if(32.BATCH_SIZE >= 2; \"waiting\"; \"ok\")}}"
+     },
+     {
+      "name": "GROUP_NOTE",
+      "value": "TAKE GROUP {{32.GROUP_KEY}}: this is take {{31.`__IMTINDEX__`}} of {{32.BATCH_SIZE}} dropped in the same 15-minute window, so they are treated as takes of the same piece. After every take has transcribed, Claude scores them (hook/content 65%, delivery 35%) and only the winner goes on to the clip step; the other takes stay untouched in Drive and Descript."
+     }
+    ]
+   },
+   "metadata": {
+    "designer": {
+     "x": 1500,
+     "y": 0,
+     "name": "Take group / take # / takes in group for this recording"
+    }
+   }
+  },
+  {
+   "id": 3,
+   "mapper": {
+    "file": "{{31.id}}",
+    "select": "map",
+    "select1": "file"
+   },
+   "module": "google-drive:getAFileFolderMetadata",
+   "version": 4,
+   "metadata": {
+    "designer": {
+     "x": 1800,
+     "y": 0,
+     "name": "Read file size + extension (metadata only, no download)"
+    }
+   },
+   "parameters": {
+    "__IMTCONN__": 11845960
+   }
+  },
+  {
+   "id": 4,
+   "mapper": null,
+   "module": "builtin:BasicRouter",
+   "version": 1,
+   "metadata": {
+    "designer": {
+     "x": 2100,
+     "y": 0
+    }
+   },
+   "routes": [
     {
-      "id": 2,
-      "module": "util:SetVariables",
-      "version": 1,
-      "parameters": {},
-      "filter": {
-        "name": "Only video or audio files",
+     "flow": [
+      {
+       "id": 10,
+       "filter": {
+        "name": "Fits the direct-download limit",
         "conditions": [
-          [
-            {
-              "a": "{{1.mimeType}}",
-              "o": "text:startwith",
-              "b": "video/"
-            }
-          ],
-          [
-            {
-              "a": "{{1.mimeType}}",
-              "o": "text:startwith",
-              "b": "audio/"
-            }
-          ]
-        ]
-      },
-      "mapper": {
-        "variables": [
+         [
           {
-            "name": "DESCRIPT_API_TOKEN",
-            "value": "PASTE_DESCRIPT_API_TOKEN_HERE"
-          },
-          {
-            "name": "DESCRIPT_CALLBACK_URL",
-            "value": "PASTE_WEBHOOK_URL_FROM_SCENARIO_2_HERE"
-          },
-          {
-            "name": "DESCRIPT_FOLDER",
-            "value": "AI Dad Healthy Dad/Auto clips"
-          },
-          {
-            "name": "MAX_UPLOAD_BYTES",
-            "value": 100000000
+           "a": "{{3.size}}",
+           "b": "{{2.MAX_UPLOAD_BYTES}}",
+           "o": "number:lessorequal"
           }
+         ]
         ]
-      },
-      "metadata": {
+       },
+       "mapper": {
+        "file": "{{31.id}}",
+        "role": "reader",
+        "type": "anyone",
+        "select": "file",
+        "destination": "drive",
+        "allowFileDiscovery": false
+       },
+       "module": "google-drive:shareAFileFolder",
+       "version": 4,
+       "metadata": {
         "designer": {
-          "x": 300,
-          "y": 0,
-          "name": "CONFIG – paste Descript token + webhook URL"
+         "x": 2400,
+         "y": -150,
+         "name": "Link-share recording (anyone with the link, viewer, not searchable) so Descript can fetch it"
         }
-      }
-    },
-    {
-      "id": 3,
-      "module": "google-drive:getAFileFolderMetadata",
-      "version": 4,
-      "parameters": {
+       },
+       "parameters": {
         "__IMTCONN__": 11845960
+       }
       },
-      "mapper": {
-        "select": "map",
-        "select1": "file",
-        "file": "{{1.id}}"
-      },
-      "metadata": {
+      {
+       "id": 11,
+       "mapper": {
+        "qs": [],
+        "url": "https://descriptapi.com/v1/jobs/import/project_media",
+        "data": "{\"project_name\": \"AI Dad – {{31.name}} – {{31.id}}\", \"folder_name\": \"{{2.DESCRIPT_FOLDER}}\", \"team_access\": \"view\", \"add_media\": {\"recording-{{31.id}}.{{ifempty(3.fileExtension; \\\"mp4\\\")}}\": {\"url\": \"https://drive.usercontent.google.com/download?id={{31.id}}&export=download&confirm=t\", \"language\": \"en\"}}, \"add_compositions\": [{\"name\": \"Full – {{31.name}}\", \"width\": 1080, \"height\": 1920, \"clips\": [{\"media\": \"recording-{{31.id}}.{{ifempty(3.fileExtension; \\\"mp4\\\")}}\"}]}], \"callback_url\": \"{{2.DESCRIPT_CALLBACK_URL}}\"}",
+        "gzip": true,
+        "method": "post",
+        "headers": [
+         {
+          "name": "Authorization",
+          "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
+         }
+        ],
+        "useMtls": false,
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "serializeUrl": false,
+        "shareCookies": false,
+        "parseResponse": true,
+        "followRedirect": true,
+        "useQuerystring": false,
+        "followAllRedirects": false,
+        "rejectUnauthorized": true
+       },
+       "module": "http:ActionSendData",
+       "version": 3,
+       "metadata": {
         "designer": {
-          "x": 600,
-          "y": 0,
-          "name": "Read file size (metadata only, no download)"
+         "x": 2700,
+         "y": -150,
+         "name": "Descript: create project + import recording from its Drive link (URL import; never throws, status checked next)"
         }
-      }
-    },
-    {
-      "id": 4,
-      "module": "builtin:BasicRouter",
-      "version": 1,
-      "mapper": null,
-      "metadata": {
-        "designer": {
-          "x": 900,
-          "y": 0
-        }
+       },
+       "parameters": {
+        "handleErrors": false,
+        "useNewZLibDeCompress": true
+       }
       },
-      "routes": [
+      {
+       "id": 12,
+       "mapper": null,
+       "module": "builtin:BasicRouter",
+       "version": 1,
+       "metadata": {
+        "designer": {
+         "x": 3000,
+         "y": -150
+        }
+       },
+       "routes": [
         {
-          "flow": [
-            {
-              "id": 10,
-              "module": "google-drive:getAFile",
-              "version": 4,
-              "parameters": {
-                "__IMTCONN__": 11845960
-              },
-              "filter": {
-                "name": "Fits Make file-size limit",
-                "conditions": [
-                  [
-                    {
-                      "a": "{{3.size}}",
-                      "o": "number:lessorequal",
-                      "b": "{{2.MAX_UPLOAD_BYTES}}"
-                    }
-                  ]
-                ]
-              },
-              "mapper": {
-                "select": "map",
-                "file": "{{1.id}}"
-              },
-              "metadata": {
-                "designer": {
-                  "x": 1200,
-                  "y": -150,
-                  "name": "Download recording privately (Drive connection, no sharing)"
-                }
-              }
+         "flow": [
+          {
+           "id": 13,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "1. Uploaded to Descript · transcribing",
+             "2": "{{33.ROW_STATUS}}",
+             "3": "{{31.name}}",
+             "4": "{{31.id}}",
+             "5": "{{11.data.project_id}}",
+             "6": "{{11.data.project_url}}",
+             "7": "{{11.data.job_id}}",
+             "15": "Recording ({{round(3.size / 1048576)}} MB) was link-shared as viewer (anyone with the link, not searchable; permission id {{10.id}}) and Descript was told to fetch it from {{3.webViewLink}} . Descript pulls the file itself, so nothing passes through Make. To make the recording private again once row 2 appears: Drive → file → Share → remove 'Anyone with the link'. The clip step starts when Descript calls back into scenario 2. {{if(32.BATCH_SIZE >= 2; 33.GROUP_NOTE; emptystring)}}",
+             "16": "{{33.TAKE_GROUP}}",
+             "17": "{{33.TAKE_NO}}",
+             "18": "{{33.TAKES_IN_GROUP}}"
             },
-            {
-              "id": 11,
-              "module": "http:ActionSendData",
-              "version": 3,
-              "parameters": {
-                "handleErrors": true,
-                "useNewZLibDeCompress": true
-              },
-              "mapper": {
-                "url": "https://descriptapi.com/v1/jobs/import/project_media",
-                "method": "post",
-                "headers": [
-                  {
-                    "name": "Authorization",
-                    "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
-                  }
-                ],
-                "qs": [],
-                "bodyType": "raw",
-                "contentType": "application/json",
-                "data": "{\"project_name\": \"AI Dad – {{1.name}}\", \"folder_name\": \"{{2.DESCRIPT_FOLDER}}\", \"add_media\": {\"recording\": {\"content_type\": \"{{1.mimeType}}\", \"file_size\": {{3.size}}, \"language\": \"en\"}}, \"add_compositions\": [{\"name\": \"Full – {{1.name}}\", \"width\": 1080, \"height\": 1920, \"clips\": [{\"media\": \"recording\"}]}], \"callback_url\": \"{{2.DESCRIPT_CALLBACK_URL}}\"}",
-                "parseResponse": true,
-                "serializeUrl": false,
-                "shareCookies": false,
-                "rejectUnauthorized": true,
-                "followRedirect": true,
-                "followAllRedirects": false,
-                "useQuerystring": false,
-                "gzip": true,
-                "useMtls": false
-              },
-              "metadata": {
-                "designer": {
-                  "x": 1500,
-                  "y": -150,
-                  "name": "Descript: create project + get signed upload URL (direct upload)"
-                }
-              }
-            },
-            {
-              "id": 12,
-              "module": "http:ActionSendData",
-              "version": 3,
-              "parameters": {
-                "handleErrors": true,
-                "useNewZLibDeCompress": true
-              },
-              "mapper": {
-                "url": "{{11.data.upload_urls.recording.upload_url}}",
-                "method": "put",
-                "headers": [],
-                "qs": [],
-                "bodyType": "raw",
-                "contentType": "custom",
-                "customContentType": "application/octet-stream",
-                "data": "{{10.data}}",
-                "parseResponse": false,
-                "timeout": 300,
-                "serializeUrl": false,
-                "shareCookies": false,
-                "rejectUnauthorized": true,
-                "followRedirect": true,
-                "followAllRedirects": false,
-                "useQuerystring": false,
-                "gzip": true,
-                "useMtls": false
-              },
-              "metadata": {
-                "designer": {
-                  "x": 1800,
-                  "y": -150,
-                  "name": "PUT the bytes to Descript (import + transcription start on arrival)"
-                }
-              }
-            },
-            {
-              "id": 13,
-              "module": "google-sheets:addRow",
-              "version": 2,
-              "parameters": {
-                "__IMTCONN__": 11391947
-              },
-              "mapper": {
-                "mode": "map",
-                "insertUnformatted": false,
-                "valueInputOption": "USER_ENTERED",
-                "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
-                "sheetId": "Sheet1",
-                "tableFirstRow": "A1:Z1",
-                "values": {
-                  "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                  "1": "1. Uploaded to Descript · transcribing",
-                  "2": "ok",
-                  "3": "{{1.name}}",
-                  "4": "{{1.id}}",
-                  "5": "{{11.data.project_id}}",
-                  "6": "{{11.data.project_url}}",
-                  "7": "{{11.data.job_id}}",
-                  "15": "Recording ({{round(3.size / 1048576)}} MB) was downloaded through your private Drive connection and uploaded straight to Descript. Nothing was link-shared. The clip step starts when Descript calls back into scenario 2."
-                }
-              },
-              "metadata": {
-                "designer": {
-                  "x": 2100,
-                  "y": -150,
-                  "name": "Log → Review Log sheet"
-                }
-              }
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 3300,
+             "y": -250,
+             "name": "Log → Review Log sheet"
             }
-          ]
+           },
+           "filter": {
+            "name": "Descript accepted (2xx)",
+            "conditions": [
+             [
+              {
+               "a": "{{11.statusCode}}",
+               "b": "300",
+               "o": "number:less"
+              }
+             ]
+            ]
+           }
+          }
+         ]
         },
         {
-          "flow": [
-            {
-              "id": 20,
-              "module": "google-sheets:addRow",
-              "version": 2,
-              "parameters": {
-                "__IMTCONN__": 11391947
-              },
-              "mapper": {
-                "mode": "map",
-                "insertUnformatted": false,
-                "valueInputOption": "USER_ENTERED",
-                "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
-                "sheetId": "Sheet1",
-                "tableFirstRow": "A1:Z1",
-                "values": {
-                  "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                  "1": "1. SKIPPED – recording too large for Make",
-                  "2": "needs you",
-                  "3": "{{1.name}}",
-                  "4": "{{1.id}}",
-                  "15": "This file is {{round(3.size / 1048576)}} MB. The Make Core plan moves files up to 100 MB only, and this pipeline never link-shares recordings, so it was skipped. Options: trim or re-export it under 100 MB and drop it in again, or import it into Descript by hand (the rest of the pipeline will not run for a manual import). Nothing was changed in Drive."
-                }
-              },
-              "metadata": {
-                "designer": {
-                  "x": 1200,
-                  "y": 150,
-                  "name": "Log → needs Marcus (file too large)"
-                }
-              },
-              "filter": {
-                "name": "Too large for the Make plan",
-                "conditions": [
-                  [
-                    {
-                      "a": "{{3.size}}",
-                      "o": "number:greater",
-                      "b": "{{2.MAX_UPLOAD_BYTES}}"
-                    }
-                  ]
-                ]
-              }
+         "flow": [
+          {
+           "id": 14,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "{{if(32.BATCH_SIZE >= 2; \"2. Take EXCLUDED – Descript rejected the import\"; \"1. ERROR – Descript rejected the import\")}}",
+             "2": "{{if(32.BATCH_SIZE >= 2; \"excluded\"; \"failed\")}}",
+             "3": "{{31.name}}",
+             "4": "{{31.id}}",
+             "15": "Descript answered HTTP {{11.statusCode}}: {{11.data.message}} {{11.data.error}}. Nothing was imported; the recording stays in Drive (it is link-shared as viewer, permission id {{10.id}}, remove 'Anyone with the link' in Drive if you want). Fix the cause (token, folder, payload) and drop the file in again to retry. {{if(32.BATCH_SIZE >= 2; \"This take is excluded from the best-take pick; the other takes in the group are still scored.\"; emptystring)}}",
+             "16": "{{33.TAKE_GROUP}}",
+             "17": "{{33.TAKE_NO}}",
+             "18": "{{33.TAKES_IN_GROUP}}"
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 3300,
+             "y": -50,
+             "name": "Log → error row (file is NOT retried)"
             }
-          ]
+           },
+           "filter": {
+            "name": "Descript rejected it (non-2xx)",
+            "conditions": [
+             [
+              {
+               "a": "{{11.statusCode}}",
+               "b": "300",
+               "o": "number:greaterorequal"
+              }
+             ]
+            ]
+           }
+          },
+          {
+           "id": 15,
+           "module": "http:ActionSendData",
+           "version": 3,
+           "filter": {
+            "name": "Grouped take – tell scenario 2 to re-check the group",
+            "conditions": [
+             [
+              {
+               "a": "{{32.BATCH_SIZE}}",
+               "b": "2",
+               "o": "number:greaterorequal"
+              }
+             ]
+            ]
+           },
+           "parameters": {
+            "handleErrors": true,
+            "useNewZLibDeCompress": true
+           },
+           "mapper": {
+            "qs": [],
+            "url": "{{2.DESCRIPT_CALLBACK_URL}}",
+            "data": "{\"job_type\": \"pick_best_take\", \"take_group\": \"{{33.TAKE_GROUP}}\", \"takes_in_group\": \"{{33.TAKES_IN_GROUP}}\", \"trigger_source\": \"scenario 1/2 take {{33.TAKE_NO}} not imported\"}",
+            "gzip": true,
+            "method": "post",
+            "headers": [],
+            "useMtls": false,
+            "bodyType": "raw",
+            "contentType": "application/json",
+            "serializeUrl": false,
+            "shareCookies": false,
+            "parseResponse": false,
+            "followRedirect": true,
+            "useQuerystring": false,
+            "followAllRedirects": false,
+            "rejectUnauthorized": true
+           },
+           "metadata": {
+            "designer": {
+             "x": 3600,
+             "y": -50,
+             "name": "Grouped take could not be imported → ping scenario 2 so the group does not wait forever"
+            }
+           }
+          }
+         ]
         }
-      ]
-    }
-  ],
-  "metadata": {
-    "version": 1,
-    "scenario": {
-      "roundtrips": 1,
-      "maxErrors": 3,
-      "autoCommit": true,
-      "autoCommitTriggerLast": true,
-      "sequential": false,
-      "confidential": false,
-      "dataloss": false,
-      "dlq": false,
-      "freshVariables": false
+       ]
+      }
+     ]
     },
-    "designer": {
-      "orphans": []
+    {
+     "flow": [
+      {
+       "id": 20,
+       "module": "google-sheets:addRow",
+       "version": 2,
+       "parameters": {
+        "__IMTCONN__": 11391947
+       },
+       "mapper": {
+        "mode": "map",
+        "values": {
+         "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+         "1": "{{if(32.BATCH_SIZE >= 2; \"2. Take EXCLUDED – recording over 100 MB\"; \"1. SKIPPED – recording over 100 MB\")}}",
+         "2": "{{if(32.BATCH_SIZE >= 2; \"excluded\"; \"needs you\")}}",
+         "3": "{{31.name}}",
+         "4": "{{31.id}}",
+         "15": "This file is {{round(3.size / 1048576)}} MB. Google Drive only serves direct downloads of files up to 100 MB; above that it returns a 'can't scan for viruses' page instead of the video, which Descript cannot import from. So it was skipped. Options: trim or re-export it under 100 MB and drop it in again, or import it into Descript by hand (the rest of the pipeline will not run for a manual import). Nothing was changed in Drive. {{if(32.BATCH_SIZE >= 2; \"This take is excluded from the best-take pick; the other takes in the group are still scored.\"; emptystring)}}",
+         "16": "{{33.TAKE_GROUP}}",
+         "17": "{{33.TAKE_NO}}",
+         "18": "{{33.TAKES_IN_GROUP}}"
+        },
+        "sheetId": "Sheet1",
+        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+        "tableFirstRow": "A1:Z1",
+        "valueInputOption": "USER_ENTERED",
+        "insertUnformatted": false
+       },
+       "metadata": {
+        "designer": {
+         "x": 2400,
+         "y": 150,
+         "name": "Log → needs Marcus (file too large)"
+        }
+       },
+       "filter": {
+        "name": "Too large for a direct Drive download link",
+        "conditions": [
+         [
+          {
+           "a": "{{3.size}}",
+           "b": "{{2.MAX_UPLOAD_BYTES}}",
+           "o": "number:greater"
+          }
+         ]
+        ]
+       }
+      },
+      {
+       "id": 21,
+       "module": "http:ActionSendData",
+       "version": 3,
+       "filter": {
+        "name": "Grouped take – tell scenario 2 to re-check the group",
+        "conditions": [
+         [
+          {
+           "a": "{{32.BATCH_SIZE}}",
+           "b": "2",
+           "o": "number:greaterorequal"
+          }
+         ]
+        ]
+       },
+       "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+       },
+       "mapper": {
+        "qs": [],
+        "url": "{{2.DESCRIPT_CALLBACK_URL}}",
+        "data": "{\"job_type\": \"pick_best_take\", \"take_group\": \"{{33.TAKE_GROUP}}\", \"takes_in_group\": \"{{33.TAKES_IN_GROUP}}\", \"trigger_source\": \"scenario 1/2 take {{33.TAKE_NO}} not imported\"}",
+        "gzip": true,
+        "method": "post",
+        "headers": [],
+        "useMtls": false,
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "serializeUrl": false,
+        "shareCookies": false,
+        "parseResponse": false,
+        "followRedirect": true,
+        "useQuerystring": false,
+        "followAllRedirects": false,
+        "rejectUnauthorized": true
+       },
+       "metadata": {
+        "designer": {
+         "x": 2700,
+         "y": 150,
+         "name": "Grouped take could not be imported → ping scenario 2 so the group does not wait forever"
+        }
+       }
+      }
+     ]
     }
+   ]
   }
+ ],
+ "metadata": {
+  "instant": false,
+  "version": 1,
+  "designer": {
+   "orphans": []
+  },
+  "scenario": {
+   "dlq": false,
+   "slots": null,
+   "dataloss": false,
+   "maxErrors": 3,
+   "autoCommit": true,
+   "roundtrips": 1,
+   "sequential": false,
+   "confidential": false,
+   "freshVariables": false,
+   "autoCommitTriggerLast": true
+  }
+ }
 }

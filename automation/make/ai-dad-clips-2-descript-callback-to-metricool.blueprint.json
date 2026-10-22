@@ -1,1011 +1,2072 @@
 {
-  "name": "AI Dad Clips 2/2 – Descript callback → clip → captions → review log (Metricool optional)",
-  "flow": [
-    {
-      "id": 1,
-      "module": "gateway:CustomWebHook",
-      "version": 1,
-      "parameters": {
-        "maxResults": 1
-      },
-      "mapper": {},
-      "metadata": {
-        "designer": {
-          "x": 0,
-          "y": 0,
-          "name": "Descript job callback (import / agent / publish)"
-        }
-      }
-    },
-    {
-      "id": 2,
-      "module": "util:SetVariables",
-      "version": 1,
-      "parameters": {},
-      "mapper": {
-        "variables": [
-          {
-            "name": "METRICOOL_ENABLED",
-            "value": false
-          },
-          {
-            "name": "DESCRIPT_API_TOKEN",
-            "value": "PASTE_DESCRIPT_API_TOKEN_HERE"
-          },
-          {
-            "name": "DESCRIPT_CALLBACK_URL",
-            "value": "PASTE_THIS_SCENARIOS_WEBHOOK_URL_HERE"
-          },
-          {
-            "name": "METRICOOL_USER_TOKEN",
-            "value": "PASTE_METRICOOL_API_TOKEN_HERE"
-          },
-          {
-            "name": "METRICOOL_USER_ID",
-            "value": "5392334"
-          },
-          {
-            "name": "METRICOOL_BLOG_ID",
-            "value": "6987872"
-          },
-          {
-            "name": "METRICOOL_AUTO_PUBLISH",
-            "value": false
-          },
-          {
-            "name": "CLIPS_FOLDER_ID",
-            "value": "1zXQGPU835CXsu8mKd_k8aut8Slf7a3o8"
-          },
-          {
-            "name": "CLIP_COMPOSITION_NAME",
-            "value": "AI Dad Clip"
-          },
-          {
-            "name": "MAX_CLIP_SECONDS",
-            "value": 90
-          },
-          {
-            "name": "TIMEZONE",
-            "value": "America/New_York"
-          },
-          {
-            "name": "TIKTOK_DAY_OFFSET",
-            "value": 1
-          },
-          {
-            "name": "TIKTOK_POST_TIME",
-            "value": "10:00:00"
-          },
-          {
-            "name": "IG_DAY_OFFSET",
-            "value": 2
-          },
-          {
-            "name": "IG_POST_TIME",
-            "value": "10:00:00"
-          },
-          {
-            "name": "IG_HASHTAG_HINTS",
-            "value": "#adhddad #adhdadults #adultadhd #latediagnosedadhd #dadlife #dadsofinstagram #aiforparents #aitools #neurodivergent #5amclub"
-          }
-        ]
-      },
-      "metadata": {
-        "designer": {
-          "x": 300,
-          "y": 0,
-          "name": "CONFIG – METRICOOL_ENABLED switch, tokens, posting times, hashtags"
-        }
-      }
-    },
-    {
-      "id": 3,
-      "module": "builtin:BasicRouter",
-      "version": 1,
-      "mapper": null,
-      "metadata": {
-        "designer": {
-          "x": 600,
-          "y": 0
-        }
-      },
-      "routes": [
-        {
-          "flow": [
-            {
-              "id": 10,
-              "module": "http:ActionSendData",
-              "version": 3,
-              "parameters": {
-                "handleErrors": true,
-                "useNewZLibDeCompress": true
-              },
-              "filter": {
-                "name": "A · Import finished OK",
-                "conditions": [
-                  [
-                    {
-                      "a": "{{1.job_type}}",
-                      "o": "text:equal",
-                      "b": "import"
-                    },
-                    {
-                      "a": "{{1.result.status}}",
-                      "o": "text:equal",
-                      "b": "success"
-                    }
-                  ]
-                ]
-              },
-              "mapper": {
-                "url": "https://descriptapi.com/v1/jobs/agent",
-                "method": "post",
-                "headers": [
-                  {
-                    "name": "Authorization",
-                    "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
-                  }
-                ],
-                "qs": [],
-                "bodyType": "raw",
-                "contentType": "application/json",
-                "data": "{\"project_id\": \"{{1.project_id}}\", \"callback_url\": \"{{2.DESCRIPT_CALLBACK_URL}}\", \"prompt\": \"Edit this raw talking-head recording into one short vertical clip for TikTok and Instagram Reels. 1) Use your clip-finding to pick the single best self-contained moment, 20 to 60 seconds long: a sharp, specific, scroll-stopping first line, one clear idea, and a natural ending. 2) Create a NEW composition named exactly '{{2.CLIP_COMPOSITION_NAME}}' containing only that moment, vertical 9:16 (1080x1920). If you cannot create a new composition, trim the existing composition down to that moment instead. 3) In the clip: remove filler words, apply Studio Sound, and add clean, large captions that are readable on a phone. 4) Do not add music, stock footage, B-roll, AI voices, eye-contact fixes or effects. Keep it raw and real. 5) Do not delete or alter the original media files.\"}",
-                "parseResponse": true,
-                "serializeUrl": false,
-                "shareCookies": false,
-                "rejectUnauthorized": true,
-                "followRedirect": true,
-                "followAllRedirects": false,
-                "useQuerystring": false,
-                "gzip": true,
-                "useMtls": false
-              },
-              "metadata": {
-                "designer": {
-                  "x": 900,
-                  "y": -300,
-                  "name": "Descript Underlord: find best clip (async, calls back)"
-                }
-              }
-            },
-            {
-              "id": 11,
-              "module": "google-sheets:addRow",
-              "version": 2,
-              "parameters": {
-                "__IMTCONN__": 11391947
-              },
-              "mapper": {
-                "mode": "map",
-                "insertUnformatted": false,
-                "valueInputOption": "USER_ENTERED",
-                "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
-                "sheetId": "Sheet1",
-                "tableFirstRow": "A1:Z1",
-                "values": {
-                  "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                  "1": "2. Transcribed · clip finding started",
-                  "2": "ok",
-                  "5": "{{1.project_id}}",
-                  "6": "{{1.project_url}}",
-                  "7": "{{10.data.job_id}}",
-                  "15": "Descript transcribed the file ({{1.result.media_seconds_used}}s of media). Underlord is now picking the clip; the next row appears when it calls back."
-                }
-              },
-              "metadata": {
-                "designer": {
-                  "x": 1200,
-                  "y": -300,
-                  "name": "Log → Review Log sheet"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "flow": [
-            {
-              "id": 20,
-              "module": "http:ActionSendData",
-              "version": 3,
-              "parameters": {
-                "handleErrors": true,
-                "useNewZLibDeCompress": true
-              },
-              "filter": {
-                "name": "B · Clip edit finished OK",
-                "conditions": [
-                  [
-                    {
-                      "a": "{{1.job_type}}",
-                      "o": "text:equal",
-                      "b": "agent"
-                    },
-                    {
-                      "a": "{{1.result.status}}",
-                      "o": "text:equal",
-                      "b": "success"
-                    }
-                  ]
-                ]
-              },
-              "mapper": {
-                "url": "https://descriptapi.com/v1/projects/{{1.project_id}}",
-                "method": "get",
-                "headers": [
-                  {
-                    "name": "Authorization",
-                    "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
-                  }
-                ],
-                "qs": [],
-                "bodyType": "",
-                "parseResponse": true,
-                "serializeUrl": false,
-                "shareCookies": false,
-                "rejectUnauthorized": true,
-                "followRedirect": true,
-                "followAllRedirects": false,
-                "useQuerystring": false,
-                "gzip": true,
-                "useMtls": false
-              },
-              "metadata": {
-                "designer": {
-                  "x": 900,
-                  "y": -100,
-                  "name": "Descript: list compositions in project"
-                }
-              }
-            },
-            {
-              "id": 21,
-              "module": "util:SetVariables",
-              "version": 1,
-              "parameters": {},
-              "mapper": {
-                "variables": [
-                  {
-                    "name": "CLIP_COMP_ID",
-                    "value": "{{ifempty(get(map(20.data.compositions; \"id\"; \"name\"; 2.CLIP_COMPOSITION_NAME); 1); get(map(20.data.compositions; \"id\"); length(20.data.compositions)))}}"
-                  },
-                  {
-                    "name": "CLIP_COMP_NAME",
-                    "value": "{{ifempty(get(map(20.data.compositions; \"name\"; \"name\"; 2.CLIP_COMPOSITION_NAME); 1); get(map(20.data.compositions; \"name\"); length(20.data.compositions)))}}"
-                  }
-                ]
-              },
-              "metadata": {
-                "designer": {
-                  "x": 1200,
-                  "y": -100,
-                  "name": "Pick the clip composition ('AI Dad Clip', else newest)"
-                }
-              }
-            },
-            {
-              "id": 22,
-              "module": "util:SetVariables",
-              "version": 1,
-              "parameters": {},
-              "mapper": {
-                "variables": [
-                  {
-                    "name": "CLIP_DURATION",
-                    "value": "{{get(map(20.data.compositions; \"duration\"; \"id\"; 21.CLIP_COMP_ID); 1)}}"
-                  }
-                ]
-              },
-              "metadata": {
-                "designer": {
-                  "x": 1500,
-                  "y": -100,
-                  "name": "Clip duration (seconds)"
-                }
-              }
-            },
-            {
-              "id": 23,
-              "module": "builtin:BasicRouter",
-              "version": 1,
-              "mapper": null,
-              "metadata": {
-                "designer": {
-                  "x": 1800,
-                  "y": -100
-                }
-              },
-              "routes": [
-                {
-                  "flow": [
-                    {
-                      "id": 30,
-                      "module": "http:ActionSendData",
-                      "version": 3,
-                      "parameters": {
-                        "handleErrors": true,
-                        "useNewZLibDeCompress": true
-                      },
-                      "filter": {
-                        "name": "Clip is short enough (or duration unknown)",
-                        "conditions": [
-                          [
-                            {
-                              "a": "{{22.CLIP_DURATION}}",
-                              "o": "number:lessorequal",
-                              "b": "{{2.MAX_CLIP_SECONDS}}"
-                            }
-                          ],
-                          [
-                            {
-                              "a": "{{22.CLIP_DURATION}}",
-                              "o": "notexist"
-                            }
-                          ]
-                        ]
-                      },
-                      "mapper": {
-                        "url": "https://descriptapi.com/v1/jobs/publish",
-                        "method": "post",
-                        "headers": [
-                          {
-                            "name": "Authorization",
-                            "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
-                          }
-                        ],
-                        "qs": [],
-                        "bodyType": "raw",
-                        "contentType": "application/json",
-                        "data": "{\"project_id\": \"{{1.project_id}}\", \"composition_id\": \"{{21.CLIP_COMP_ID}}\", \"media_type\": \"Video\", \"resolution\": \"1080p\", \"callback_url\": \"{{2.DESCRIPT_CALLBACK_URL}}\"}",
-                        "parseResponse": true,
-                        "serializeUrl": false,
-                        "shareCookies": false,
-                        "rejectUnauthorized": true,
-                        "followRedirect": true,
-                        "followAllRedirects": false,
-                        "useQuerystring": false,
-                        "gzip": true,
-                        "useMtls": false
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 2100,
-                          "y": -200,
-                          "name": "Descript: render + publish clip (async, calls back)"
-                        }
-                      }
-                    },
-                    {
-                      "id": 31,
-                      "module": "google-sheets:addRow",
-                      "version": 2,
-                      "parameters": {
-                        "__IMTCONN__": 11391947
-                      },
-                      "mapper": {
-                        "mode": "map",
-                        "insertUnformatted": false,
-                        "valueInputOption": "USER_ENTERED",
-                        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
-                        "sheetId": "Sheet1",
-                        "tableFirstRow": "A1:Z1",
-                        "values": {
-                          "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                          "1": "3. Clip chosen · rendering",
-                          "2": "ok",
-                          "5": "{{1.project_id}}",
-                          "6": "{{1.project_url}}",
-                          "7": "{{30.data.job_id}}",
-                          "15": "Composition '{{21.CLIP_COMP_NAME}}' ({{22.CLIP_DURATION}}s) is being rendered. Underlord said: {{1.result.agent_response}}"
-                        }
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 2400,
-                          "y": -200,
-                          "name": "Log → Review Log sheet"
-                        }
-                      }
-                    }
-                  ]
-                },
-                {
-                  "flow": [
-                    {
-                      "id": 35,
-                      "module": "google-sheets:addRow",
-                      "version": 2,
-                      "parameters": {
-                        "__IMTCONN__": 11391947
-                      },
-                      "filter": {
-                        "name": "Clip too long – stop",
-                        "conditions": [
-                          [
-                            {
-                              "a": "{{22.CLIP_DURATION}}",
-                              "o": "number:greater",
-                              "b": "{{2.MAX_CLIP_SECONDS}}"
-                            }
-                          ]
-                        ]
-                      },
-                      "mapper": {
-                        "mode": "map",
-                        "insertUnformatted": false,
-                        "valueInputOption": "USER_ENTERED",
-                        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
-                        "sheetId": "Sheet1",
-                        "tableFirstRow": "A1:Z1",
-                        "values": {
-                          "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                          "1": "3. STOPPED – clip too long",
-                          "2": "needs you",
-                          "5": "{{1.project_id}}",
-                          "6": "{{1.project_url}}",
-                          "15": "Composition '{{21.CLIP_COMP_NAME}}' is {{22.CLIP_DURATION}}s, over the {{2.MAX_CLIP_SECONDS}}s limit, so nothing was published or scheduled. Open the project, cut it down and publish from Descript, or raise MAX_CLIP_SECONDS. Underlord said: {{1.result.agent_response}}"
-                        }
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 2100,
-                          "y": 0,
-                          "name": "Log → needs Marcus"
-                        }
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "flow": [
-            {
-              "id": 40,
-              "module": "http:ActionSendData",
-              "version": 3,
-              "parameters": {
-                "handleErrors": true,
-                "useNewZLibDeCompress": true
-              },
-              "filter": {
-                "name": "C · Clip published OK",
-                "conditions": [
-                  [
-                    {
-                      "a": "{{1.job_type}}",
-                      "o": "text:equal",
-                      "b": "publish"
-                    },
-                    {
-                      "a": "{{1.result.status}}",
-                      "o": "text:equal",
-                      "b": "success"
-                    }
-                  ]
-                ]
-              },
-              "mapper": {
-                "url": "https://descriptapi.com/v1/export/transcript",
-                "method": "post",
-                "headers": [
-                  {
-                    "name": "Authorization",
-                    "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
-                  }
-                ],
-                "qs": [],
-                "bodyType": "raw",
-                "contentType": "application/json",
-                "data": "{\"project_id\": \"{{1.project_id}}\", \"composition_id\": \"{{1.result.composition_id}}\", \"format\": \"txt\", \"include_speaker_labels\": \"off\"}",
-                "parseResponse": false,
-                "serializeUrl": false,
-                "shareCookies": false,
-                "rejectUnauthorized": true,
-                "followRedirect": true,
-                "followAllRedirects": false,
-                "useQuerystring": false,
-                "gzip": true,
-                "useMtls": false
-              },
-              "metadata": {
-                "designer": {
-                  "x": 900,
-                  "y": 200,
-                  "name": "Descript: export clip transcript (txt)"
-                }
-              }
-            },
-            {
-              "id": 41,
-              "module": "http:ActionGetFile",
-              "version": 3,
-              "parameters": {},
-              "mapper": {
-                "url": "{{1.result.download_url}}",
-                "method": "get"
-              },
-              "metadata": {
-                "designer": {
-                  "x": 1200,
-                  "y": 200,
-                  "name": "Download rendered clip (signed URL)"
-                }
-              }
-            },
-            {
-              "id": 42,
-              "module": "google-drive:uploadAFile",
-              "version": 4,
-              "parameters": {
-                "__IMTCONN__": 11845960
-              },
-              "mapper": {
-                "select": "map",
-                "folderId": "{{2.CLIPS_FOLDER_ID}}",
-                "filename": "AI-Dad-clip-{{formatDate(now; \"YYYY-MM-DD-HHmm\"; \"America/New_York\")}}.mp4",
-                "data": "{{41.data}}"
-              },
-              "metadata": {
-                "designer": {
-                  "x": 1500,
-                  "y": 200,
-                  "name": "Save clip → 'AI Dad Happy Dad - Clips (auto)'"
-                }
-              }
-            },
-            {
-              "id": 44,
-              "module": "anthropic-claude:simpleTextPrompt",
-              "version": 1,
-              "parameters": {},
-              "mapper": {
-                "model": "claude-sonnet-5-5",
-                "max_tokens": 1200,
-                "textPrompt": "You write social captions for the TikTok and Instagram account \"AI Dad Healthy Dad\" (@aidadhealthydad). It is run by Marcus, a dad with late-diagnosed ADHD who uses AI as an external brain and films raw, unpolished videos. Below is the transcript of a short vertical clip that is about to be posted. Write the two captions.\n\nVOICE\n- Genuine, unpolished excitement and conviction: \"I need to tell you about this\" energy. Never salesy, never polished marketing copy.\n- Dry, deadpan humour is welcome.\n- Embrace ADHD, never apologise for it. Never frame ADHD as broken or a flaw. Never use \"you're not broken\" style lines or recovery cliches.\n- Sound like Marcus talking, not a brand.\n\nHARD RULES\n- Never mention alcohol, drinking, sobriety, or any specific habit. The most you may say is \"patterns\" or \"habits\" in general.\n- Never invent facts, stats, trends or story details that are not in the transcript.\n- No em-dashes. At most 2 emojis per caption, zero is fine.\n- Never write a hook that says \"hey guys, today we are talking about\".\n\nTIKTOK CAPTION\n- Short and punchy, max 100 characters, 0 to 3 hashtags. The video does the work, not the text.\n\nINSTAGRAM CAPTION\n- 2 to 4 short lines (max about 300 characters before hashtags) that add one extra thought or ask one question, then a blank line, then 5 to 10 hashtags.\n- Start from these hashtag hints and keep only the ones that fit this clip: {{2.IG_HASHTAG_HINTS}}\n\nOUTPUT\nReturn ONLY a raw JSON object, no code fences, no commentary, exactly this shape:\n{\"tiktok_caption\": \"...\", \"instagram_caption\": \"...\"}\nUse \\n for line breaks inside the strings.\n\nTRANSCRIPT\n{{40.data}}"
-              },
-              "metadata": {
-                "designer": {
-                  "x": 2100,
-                  "y": 200,
-                  "name": "Claude: TikTok + Instagram captions (CLAUDE.md rules)"
-                }
-              }
-            },
-            {
-              "id": 45,
-              "module": "json:ParseJSON",
-              "version": 1,
-              "parameters": {},
-              "mapper": {
-                "json": "{{trim(replace(replace(44.result; \"```json\"; \"\"); \"```\"; \"\"))}}"
-              },
-              "metadata": {
-                "designer": {
-                  "x": 2400,
-                  "y": 200,
-                  "name": "Parse captions JSON"
-                }
-              }
-            },
-            {
-              "id": 55,
-              "module": "builtin:BasicRouter",
-              "version": 1,
-              "mapper": null,
-              "metadata": {
-                "designer": {
-                  "x": 2700,
-                  "y": 200
-                }
-              },
-              "routes": [
-                {
-                  "flow": [
-                    {
-                      "id": 43,
-                      "module": "google-drive:shareAFileFolder",
-                      "version": 4,
-                      "parameters": {
-                        "__IMTCONN__": 11845960
-                      },
-                      "mapper": {
-                        "destination": "drive",
-                        "select": "file",
-                        "file": "{{42.id}}",
-                        "role": "reader",
-                        "type": "anyone",
-                        "allowFileDiscovery": false
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 2700,
-                          "y": 0,
-                          "name": "Link-share clip (viewer) – only when Metricool is ON (Metricool needs a fetchable URL)"
-                        }
-                      },
-                      "filter": {
-                        "name": "Metricool ON – schedule posts",
-                        "conditions": [
-                          [
-                            {
-                              "a": "{{2.METRICOOL_ENABLED}}",
-                              "o": "text:equal",
-                              "b": "true"
-                            }
-                          ]
-                        ]
-                      }
-                    },
-                    {
-                      "id": 46,
-                      "module": "json:TransformToJSON",
-                      "version": 1,
-                      "parameters": {},
-                      "mapper": {
-                        "object": {
-                          "autoPublish": "{{2.METRICOOL_AUTO_PUBLISH}}",
-                          "draft": false,
-                          "hasNotReadNotes": false,
-                          "shortener": false,
-                          "firstCommentText": "",
-                          "descendants": [],
-                          "mediaAltText": [],
-                          "smartLinkData": {
-                            "ids": []
-                          },
-                          "providers": [
-                            {
-                              "network": "tiktok"
-                            }
-                          ],
-                          "publicationDate": {
-                            "dateTime": "{{formatDate(addDays(now; 2.TIKTOK_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}}T{{2.TIKTOK_POST_TIME}}",
-                            "timezone": "{{2.TIMEZONE}}"
-                          },
-                          "text": "{{45.tiktok_caption}}",
-                          "media": [
-                            "https://drive.usercontent.google.com/download?id={{42.id}}&export=download&confirm=t"
-                          ],
-                          "tiktokData": {
-                            "disableComment": false,
-                            "disableDuet": false,
-                            "disableStitch": false,
-                            "privacyOption": "PUBLIC_TO_EVERYONE",
-                            "commercialContentThirdParty": false,
-                            "commercialContentOwnBrand": false,
-                            "title": "{{45.tiktok_caption}}",
-                            "autoAddMusic": false,
-                            "photoCoverIndex": 0,
-                            "isAigc": false
-                          }
-                        }
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 3000,
-                          "y": -100,
-                          "name": "Build Metricool body – TikTok"
-                        }
-                      }
-                    },
-                    {
-                      "id": 47,
-                      "module": "http:ActionSendData",
-                      "version": 3,
-                      "parameters": {
-                        "handleErrors": true,
-                        "useNewZLibDeCompress": true
-                      },
-                      "mapper": {
-                        "url": "https://app.metricool.com/api/v2/scheduler/posts",
-                        "method": "post",
-                        "headers": [
-                          {
-                            "name": "X-Mc-Auth",
-                            "value": "{{2.METRICOOL_USER_TOKEN}}"
-                          }
-                        ],
-                        "qs": [
-                          {
-                            "name": "blogId",
-                            "value": "{{2.METRICOOL_BLOG_ID}}"
-                          },
-                          {
-                            "name": "userId",
-                            "value": "{{2.METRICOOL_USER_ID}}"
-                          }
-                        ],
-                        "bodyType": "raw",
-                        "contentType": "application/json",
-                        "data": "{{46.json}}",
-                        "parseResponse": true,
-                        "serializeUrl": false,
-                        "shareCookies": false,
-                        "rejectUnauthorized": true,
-                        "followRedirect": true,
-                        "followAllRedirects": false,
-                        "useQuerystring": false,
-                        "gzip": true,
-                        "useMtls": false
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 3300,
-                          "y": -100,
-                          "name": "Metricool: schedule TikTok post"
-                        }
-                      }
-                    },
-                    {
-                      "id": 48,
-                      "module": "json:TransformToJSON",
-                      "version": 1,
-                      "parameters": {},
-                      "mapper": {
-                        "object": {
-                          "autoPublish": "{{2.METRICOOL_AUTO_PUBLISH}}",
-                          "draft": false,
-                          "hasNotReadNotes": false,
-                          "shortener": false,
-                          "firstCommentText": "",
-                          "descendants": [],
-                          "mediaAltText": [],
-                          "smartLinkData": {
-                            "ids": []
-                          },
-                          "providers": [
-                            {
-                              "network": "instagram"
-                            }
-                          ],
-                          "publicationDate": {
-                            "dateTime": "{{formatDate(addDays(now; 2.IG_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}}T{{2.IG_POST_TIME}}",
-                            "timezone": "{{2.TIMEZONE}}"
-                          },
-                          "text": "{{45.instagram_caption}}",
-                          "media": [
-                            "https://drive.usercontent.google.com/download?id={{42.id}}&export=download&confirm=t"
-                          ],
-                          "instagramData": {
-                            "type": "REEL",
-                            "showReelOnFeed": true,
-                            "collaborators": [],
-                            "isAiGenerated": false
-                          }
-                        }
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 3000,
-                          "y": 100,
-                          "name": "Build Metricool body – Instagram Reel"
-                        }
-                      }
-                    },
-                    {
-                      "id": 49,
-                      "module": "http:ActionSendData",
-                      "version": 3,
-                      "parameters": {
-                        "handleErrors": true,
-                        "useNewZLibDeCompress": true
-                      },
-                      "mapper": {
-                        "url": "https://app.metricool.com/api/v2/scheduler/posts",
-                        "method": "post",
-                        "headers": [
-                          {
-                            "name": "X-Mc-Auth",
-                            "value": "{{2.METRICOOL_USER_TOKEN}}"
-                          }
-                        ],
-                        "qs": [
-                          {
-                            "name": "blogId",
-                            "value": "{{2.METRICOOL_BLOG_ID}}"
-                          },
-                          {
-                            "name": "userId",
-                            "value": "{{2.METRICOOL_USER_ID}}"
-                          }
-                        ],
-                        "bodyType": "raw",
-                        "contentType": "application/json",
-                        "data": "{{48.json}}",
-                        "parseResponse": true,
-                        "serializeUrl": false,
-                        "shareCookies": false,
-                        "rejectUnauthorized": true,
-                        "followRedirect": true,
-                        "followAllRedirects": false,
-                        "useQuerystring": false,
-                        "gzip": true,
-                        "useMtls": false
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 3300,
-                          "y": 100,
-                          "name": "Metricool: schedule Instagram Reel"
-                        }
-                      }
-                    },
-                    {
-                      "id": 50,
-                      "module": "google-sheets:addRow",
-                      "version": 2,
-                      "parameters": {
-                        "__IMTCONN__": 11391947
-                      },
-                      "mapper": {
-                        "mode": "map",
-                        "insertUnformatted": false,
-                        "valueInputOption": "USER_ENTERED",
-                        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
-                        "sheetId": "Sheet1",
-                        "tableFirstRow": "A1:Z1",
-                        "values": {
-                          "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                          "1": "4. Scheduled in Metricool – REVIEW ME",
-                          "2": "review",
-                          "5": "{{1.project_id}}",
-                          "6": "{{1.project_url}}",
-                          "7": "{{1.job_id}}",
-                          "8": "{{40.data}}",
-                          "9": "{{1.result.share_url}}",
-                          "10": "{{1.result.download_url}}",
-                          "11": "{{45.tiktok_caption}}",
-                          "12": "{{45.instagram_caption}}",
-                          "13": "{{formatDate(addDays(now; 2.TIKTOK_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.TIKTOK_POST_TIME}}",
-                          "14": "{{formatDate(addDays(now; 2.IG_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.IG_POST_TIME}}",
-                          "15": "Clip saved in Drive: {{42.webViewLink}} · Metricool TikTok post id {{47.data.id}}{{47.data.data.id}} · Instagram post id {{49.data.id}}{{49.data.data.id}} · autoPublish={{2.METRICOOL_AUTO_PUBLISH}} (false = Metricool pings your phone at post time and you publish by hand). Review both posts in the Metricool planner."
-                        }
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 3600,
-                          "y": 0,
-                          "name": "Log → Review Log sheet (transcript, clip, captions, times)"
-                        }
-                      }
-                    }
-                  ]
-                },
-                {
-                  "flow": [
-                    {
-                      "id": 56,
-                      "module": "google-sheets:addRow",
-                      "version": 2,
-                      "parameters": {
-                        "__IMTCONN__": 11391947
-                      },
-                      "mapper": {
-                        "mode": "map",
-                        "insertUnformatted": false,
-                        "valueInputOption": "USER_ENTERED",
-                        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
-                        "sheetId": "Sheet1",
-                        "tableFirstRow": "A1:Z1",
-                        "values": {
-                          "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                          "1": "4. READY TO POST – post by hand",
-                          "2": "review",
-                          "5": "{{1.project_id}}",
-                          "6": "{{1.project_url}}",
-                          "7": "{{1.job_id}}",
-                          "8": "{{40.data}}",
-                          "9": "{{1.result.share_url}}",
-                          "10": "{{1.result.download_url}}",
-                          "11": "{{45.tiktok_caption}}",
-                          "12": "{{45.instagram_caption}}",
-                          "13": "{{formatDate(addDays(now; 2.TIKTOK_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.TIKTOK_POST_TIME}}",
-                          "14": "{{formatDate(addDays(now; 2.IG_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.IG_POST_TIME}}",
-                          "15": "Clip saved in Drive (private, not link-shared): {{42.webViewLink}} · Metricool is OFF (CONFIG METRICOOL_ENABLED = false), so nothing was scheduled. Download the clip from Drive and post it on TikTok at the time in column N and as an Instagram Reel at the time in column O, with the captions in columns L and M. To let Make schedule through Metricool later: paste METRICOOL_USER_TOKEN into CONFIG and set METRICOOL_ENABLED to true."
-                        }
-                      },
-                      "metadata": {
-                        "designer": {
-                          "x": 2700,
-                          "y": 400,
-                          "name": "Log → Review Log sheet: clip, transcript, captions, suggested times (post by hand)"
-                        }
-                      },
-                      "filter": {
-                        "name": "Metricool OFF – log for manual posting",
-                        "conditions": [
-                          [
-                            {
-                              "a": "{{2.METRICOOL_ENABLED}}",
-                              "o": "text:notequal",
-                              "b": "true"
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "flow": [
-            {
-              "id": 60,
-              "module": "google-sheets:addRow",
-              "version": 2,
-              "parameters": {
-                "__IMTCONN__": 11391947
-              },
-              "filter": {
-                "name": "D · Descript job failed",
-                "conditions": [
-                  [
-                    {
-                      "a": "{{1.result.status}}",
-                      "o": "text:equal",
-                      "b": "error"
-                    }
-                  ],
-                  [
-                    {
-                      "a": "{{1.result.status}}",
-                      "o": "text:equal",
-                      "b": "partial"
-                    }
-                  ]
-                ]
-              },
-              "mapper": {
-                "mode": "map",
-                "insertUnformatted": false,
-                "valueInputOption": "USER_ENTERED",
-                "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
-                "sheetId": "Sheet1",
-                "tableFirstRow": "A1:Z1",
-                "values": {
-                  "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
-                  "1": "ERROR in Descript {{1.job_type}} job",
-                  "2": "failed",
-                  "5": "{{1.project_id}}",
-                  "6": "{{1.project_url}}",
-                  "7": "{{1.job_id}}",
-                  "15": "Descript reported {{1.result.status}}: {{1.result.error_message}}. Nothing was published or scheduled. The source recording is untouched in Drive."
-                }
-              },
-              "metadata": {
-                "designer": {
-                  "x": 900,
-                  "y": 500,
-                  "name": "Log → error row"
-                }
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "metadata": {
-    "version": 1,
-    "scenario": {
-      "roundtrips": 1,
-      "maxErrors": 3,
-      "autoCommit": true,
-      "autoCommitTriggerLast": true,
-      "sequential": false,
-      "confidential": false,
-      "dataloss": false,
-      "dlq": false,
-      "freshVariables": false
-    },
+ "name": "AI Dad Clips 2/2 – Descript callback → best take → clip → captions → review log (Metricool optional)",
+ "flow": [
+  {
+   "id": 1,
+   "mapper": {},
+   "module": "gateway:CustomWebHook",
+   "version": 1,
+   "metadata": {
     "designer": {
-      "orphans": []
+     "x": 0,
+     "y": 0,
+     "name": "Descript job callback (import / agent / publish) + internal pick_best_take ping"
     }
+   },
+   "parameters": {
+    "hook": 2963382,
+    "maxResults": 1
+   }
+  },
+  {
+   "id": 2,
+   "module": "util:SetVariables",
+   "version": 1,
+   "parameters": {},
+   "mapper": {
+    "variables": [
+     {
+      "name": "METRICOOL_ENABLED",
+      "value": ""
+     },
+     {
+      "name": "DESCRIPT_API_TOKEN",
+      "value": "PASTE_DESCRIPT_API_TOKEN_HERE"
+     },
+     {
+      "name": "DESCRIPT_CALLBACK_URL",
+      "value": "PASTE_THIS_SCENARIOS_WEBHOOK_URL_HERE"
+     },
+     {
+      "name": "METRICOOL_USER_TOKEN",
+      "value": "PASTE_METRICOOL_API_TOKEN_HERE"
+     },
+     {
+      "name": "METRICOOL_USER_ID",
+      "value": "5392334"
+     },
+     {
+      "name": "METRICOOL_BLOG_ID",
+      "value": "6987872"
+     },
+     {
+      "name": "METRICOOL_AUTO_PUBLISH",
+      "value": ""
+     },
+     {
+      "name": "CLIPS_FOLDER_ID",
+      "value": "1zXQGPU835CXsu8mKd_k8aut8Slf7a3o8"
+     },
+     {
+      "name": "CLIP_COMPOSITION_NAME",
+      "value": "AI Dad Clip"
+     },
+     {
+      "name": "MAX_CLIP_SECONDS",
+      "value": "90"
+     },
+     {
+      "name": "TIMEZONE",
+      "value": "America/New_York"
+     },
+     {
+      "name": "TIKTOK_DAY_OFFSET",
+      "value": "1"
+     },
+     {
+      "name": "TIKTOK_POST_TIME",
+      "value": "10:00:00"
+     },
+     {
+      "name": "IG_DAY_OFFSET",
+      "value": "2"
+     },
+     {
+      "name": "IG_POST_TIME",
+      "value": "10:00:00"
+     },
+     {
+      "name": "IG_HASHTAG_HINTS",
+      "value": "#adhddad #adhdadults #adultadhd #latediagnosedadhd #dadlife #dadsofinstagram #aiforparents #aitools #neurodivergent #5amclub"
+     },
+     {
+      "name": "TAKE_STAGE_WAITING",
+      "value": "2. Take transcribed · waiting for other takes"
+     },
+     {
+      "name": "TAKE_STAGE_EXCLUDED",
+      "value": "2. Take EXCLUDED – transcription failed"
+     },
+     {
+      "name": "SCORING_MODEL",
+      "value": "claude-sonnet-5-5"
+     }
+    ]
+   },
+   "metadata": {
+    "designer": {
+     "x": 300,
+     "y": 0,
+     "name": "CONFIG – METRICOOL_ENABLED switch, tokens, posting times, hashtags, take-stage names"
+    }
+   }
+  },
+  {
+   "id": 3,
+   "mapper": null,
+   "module": "builtin:BasicRouter",
+   "version": 1,
+   "metadata": {
+    "designer": {
+     "x": 600,
+     "y": 0
+    }
+   },
+   "routes": [
+    {
+     "flow": [
+      {
+       "id": 70,
+       "module": "google-sheets:filterRows",
+       "version": 2,
+       "parameters": {
+        "__IMTCONN__": 11391947
+       },
+       "mapper": {
+        "from": "drive",
+        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+        "sheetId": "Sheet1",
+        "includesHeaders": true,
+        "tableFirstRow": "A1:Z1",
+        "filter": [
+         [
+          {
+           "a": "F",
+           "o": "text:equal",
+           "b": "{{1.project_id}}"
+          },
+          {
+           "a": "B",
+           "o": "text:startwith",
+           "b": "1."
+          }
+         ]
+        ],
+        "limit": 1,
+        "sortOrder": "",
+        "orderBy": ""
+       },
+       "metadata": {
+        "designer": {
+         "x": 900,
+         "y": -700,
+         "name": "Review Log: find this project's stage-1 row (take group / take # / takes in group)"
+        }
+       },
+       "filter": {
+        "name": "A · Descript import callback (any result)",
+        "conditions": [
+         [
+          {
+           "a": "{{1.job_type}}",
+           "b": "import/project_media",
+           "o": "text:equal"
+          }
+         ],
+         [
+          {
+           "a": "{{1.job_type}}",
+           "b": "import",
+           "o": "text:equal"
+          }
+         ]
+        ]
+       }
+      },
+      {
+       "id": 71,
+       "module": "util:SetVariables",
+       "version": 1,
+       "parameters": {},
+       "mapper": {
+        "variables": [
+         {
+          "name": "TAKE_GROUP",
+          "value": "{{70.`16`}}"
+         },
+         {
+          "name": "TAKE_NO",
+          "value": "{{70.`17`}}"
+         },
+         {
+          "name": "TAKES_IN_GROUP",
+          "value": "{{70.`18`}}"
+         },
+         {
+          "name": "SRC_NAME",
+          "value": "{{70.`3`}}"
+         },
+         {
+          "name": "SRC_ID",
+          "value": "{{70.`4`}}"
+         }
+        ]
+       },
+       "metadata": {
+        "designer": {
+         "x": 1200,
+         "y": -700,
+         "name": "Take group fields (empty = single recording, old behaviour)"
+        }
+       }
+      },
+      {
+       "id": 72,
+       "mapper": null,
+       "module": "builtin:BasicRouter",
+       "version": 1,
+       "metadata": {
+        "designer": {
+         "x": 1500,
+         "y": -700
+        }
+       },
+       "routes": [
+        {
+         "flow": [
+          {
+           "id": 10,
+           "module": "http:ActionSendData",
+           "version": 3,
+           "parameters": {
+            "handleErrors": true,
+            "useNewZLibDeCompress": true
+           },
+           "mapper": {
+            "qs": [],
+            "url": "https://descriptapi.com/v1/jobs/agent",
+            "gzip": true,
+            "method": "post",
+            "headers": [
+             {
+              "name": "Authorization",
+              "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
+             }
+            ],
+            "useMtls": false,
+            "bodyType": "raw",
+            "serializeUrl": false,
+            "shareCookies": false,
+            "parseResponse": true,
+            "followRedirect": true,
+            "useQuerystring": false,
+            "followAllRedirects": false,
+            "rejectUnauthorized": true,
+            "data": "{\"project_id\": \"{{1.project_id}}\", \"callback_url\": \"{{2.DESCRIPT_CALLBACK_URL}}\", \"prompt\": \"Edit this raw talking-head recording into one short vertical clip for TikTok and Instagram Reels. 1) Use your clip-finding to pick the single best self-contained moment, 20 to 60 seconds long: a sharp, specific, scroll-stopping first line, one clear idea, and a natural ending. 2) Create a NEW composition named exactly '{{2.CLIP_COMPOSITION_NAME}}' containing only that moment, vertical 9:16 (1080x1920). If you cannot create a new composition, trim the existing composition down to that moment instead. 3) In the clip: remove filler words, apply Studio Sound, and add clean, large captions that are readable on a phone. 4) Do not add music, stock footage, B-roll, AI voices, eye-contact fixes or effects. Keep it raw and real. 5) Do not delete or alter the original media files.\"}",
+            "contentType": "application/json"
+           },
+           "metadata": {
+            "designer": {
+             "x": 1800,
+             "y": -1000,
+             "name": "Descript Underlord: find best clip (async, calls back)"
+            }
+           },
+           "filter": {
+            "name": "A1 · single recording, import OK",
+            "conditions": [
+             [
+              {
+               "a": "{{71.TAKE_GROUP}}",
+               "o": "notexist"
+              },
+              {
+               "a": "{{1.result.status}}",
+               "b": "success",
+               "o": "text:equal"
+              }
+             ]
+            ]
+           }
+          },
+          {
+           "id": 11,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "2. Transcribed · clip finding started",
+             "2": "ok",
+             "5": "{{1.project_id}}",
+             "6": "{{1.project_url}}",
+             "7": "{{10.data.job_id}}",
+             "15": "Descript transcribed the file ({{1.result.media_seconds_used}}s of media). Underlord is now picking the clip; the next row appears when it calls back."
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 2100,
+             "y": -1000,
+             "name": "Log → Review Log sheet"
+            }
+           }
+          }
+         ]
+        },
+        {
+         "flow": [
+          {
+           "id": 61,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "ERROR in Descript {{1.job_type}} job",
+             "2": "failed",
+             "5": "{{1.project_id}}",
+             "6": "{{1.project_url}}",
+             "7": "{{1.job_id}}",
+             "15": "Descript reported {{1.result.status}}: {{1.result.error_message}}. Nothing was published or scheduled. The source recording is untouched in Drive."
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 1800,
+             "y": -800,
+             "name": "Log → error row (single recording import failed)"
+            }
+           },
+           "filter": {
+            "name": "A2 · single recording, import failed",
+            "conditions": [
+             [
+              {
+               "a": "{{71.TAKE_GROUP}}",
+               "o": "notexist"
+              },
+              {
+               "a": "{{1.result.status}}",
+               "b": "error",
+               "o": "text:equal"
+              }
+             ],
+             [
+              {
+               "a": "{{71.TAKE_GROUP}}",
+               "o": "notexist"
+              },
+              {
+               "a": "{{1.result.status}}",
+               "b": "partial",
+               "o": "text:equal"
+              }
+             ]
+            ]
+           }
+          }
+         ]
+        },
+        {
+         "flow": [
+          {
+           "id": 73,
+           "module": "http:ActionSendData",
+           "version": 3,
+           "parameters": {
+            "handleErrors": true,
+            "useNewZLibDeCompress": true
+           },
+           "mapper": {
+            "qs": [],
+            "url": "https://descriptapi.com/v1/export/transcript",
+            "gzip": true,
+            "method": "post",
+            "headers": [
+             {
+              "name": "Authorization",
+              "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
+             }
+            ],
+            "useMtls": false,
+            "bodyType": "raw",
+            "serializeUrl": false,
+            "shareCookies": false,
+            "parseResponse": false,
+            "followRedirect": true,
+            "useQuerystring": false,
+            "followAllRedirects": false,
+            "rejectUnauthorized": true,
+            "data": "{\"project_id\": \"{{1.project_id}}\", \"format\": \"txt\", \"include_speaker_labels\": \"off\"}",
+            "contentType": "application/json"
+           },
+           "metadata": {
+            "designer": {
+             "x": 1800,
+             "y": -600,
+             "name": "Descript: export this take's full transcript (txt)"
+            }
+           },
+           "filter": {
+            "name": "A3 · grouped take, import OK",
+            "conditions": [
+             [
+              {
+               "a": "{{71.TAKE_GROUP}}",
+               "o": "exist"
+              },
+              {
+               "a": "{{1.result.status}}",
+               "b": "success",
+               "o": "text:equal"
+              }
+             ]
+            ]
+           }
+          },
+          {
+           "id": 74,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "{{if(73.statusCode < 300; 2.TAKE_STAGE_WAITING; 2.TAKE_STAGE_EXCLUDED)}}",
+             "2": "{{if(73.statusCode < 300; \"waiting\"; \"excluded\")}}",
+             "3": "{{71.SRC_NAME}}",
+             "4": "{{71.SRC_ID}}",
+             "5": "{{1.project_id}}",
+             "6": "{{1.project_url}}",
+             "7": "{{1.job_id}}",
+             "8": "{{if(73.statusCode < 300; toString(73.data); emptystring)}}",
+             "15": "Take {{71.TAKE_NO}} of {{71.TAKES_IN_GROUP}} in group {{71.TAKE_GROUP}}: Descript transcribed it ({{1.result.media_seconds_used}}s of media). {{if(73.statusCode < 300; \"Transcript saved in column I; waiting until every take in the group has transcribed or failed, then Claude scores them and picks the best take.\"; \"But the transcript export failed, so this take is excluded from the pick. HTTP status: \")}}{{if(73.statusCode < 300; emptystring; 73.statusCode)}}",
+             "16": "{{71.TAKE_GROUP}}",
+             "17": "{{71.TAKE_NO}}",
+             "18": "{{71.TAKES_IN_GROUP}}"
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 2100,
+             "y": -600,
+             "name": "Log → take row (transcript saved in column I; waiting for the other takes)"
+            }
+           }
+          },
+          {
+           "id": 75,
+           "module": "http:ActionSendData",
+           "version": 3,
+           "parameters": {
+            "handleErrors": true,
+            "useNewZLibDeCompress": true
+           },
+           "mapper": {
+            "qs": [],
+            "url": "{{2.DESCRIPT_CALLBACK_URL}}",
+            "gzip": true,
+            "method": "post",
+            "headers": [],
+            "useMtls": false,
+            "bodyType": "raw",
+            "serializeUrl": false,
+            "shareCookies": false,
+            "parseResponse": false,
+            "followRedirect": true,
+            "useQuerystring": false,
+            "followAllRedirects": false,
+            "rejectUnauthorized": true,
+            "data": "{\"job_type\": \"pick_best_take\", \"take_group\": \"{{71.TAKE_GROUP}}\", \"takes_in_group\": \"{{71.TAKES_IN_GROUP}}\", \"trigger_source\": \"take {{71.TAKE_NO}} import callback\"}",
+            "contentType": "application/json"
+           },
+           "metadata": {
+            "designer": {
+             "x": 2400,
+             "y": -600,
+             "name": "Ping this scenario: re-check whether the group is complete (pick_best_take)"
+            }
+           }
+          }
+         ]
+        },
+        {
+         "flow": [
+          {
+           "id": 76,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "{{2.TAKE_STAGE_EXCLUDED}}",
+             "2": "excluded",
+             "3": "{{71.SRC_NAME}}",
+             "4": "{{71.SRC_ID}}",
+             "5": "{{1.project_id}}",
+             "6": "{{1.project_url}}",
+             "7": "{{1.job_id}}",
+             "15": "Take {{71.TAKE_NO}} of {{71.TAKES_IN_GROUP}} in group {{71.TAKE_GROUP}} excluded: Descript import reported {{1.result.status}}: {{1.result.error_message}}. The other takes in the group are still scored. The recording is untouched in Drive.",
+             "16": "{{71.TAKE_GROUP}}",
+             "17": "{{71.TAKE_NO}}",
+             "18": "{{71.TAKES_IN_GROUP}}"
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 1800,
+             "y": -400,
+             "name": "Log → take EXCLUDED (Descript could not transcribe it)"
+            }
+           },
+           "filter": {
+            "name": "A4 · grouped take, import failed",
+            "conditions": [
+             [
+              {
+               "a": "{{71.TAKE_GROUP}}",
+               "o": "exist"
+              },
+              {
+               "a": "{{1.result.status}}",
+               "b": "error",
+               "o": "text:equal"
+              }
+             ],
+             [
+              {
+               "a": "{{71.TAKE_GROUP}}",
+               "o": "exist"
+              },
+              {
+               "a": "{{1.result.status}}",
+               "b": "partial",
+               "o": "text:equal"
+              }
+             ]
+            ]
+           }
+          },
+          {
+           "id": 77,
+           "module": "http:ActionSendData",
+           "version": 3,
+           "parameters": {
+            "handleErrors": true,
+            "useNewZLibDeCompress": true
+           },
+           "mapper": {
+            "qs": [],
+            "url": "{{2.DESCRIPT_CALLBACK_URL}}",
+            "gzip": true,
+            "method": "post",
+            "headers": [],
+            "useMtls": false,
+            "bodyType": "raw",
+            "serializeUrl": false,
+            "shareCookies": false,
+            "parseResponse": false,
+            "followRedirect": true,
+            "useQuerystring": false,
+            "followAllRedirects": false,
+            "rejectUnauthorized": true,
+            "data": "{\"job_type\": \"pick_best_take\", \"take_group\": \"{{71.TAKE_GROUP}}\", \"takes_in_group\": \"{{71.TAKES_IN_GROUP}}\", \"trigger_source\": \"take {{71.TAKE_NO}} import callback\"}",
+            "contentType": "application/json"
+           },
+           "metadata": {
+            "designer": {
+             "x": 2100,
+             "y": -400,
+             "name": "Ping this scenario: re-check whether the group is complete (pick_best_take)"
+            }
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "flow": [
+      {
+       "id": 20,
+       "module": "http:ActionSendData",
+       "version": 3,
+       "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+       },
+       "mapper": {
+        "qs": [],
+        "url": "https://descriptapi.com/v1/projects/{{1.project_id}}",
+        "gzip": true,
+        "method": "get",
+        "headers": [
+         {
+          "name": "Authorization",
+          "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
+         }
+        ],
+        "useMtls": false,
+        "bodyType": "",
+        "serializeUrl": false,
+        "shareCookies": false,
+        "parseResponse": true,
+        "followRedirect": true,
+        "useQuerystring": false,
+        "followAllRedirects": false,
+        "rejectUnauthorized": true
+       },
+       "metadata": {
+        "designer": {
+         "x": 900,
+         "y": -100,
+         "name": "Descript: list compositions in project"
+        }
+       },
+       "filter": {
+        "name": "B · Clip edit finished OK",
+        "conditions": [
+         [
+          {
+           "a": "{{1.job_type}}",
+           "b": "agent",
+           "o": "text:equal"
+          },
+          {
+           "a": "{{1.result.status}}",
+           "b": "success",
+           "o": "text:equal"
+          }
+         ]
+        ]
+       }
+      },
+      {
+       "id": 21,
+       "module": "util:SetVariables",
+       "version": 1,
+       "parameters": {},
+       "mapper": {
+        "variables": [
+         {
+          "name": "CLIP_COMP_ID",
+          "value": "{{ifempty(get(map(20.data.compositions; \"id\"; \"name\"; 2.CLIP_COMPOSITION_NAME); 1); get(map(20.data.compositions; \"id\"); length(20.data.compositions)))}}"
+         },
+         {
+          "name": "CLIP_COMP_NAME",
+          "value": "{{ifempty(get(map(20.data.compositions; \"name\"; \"name\"; 2.CLIP_COMPOSITION_NAME); 1); get(map(20.data.compositions; \"name\"); length(20.data.compositions)))}}"
+         }
+        ]
+       },
+       "metadata": {
+        "designer": {
+         "x": 1200,
+         "y": -100,
+         "name": "Pick the clip composition ('AI Dad Clip', else newest)"
+        }
+       }
+      },
+      {
+       "id": 22,
+       "module": "util:SetVariables",
+       "version": 1,
+       "parameters": {},
+       "mapper": {
+        "variables": [
+         {
+          "name": "CLIP_DURATION",
+          "value": "{{get(map(20.data.compositions; \"duration\"; \"id\"; 21.CLIP_COMP_ID); 1)}}"
+         }
+        ]
+       },
+       "metadata": {
+        "designer": {
+         "x": 1500,
+         "y": -100,
+         "name": "Clip duration (seconds)"
+        }
+       }
+      },
+      {
+       "id": 23,
+       "mapper": null,
+       "module": "builtin:BasicRouter",
+       "version": 1,
+       "metadata": {
+        "designer": {
+         "x": 1800,
+         "y": -100
+        }
+       },
+       "routes": [
+        {
+         "flow": [
+          {
+           "id": 30,
+           "module": "http:ActionSendData",
+           "version": 3,
+           "parameters": {
+            "handleErrors": true,
+            "useNewZLibDeCompress": true
+           },
+           "mapper": {
+            "qs": [],
+            "url": "https://descriptapi.com/v1/jobs/publish",
+            "gzip": true,
+            "method": "post",
+            "headers": [
+             {
+              "name": "Authorization",
+              "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
+             }
+            ],
+            "useMtls": false,
+            "bodyType": "raw",
+            "serializeUrl": false,
+            "shareCookies": false,
+            "parseResponse": true,
+            "followRedirect": true,
+            "useQuerystring": false,
+            "followAllRedirects": false,
+            "rejectUnauthorized": true,
+            "data": "{\"project_id\": \"{{1.project_id}}\", \"composition_id\": \"{{21.CLIP_COMP_ID}}\", \"media_type\": \"Video\", \"resolution\": \"1080p\", \"callback_url\": \"{{2.DESCRIPT_CALLBACK_URL}}\"}",
+            "contentType": "application/json"
+           },
+           "metadata": {
+            "designer": {
+             "x": 2100,
+             "y": -200,
+             "name": "Descript: render + publish clip (async, calls back)"
+            }
+           },
+           "filter": {
+            "name": "Clip is short enough (or duration unknown)",
+            "conditions": [
+             [
+              {
+               "a": "{{22.CLIP_DURATION}}",
+               "b": "{{2.MAX_CLIP_SECONDS}}",
+               "o": "number:lessorequal"
+              }
+             ],
+             [
+              {
+               "a": "{{22.CLIP_DURATION}}",
+               "o": "notexist"
+              }
+             ]
+            ]
+           }
+          },
+          {
+           "id": 31,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "3. Clip chosen · rendering",
+             "2": "ok",
+             "5": "{{1.project_id}}",
+             "6": "{{1.project_url}}",
+             "7": "{{30.data.job_id}}",
+             "15": "Composition '{{21.CLIP_COMP_NAME}}' ({{22.CLIP_DURATION}}s) is being rendered. Underlord said: {{1.result.agent_response}}"
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 2400,
+             "y": -200,
+             "name": "Log → Review Log sheet"
+            }
+           }
+          }
+         ]
+        },
+        {
+         "flow": [
+          {
+           "id": 35,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "3. STOPPED – clip too long",
+             "2": "needs you",
+             "5": "{{1.project_id}}",
+             "6": "{{1.project_url}}",
+             "15": "Composition '{{21.CLIP_COMP_NAME}}' is {{22.CLIP_DURATION}}s, over the {{2.MAX_CLIP_SECONDS}}s limit, so nothing was published or scheduled. Open the project, cut it down and publish from Descript, or raise MAX_CLIP_SECONDS. Underlord said: {{1.result.agent_response}}"
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 2100,
+             "y": 0,
+             "name": "Log → needs Marcus"
+            }
+           },
+           "filter": {
+            "name": "Clip too long – stop",
+            "conditions": [
+             [
+              {
+               "a": "{{22.CLIP_DURATION}}",
+               "b": "{{2.MAX_CLIP_SECONDS}}",
+               "o": "number:greater"
+              }
+             ]
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "flow": [
+      {
+       "id": 40,
+       "module": "http:ActionSendData",
+       "version": 3,
+       "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+       },
+       "mapper": {
+        "qs": [],
+        "url": "https://descriptapi.com/v1/export/transcript",
+        "gzip": true,
+        "method": "post",
+        "headers": [
+         {
+          "name": "Authorization",
+          "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
+         }
+        ],
+        "useMtls": false,
+        "bodyType": "raw",
+        "serializeUrl": false,
+        "shareCookies": false,
+        "parseResponse": false,
+        "followRedirect": true,
+        "useQuerystring": false,
+        "followAllRedirects": false,
+        "rejectUnauthorized": true,
+        "data": "{\"project_id\": \"{{1.project_id}}\", \"composition_id\": \"{{1.result.composition_id}}\", \"format\": \"txt\", \"include_speaker_labels\": \"off\"}",
+        "contentType": "application/json"
+       },
+       "metadata": {
+        "designer": {
+         "x": 900,
+         "y": 200,
+         "name": "Descript: export clip transcript (txt)"
+        }
+       },
+       "filter": {
+        "name": "C · Clip published OK",
+        "conditions": [
+         [
+          {
+           "a": "{{1.job_type}}",
+           "b": "publish",
+           "o": "text:equal"
+          },
+          {
+           "a": "{{1.result.status}}",
+           "b": "success",
+           "o": "text:equal"
+          }
+         ]
+        ]
+       }
+      },
+      {
+       "id": 38,
+       "module": "http:ActionSendData",
+       "version": 3,
+       "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+       },
+       "mapper": {
+        "qs": [],
+        "url": "https://descriptapi.com/v1/published_projects/{{last(split(1.result.share_url; \"/\"))}}",
+        "gzip": true,
+        "method": "get",
+        "headers": [
+         {
+          "name": "Authorization",
+          "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
+         }
+        ],
+        "useMtls": false,
+        "bodyType": "",
+        "serializeUrl": false,
+        "shareCookies": false,
+        "parseResponse": true,
+        "followRedirect": true,
+        "useQuerystring": false,
+        "followAllRedirects": false,
+        "rejectUnauthorized": true
+       },
+       "metadata": {
+        "designer": {
+         "x": 1200,
+         "y": 200,
+         "name": "Descript: published-project metadata (fallback source of the signed download URL)"
+        }
+       }
+      },
+      {
+       "id": 37,
+       "module": "util:SetVariables",
+       "version": 1,
+       "parameters": {},
+       "mapper": {
+        "variables": [
+         {
+          "name": "DOWNLOAD_URL",
+          "value": "{{ifempty(1.result.download_url; 38.data.download_url)}}"
+         }
+        ]
+       },
+       "metadata": {
+        "designer": {
+         "x": 1500,
+         "y": 200,
+         "name": "Clip download URL (callback first, published-project lookup second)"
+        }
+       }
+      },
+      {
+       "id": 44,
+       "module": "anthropic-claude:simpleTextPrompt",
+       "version": 1,
+       "parameters": {},
+       "mapper": {
+        "model": "claude-sonnet-5-5",
+        "max_tokens": 1200,
+        "textPrompt": "You write social captions for the TikTok and Instagram account \"AI Dad Healthy Dad\" (@aidadhealthydad). It is run by Marcus, a dad with late-diagnosed ADHD who uses AI as an external brain and films raw, unpolished videos. Below is the transcript of a short vertical clip that is about to be posted. Write the two captions.\n\nVOICE\n- Genuine, unpolished excitement and conviction: \"I need to tell you about this\" energy. Never salesy, never polished marketing copy.\n- Dry, deadpan humour is welcome.\n- Embrace ADHD, never apologise for it. Never frame ADHD as broken or a flaw. Never use \"you're not broken\" style lines or recovery cliches.\n- Sound like Marcus talking, not a brand.\n\nHARD RULES\n- Never mention alcohol, drinking, sobriety, or any specific habit. The most you may say is \"patterns\" or \"habits\" in general.\n- Never invent facts, stats, trends or story details that are not in the transcript.\n- No em-dashes. At most 2 emojis per caption, zero is fine.\n- Never write a hook that says \"hey guys, today we are talking about\".\n\nTIKTOK CAPTION\n- Short and punchy, max 100 characters, 0 to 3 hashtags. The video does the work, not the text.\n\nINSTAGRAM CAPTION\n- 2 to 4 short lines (max about 300 characters before hashtags) that add one extra thought or ask one question, then a blank line, then 5 to 10 hashtags.\n- Start from these hashtag hints and keep only the ones that fit this clip: {{2.IG_HASHTAG_HINTS}}\n\nOUTPUT\nReturn ONLY a raw JSON object, no code fences, no commentary, exactly this shape:\n{\"tiktok_caption\": \"...\", \"instagram_caption\": \"...\"}\nUse \\n for line breaks inside the strings.\n\nTRANSCRIPT\n{{toString(40.data)}}"
+       },
+       "metadata": {
+        "designer": {
+         "x": 1800,
+         "y": 200,
+         "name": "Claude: TikTok + Instagram captions (CLAUDE.md rules)"
+        }
+       }
+      },
+      {
+       "id": 45,
+       "module": "json:ParseJSON",
+       "version": 1,
+       "parameters": {},
+       "mapper": {
+        "json": "{{trim(replace(replace(44.result; \"```json\"; \"\"); \"```\"; \"\"))}}"
+       },
+       "metadata": {
+        "designer": {
+         "x": 2100,
+         "y": 200,
+         "name": "Parse captions JSON"
+        }
+       }
+      },
+      {
+       "id": 36,
+       "mapper": null,
+       "module": "builtin:BasicRouter",
+       "version": 1,
+       "metadata": {
+        "designer": {
+         "x": 2400,
+         "y": 200
+        }
+       },
+       "routes": [
+        {
+         "flow": [
+          {
+           "id": 41,
+           "module": "http:ActionGetFile",
+           "version": 3,
+           "parameters": {
+            "handleErrors": false
+           },
+           "filter": {
+            "name": "C1 · Descript gave a download link",
+            "conditions": [
+             [
+              {
+               "a": "{{37.DOWNLOAD_URL}}",
+               "o": "exist"
+              }
+             ]
+            ]
+           },
+           "mapper": {
+            "url": "{{37.DOWNLOAD_URL}}",
+            "method": "get",
+            "serializeUrl": false,
+            "shareCookies": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 2700,
+             "y": 100,
+             "name": "Download rendered clip (signed URL)"
+            }
+           }
+          },
+          {
+           "id": 42,
+           "module": "google-drive:uploadAFile",
+           "version": 4,
+           "parameters": {
+            "__IMTCONN__": 11845960
+           },
+           "mapper": {
+            "data": "{{41.data}}",
+            "select": "map",
+            "convert": false,
+            "filename": "AI-Dad-clip-{{formatDate(now; \"YYYY-MM-DD-HHmm\"; \"America/New_York\")}}.mp4",
+            "folderId": "{{2.CLIPS_FOLDER_ID}}"
+           },
+           "metadata": {
+            "designer": {
+             "x": 3000,
+             "y": 100,
+             "name": "Save clip → 'AI Dad Happy Dad - Clips (auto)'"
+            }
+           }
+          },
+          {
+           "id": 55,
+           "mapper": null,
+           "module": "builtin:BasicRouter",
+           "version": 1,
+           "metadata": {
+            "designer": {
+             "x": 3300,
+             "y": 100
+            }
+           },
+           "routes": [
+            {
+             "flow": [
+              {
+               "id": 43,
+               "module": "google-drive:shareAFileFolder",
+               "version": 4,
+               "parameters": {
+                "__IMTCONN__": 11845960
+               },
+               "filter": {
+                "name": "Metricool ON – schedule posts",
+                "conditions": [
+                 [
+                  {
+                   "a": "{{2.METRICOOL_ENABLED}}",
+                   "b": "true",
+                   "o": "text:equal"
+                  }
+                 ]
+                ]
+               },
+               "mapper": {
+                "file": "{{42.id}}",
+                "role": "reader",
+                "type": "anyone",
+                "select": "file",
+                "destination": "drive",
+                "allowFileDiscovery": false
+               },
+               "metadata": {
+                "designer": {
+                 "x": 3600,
+                 "y": -100,
+                 "name": "Link-share clip (viewer) – only when Metricool is ON (Metricool needs a fetchable URL)"
+                }
+               }
+              },
+              {
+               "id": 46,
+               "module": "json:TransformToJSON",
+               "version": 1,
+               "parameters": {},
+               "mapper": {
+                "object": {
+                 "text": "{{45.tiktok_caption}}",
+                 "draft": false,
+                 "media": [
+                  "https://drive.usercontent.google.com/download?id={{42.id}}&export=download&confirm=t"
+                 ],
+                 "providers": [
+                  {
+                   "network": "tiktok"
+                  }
+                 ],
+                 "shortener": false,
+                 "autoPublish": "{{2.METRICOOL_AUTO_PUBLISH}}",
+                 "descendants": [],
+                 "mediaAltText": [],
+                 "smartLinkData": {
+                  "ids": []
+                 },
+                 "hasNotReadNotes": false,
+                 "publicationDate": {
+                  "dateTime": "{{formatDate(addDays(now; 2.TIKTOK_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}}T{{2.TIKTOK_POST_TIME}}",
+                  "timezone": "{{2.TIMEZONE}}"
+                 },
+                 "firstCommentText": "",
+                 "tiktokData": {
+                  "title": "{{45.tiktok_caption}}",
+                  "isAigc": false,
+                  "disableDuet": false,
+                  "autoAddMusic": false,
+                  "disableStitch": false,
+                  "privacyOption": "PUBLIC_TO_EVERYONE",
+                  "disableComment": false,
+                  "photoCoverIndex": 0,
+                  "commercialContentOwnBrand": false,
+                  "commercialContentThirdParty": false
+                 }
+                }
+               },
+               "metadata": {
+                "designer": {
+                 "x": 3900,
+                 "y": -200,
+                 "name": "Build Metricool body – TikTok"
+                }
+               }
+              },
+              {
+               "id": 47,
+               "module": "http:ActionSendData",
+               "version": 3,
+               "parameters": {
+                "handleErrors": true,
+                "useNewZLibDeCompress": true
+               },
+               "mapper": {
+                "qs": [
+                 {
+                  "name": "blogId",
+                  "value": "{{2.METRICOOL_BLOG_ID}}"
+                 },
+                 {
+                  "name": "userId",
+                  "value": "{{2.METRICOOL_USER_ID}}"
+                 }
+                ],
+                "url": "https://app.metricool.com/api/v2/scheduler/posts",
+                "data": "{{46.json}}",
+                "gzip": true,
+                "method": "post",
+                "headers": [
+                 {
+                  "name": "X-Mc-Auth",
+                  "value": "{{2.METRICOOL_USER_TOKEN}}"
+                 }
+                ],
+                "useMtls": false,
+                "bodyType": "raw",
+                "contentType": "application/json",
+                "serializeUrl": false,
+                "shareCookies": false,
+                "parseResponse": true,
+                "followRedirect": true,
+                "useQuerystring": false,
+                "followAllRedirects": false,
+                "rejectUnauthorized": true
+               },
+               "metadata": {
+                "designer": {
+                 "x": 4200,
+                 "y": -200,
+                 "name": "Metricool: schedule TikTok post"
+                }
+               }
+              },
+              {
+               "id": 48,
+               "module": "json:TransformToJSON",
+               "version": 1,
+               "parameters": {},
+               "mapper": {
+                "object": {
+                 "text": "{{45.instagram_caption}}",
+                 "draft": false,
+                 "media": [
+                  "https://drive.usercontent.google.com/download?id={{42.id}}&export=download&confirm=t"
+                 ],
+                 "providers": [
+                  {
+                   "network": "instagram"
+                  }
+                 ],
+                 "shortener": false,
+                 "autoPublish": "{{2.METRICOOL_AUTO_PUBLISH}}",
+                 "descendants": [],
+                 "mediaAltText": [],
+                 "smartLinkData": {
+                  "ids": []
+                 },
+                 "hasNotReadNotes": false,
+                 "publicationDate": {
+                  "dateTime": "{{formatDate(addDays(now; 2.IG_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}}T{{2.IG_POST_TIME}}",
+                  "timezone": "{{2.TIMEZONE}}"
+                 },
+                 "firstCommentText": "",
+                 "instagramData": {
+                  "type": "REEL",
+                  "collaborators": [],
+                  "isAiGenerated": false,
+                  "showReelOnFeed": true
+                 }
+                }
+               },
+               "metadata": {
+                "designer": {
+                 "x": 3900,
+                 "y": 0,
+                 "name": "Build Metricool body – Instagram Reel"
+                }
+               }
+              },
+              {
+               "id": 49,
+               "module": "http:ActionSendData",
+               "version": 3,
+               "parameters": {
+                "handleErrors": true,
+                "useNewZLibDeCompress": true
+               },
+               "mapper": {
+                "qs": [
+                 {
+                  "name": "blogId",
+                  "value": "{{2.METRICOOL_BLOG_ID}}"
+                 },
+                 {
+                  "name": "userId",
+                  "value": "{{2.METRICOOL_USER_ID}}"
+                 }
+                ],
+                "url": "https://app.metricool.com/api/v2/scheduler/posts",
+                "data": "{{48.json}}",
+                "gzip": true,
+                "method": "post",
+                "headers": [
+                 {
+                  "name": "X-Mc-Auth",
+                  "value": "{{2.METRICOOL_USER_TOKEN}}"
+                 }
+                ],
+                "useMtls": false,
+                "bodyType": "raw",
+                "contentType": "application/json",
+                "serializeUrl": false,
+                "shareCookies": false,
+                "parseResponse": true,
+                "followRedirect": true,
+                "useQuerystring": false,
+                "followAllRedirects": false,
+                "rejectUnauthorized": true
+               },
+               "metadata": {
+                "designer": {
+                 "x": 4200,
+                 "y": 0,
+                 "name": "Metricool: schedule Instagram Reel"
+                }
+               }
+              },
+              {
+               "id": 50,
+               "module": "google-sheets:addRow",
+               "version": 2,
+               "parameters": {
+                "__IMTCONN__": 11391947
+               },
+               "mapper": {
+                "mode": "map",
+                "values": {
+                 "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+                 "5": "{{1.project_id}}",
+                 "6": "{{1.project_url}}",
+                 "7": "{{1.job_id}}",
+                 "8": "{{toString(40.data)}}",
+                 "9": "{{1.result.share_url}}",
+                 "10": "{{37.DOWNLOAD_URL}}",
+                 "11": "{{45.tiktok_caption}}",
+                 "12": "{{45.instagram_caption}}",
+                 "13": "{{formatDate(addDays(now; 2.TIKTOK_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.TIKTOK_POST_TIME}}",
+                 "14": "{{formatDate(addDays(now; 2.IG_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.IG_POST_TIME}}",
+                 "1": "4. Scheduled in Metricool – REVIEW ME",
+                 "2": "review",
+                 "15": "Clip saved in Drive: {{42.webViewLink}} · Metricool TikTok post id {{47.data.id}}{{47.data.data.id}} · Instagram post id {{49.data.id}}{{49.data.data.id}} · autoPublish={{2.METRICOOL_AUTO_PUBLISH}} (false = Metricool pings your phone at post time and you publish by hand). Review both posts in the Metricool planner."
+                },
+                "sheetId": "Sheet1",
+                "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+                "tableFirstRow": "A1:Z1",
+                "valueInputOption": "USER_ENTERED",
+                "insertUnformatted": false
+               },
+               "metadata": {
+                "designer": {
+                 "x": 4500,
+                 "y": -100,
+                 "name": "Log → Review Log sheet (transcript, clip, captions, times)"
+                }
+               }
+              }
+             ]
+            },
+            {
+             "flow": [
+              {
+               "id": 56,
+               "module": "google-sheets:addRow",
+               "version": 2,
+               "parameters": {
+                "__IMTCONN__": 11391947
+               },
+               "mapper": {
+                "mode": "map",
+                "values": {
+                 "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+                 "5": "{{1.project_id}}",
+                 "6": "{{1.project_url}}",
+                 "7": "{{1.job_id}}",
+                 "8": "{{toString(40.data)}}",
+                 "9": "{{1.result.share_url}}",
+                 "10": "{{37.DOWNLOAD_URL}}",
+                 "11": "{{45.tiktok_caption}}",
+                 "12": "{{45.instagram_caption}}",
+                 "13": "{{formatDate(addDays(now; 2.TIKTOK_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.TIKTOK_POST_TIME}}",
+                 "14": "{{formatDate(addDays(now; 2.IG_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.IG_POST_TIME}}",
+                 "1": "4. READY TO POST – post by hand",
+                 "2": "review",
+                 "15": "Clip saved in Drive (private, not link-shared): {{42.webViewLink}} · Metricool is OFF (CONFIG METRICOOL_ENABLED = false), so nothing was scheduled. Download the clip from Drive and post it on TikTok at the time in column N and as an Instagram Reel at the time in column O, with the captions in columns L and M. To let Make schedule through Metricool later: paste METRICOOL_USER_TOKEN into CONFIG and set METRICOOL_ENABLED to true."
+                },
+                "sheetId": "Sheet1",
+                "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+                "tableFirstRow": "A1:Z1",
+                "valueInputOption": "USER_ENTERED",
+                "insertUnformatted": false
+               },
+               "metadata": {
+                "designer": {
+                 "x": 3600,
+                 "y": 300,
+                 "name": "Log → Review Log sheet: clip, transcript, captions, suggested times (post by hand)"
+                }
+               },
+               "filter": {
+                "name": "Metricool OFF – log for manual posting",
+                "conditions": [
+                 [
+                  {
+                   "a": "{{2.METRICOOL_ENABLED}}",
+                   "b": "true",
+                   "o": "text:notequal"
+                  }
+                 ]
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "flow": [
+          {
+           "id": 57,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "5": "{{1.project_id}}",
+             "6": "{{1.project_url}}",
+             "7": "{{1.job_id}}",
+             "8": "{{toString(40.data)}}",
+             "9": "{{1.result.share_url}}",
+             "10": "{{37.DOWNLOAD_URL}}",
+             "11": "{{45.tiktok_caption}}",
+             "12": "{{45.instagram_caption}}",
+             "13": "{{formatDate(addDays(now; 2.TIKTOK_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.TIKTOK_POST_TIME}}",
+             "14": "{{formatDate(addDays(now; 2.IG_DAY_OFFSET); \"YYYY-MM-DD\"; 2.TIMEZONE)}} {{2.IG_POST_TIME}}",
+             "1": "4. READY TO POST – download from Descript by hand",
+             "2": "needs you",
+             "15": "Descript rendered and published the clip (share page in column J) but returned no download link, so Make could not save it to Drive. Open the share page or the Descript project (column G) and download the clip by hand, then post it on TikTok at the time in column N and as an Instagram Reel at the time in column O, with the captions in columns L and M."
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 2700,
+             "y": 500,
+             "name": "Log → needs Marcus: clip is published but Descript gave no download link"
+            }
+           },
+           "filter": {
+            "name": "C2 · no download link from Descript",
+            "conditions": [
+             [
+              {
+               "a": "{{37.DOWNLOAD_URL}}",
+               "o": "notexist"
+              }
+             ]
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "flow": [
+      {
+       "id": 60,
+       "module": "google-sheets:addRow",
+       "version": 2,
+       "parameters": {
+        "__IMTCONN__": 11391947
+       },
+       "mapper": {
+        "mode": "map",
+        "values": {
+         "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+         "1": "ERROR in Descript {{1.job_type}} job",
+         "2": "failed",
+         "5": "{{1.project_id}}",
+         "6": "{{1.project_url}}",
+         "7": "{{1.job_id}}",
+         "15": "Descript reported {{1.result.status}}: {{1.result.error_message}}. Nothing was published or scheduled. The source recording is untouched in Drive."
+        },
+        "sheetId": "Sheet1",
+        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+        "tableFirstRow": "A1:Z1",
+        "valueInputOption": "USER_ENTERED",
+        "insertUnformatted": false
+       },
+       "metadata": {
+        "designer": {
+         "x": 900,
+         "y": 500,
+         "name": "Log → error row"
+        }
+       },
+       "filter": {
+        "name": "D · Descript agent/publish job failed",
+        "conditions": [
+         [
+          {
+           "a": "{{1.result.status}}",
+           "b": "error",
+           "o": "text:equal"
+          },
+          {
+           "a": "{{1.job_type}}",
+           "b": "import/project_media",
+           "o": "text:notequal"
+          },
+          {
+           "a": "{{1.job_type}}",
+           "b": "import",
+           "o": "text:notequal"
+          }
+         ],
+         [
+          {
+           "a": "{{1.result.status}}",
+           "b": "partial",
+           "o": "text:equal"
+          },
+          {
+           "a": "{{1.job_type}}",
+           "b": "import/project_media",
+           "o": "text:notequal"
+          },
+          {
+           "a": "{{1.job_type}}",
+           "b": "import",
+           "o": "text:notequal"
+          }
+         ]
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "flow": [
+      {
+       "id": 80,
+       "module": "google-sheets:filterRows",
+       "version": 2,
+       "parameters": {
+        "__IMTCONN__": 11391947
+       },
+       "mapper": {
+        "from": "drive",
+        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+        "sheetId": "Sheet1",
+        "includesHeaders": true,
+        "tableFirstRow": "A1:Z1",
+        "filter": [
+         [
+          {
+           "a": "Q",
+           "o": "text:equal",
+           "b": "{{1.take_group}}"
+          },
+          {
+           "a": "B",
+           "o": "text:equal",
+           "b": "2. Take transcribed · waiting for other takes"
+          }
+         ],
+         [
+          {
+           "a": "Q",
+           "o": "text:equal",
+           "b": "{{1.take_group}}"
+          },
+          {
+           "a": "B",
+           "o": "text:startwith",
+           "b": "2. Take EXCLUDED"
+          }
+         ]
+        ],
+        "limit": 50,
+        "sortOrder": "",
+        "orderBy": ""
+       },
+       "metadata": {
+        "designer": {
+         "x": 900,
+         "y": 800,
+         "name": "Review Log: every resolved take in this group (transcribed or excluded)"
+        }
+       },
+       "filter": {
+        "name": "E · pick_best_take (internal ping)",
+        "conditions": [
+         [
+          {
+           "a": "{{1.job_type}}",
+           "b": "pick_best_take",
+           "o": "text:equal"
+          }
+         ]
+        ]
+       }
+      },
+      {
+       "id": 81,
+       "module": "builtin:BasicAggregator",
+       "version": 1,
+       "parameters": {
+        "feeder": 80
+       },
+       "mapper": {
+        "take_no": "{{80.`17`}}",
+        "stage": "{{80.`1`}}",
+        "kind": "{{if(80.`1` = 2.TAKE_STAGE_WAITING; \"ok\"; \"excluded\")}}",
+        "project_id": "{{80.`5`}}",
+        "project_url": "{{80.`6`}}",
+        "source": "{{80.`3`}}",
+        "drive_id": "{{80.`4`}}",
+        "transcript": "{{80.`8`}}",
+        "note": "{{80.`15`}}",
+        "rownum": "{{80.`__ROW_NUMBER__`}}"
+       },
+       "metadata": {
+        "designer": {
+         "x": 1200,
+         "y": 800,
+         "name": "Collect the group's takes"
+        }
+       }
+      },
+      {
+       "id": 82,
+       "module": "google-sheets:filterRows",
+       "version": 2,
+       "parameters": {
+        "__IMTCONN__": 11391947
+       },
+       "mapper": {
+        "from": "drive",
+        "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+        "sheetId": "Sheet1",
+        "includesHeaders": true,
+        "tableFirstRow": "A1:Z1",
+        "filter": [
+         [
+          {
+           "a": "Q",
+           "o": "text:equal",
+           "b": "{{1.take_group}}"
+          },
+          {
+           "a": "B",
+           "o": "text:startwith",
+           "b": "3."
+          }
+         ]
+        ],
+        "limit": 1,
+        "sortOrder": "",
+        "orderBy": ""
+       },
+       "metadata": {
+        "designer": {
+         "x": 1500,
+         "y": 800,
+         "name": "Review Log: has this group already been decided? (any '3.' row)"
+        }
+       }
+      },
+      {
+       "id": 83,
+       "module": "util:SetVariables",
+       "version": 1,
+       "parameters": {},
+       "mapper": {
+        "variables": [
+         {
+          "name": "GROUP_SIZE",
+          "value": "{{1.takes_in_group}}"
+         },
+         {
+          "name": "TRANSCRIBED",
+          "value": "{{length(map(81.array; \"project_id\"; \"kind\"; \"ok\"))}}"
+         },
+         {
+          "name": "EXCLUDED",
+          "value": "{{length(map(81.array; \"take_no\"; \"kind\"; \"excluded\"))}}"
+         },
+         {
+          "name": "RESOLVED",
+          "value": "{{length(map(81.array; \"project_id\"; \"kind\"; \"ok\")) + length(map(81.array; \"take_no\"; \"kind\"; \"excluded\"))}}"
+         },
+         {
+          "name": "ALREADY_DECIDED",
+          "value": "{{if(82.`__ROW_NUMBER__` > 0; 1; 0)}}"
+         },
+         {
+          "name": "EXCLUDED_TAKES",
+          "value": "{{join(map(81.array; \"take_no\"; \"kind\"; \"excluded\"); \", \")}}"
+         },
+         {
+          "name": "EXCLUDED_NOTES",
+          "value": "{{join(map(81.array; \"note\"; \"kind\"; \"excluded\"); \" | \")}}"
+         }
+        ]
+       },
+       "metadata": {
+        "designer": {
+         "x": 1800,
+         "y": 800,
+         "name": "Count transcribed / excluded takes; already decided?"
+        }
+       }
+      },
+      {
+       "id": 84,
+       "mapper": null,
+       "module": "builtin:BasicRouter",
+       "version": 1,
+       "metadata": {
+        "designer": {
+         "x": 2100,
+         "y": 800
+        }
+       },
+       "routes": [
+        {
+         "flow": [
+          {
+           "id": 85,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "3. ERROR – no take in the group could be transcribed",
+             "2": "error",
+             "15": "Group {{1.take_group}} ({{83.GROUP_SIZE}} takes): every take failed to transcribe, so no winner was picked and nothing was sent to Underlord. Excluded takes: {{83.EXCLUDED_TAKES}}. Details: {{83.EXCLUDED_NOTES}}. The recordings are untouched in Drive; fix the cause and drop them in again.",
+             "16": "{{1.take_group}}",
+             "18": "{{83.GROUP_SIZE}}"
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 2400,
+             "y": 600,
+             "name": "Log → single error row: no take could be transcribed"
+            }
+           },
+           "filter": {
+            "name": "E1 · group complete, nothing transcribed",
+            "conditions": [
+             [
+              {
+               "a": "{{83.ALREADY_DECIDED}}",
+               "b": "0",
+               "o": "number:equal"
+              },
+              {
+               "a": "{{83.RESOLVED}}",
+               "b": "{{83.GROUP_SIZE}}",
+               "o": "number:greaterorequal"
+              },
+              {
+               "a": "{{83.TRANSCRIBED}}",
+               "b": "0",
+               "o": "number:equal"
+              }
+             ]
+            ]
+           }
+          }
+         ]
+        },
+        {
+         "flow": [
+          {
+           "id": 86,
+           "module": "builtin:BasicFeeder",
+           "version": 1,
+           "parameters": {},
+           "mapper": {
+            "array": "{{81.array}}"
+           },
+           "filter": {
+            "name": "E2 · group complete, at least one transcript",
+            "conditions": [
+             [
+              {
+               "a": "{{83.ALREADY_DECIDED}}",
+               "b": "0",
+               "o": "number:equal"
+              },
+              {
+               "a": "{{83.RESOLVED}}",
+               "b": "{{83.GROUP_SIZE}}",
+               "o": "number:greaterorequal"
+              },
+              {
+               "a": "{{83.TRANSCRIBED}}",
+               "b": "1",
+               "o": "number:greaterorequal"
+              }
+             ]
+            ]
+           },
+           "metadata": {
+            "designer": {
+             "x": 2400,
+             "y": 900,
+             "name": "One take at a time"
+            }
+           }
+          },
+          {
+           "id": 87,
+           "module": "util:TextAggregator",
+           "version": 1,
+           "parameters": {
+            "feeder": 86,
+            "rowSeparator": "other",
+            "otherRowSeparator": "\n"
+           },
+           "filter": {
+            "name": "Only takes that transcribed",
+            "conditions": [
+             [
+              {
+               "a": "{{86.stage}}",
+               "b": "{{2.TAKE_STAGE_WAITING}}",
+               "o": "text:equal"
+              }
+             ]
+            ]
+           },
+           "mapper": {
+            "value": "=== TAKE {{86.take_no}} === (file: {{86.source}}; Descript project: {{86.project_id}})\n{{86.transcript}}\n"
+           },
+           "metadata": {
+            "designer": {
+             "x": 2700,
+             "y": 900,
+             "name": "Build the transcript block for Claude"
+            }
+           }
+          },
+          {
+           "id": 88,
+           "module": "anthropic-claude:simpleTextPrompt",
+           "version": 1,
+           "parameters": {},
+           "mapper": {
+            "model": "{{2.SCORING_MODEL}}",
+            "max_tokens": 2000,
+            "textPrompt": "You are the take-picker for the \"AI Dad Healthy Dad\" clip pipeline. Marcus recorded the SAME short talking-head piece several times. Below are the transcripts of every take that transcribed successfully. Pick the single best take using the fixed scoring standard below. Do not invent other criteria and do not change the weights.\n\nWHY THIS STANDARD (fixed, do not change): this is a self-evaluation against a predetermined standard (Cooper, Heron & Heward, Applied Behavior Analysis 3rd ed., Ch. 29 \"Self-Evaluation\", p. 694) and it scores the dimension that most directly predicts the outcome, per the Ch. 29 guideline \"self-monitor the most important dimension of the target behavior\" (p. 698). For a short vertical clip the dimension that most directly predicts whether it gets watched at all is the opening hook, so hook/content outweighs delivery, and stumbles inside the opening outweigh stumbles later.\n\nDIMENSION A - HOOK / CONTENT QUALITY (0-100). Score three things:\n1. Does the take open, in the first 3 seconds (treat this as the first 8-10 words of the transcript), with a specific, concrete promise or claim - a number, a situation, a contrast, a question the viewer wants answered - instead of a vague warm-up (\"hey guys\", \"so today\", \"I want to talk about\")? This is Gary Vaynerchuk's first-3-seconds hook principle.\n2. Does the rest of the take actually deliver on that opening promise?\n3. Does the message land clearly: one idea, concrete, with a natural ending?\nAnchors: 85-100 specific hook, promise delivered, lands clearly. 60-84 decent hook or clear message, but one of the three is weak. 35-59 vague hook or the message wanders. 0-34 no real hook, or the take never delivers what it promised.\n\nDIMENSION B - DELIVERY CLEANLINESS (0-100). Judge from the transcript text only (you cannot hear audio): filler words (\"um\", \"uh\", \"like\", \"you know\"), repeated words, restarts and abandoned sentences, rambling run-ons, awkward pauses that show up as fragments. Apply the ABA \"most important dimension\" rule inside this dimension: a stumble, restart or filler INSIDE the first 3 seconds (first 8-10 words) costs about three times as much as the same problem later in the take, because the opening decides whether the clip gets watched at all. Minor pacing issues late in the take cost little. Do not just count fillers.\nAnchors: 85-100 clean throughout and the opening is clean. 60-84 a few fillers or one restart, opening clean. 35-59 the opening has a stumble or restart, OR many fillers overall. 0-34 opening badly broken, or the take is riddled with restarts.\n\nCOMBINED SCORE (0-100) = round(0.65 x A + 0.35 x B). Hook/content is weighted 65, delivery 35 - NOT equal. Grounding: Gary Vaynerchuk - \"if the stuff's good, people find it interesting and valuable, and if the stuff's not good, we put as much polish as we want on it, doesn't matter.\" So a take with a slightly rougher delivery but a sharper, more specific hook MUST beat a smoothly delivered take with a weak or vague hook. For every take, combined must equal round(0.65*A + 0.35*B); do the arithmetic.\n\nTIE-BREAK RULE: if the top two combined scores are within 3 points of each other (difference of 3 or less), treat it as a near-tie and decide using Dimension A (hook/content) ALONE, ignoring Dimension B. If A is also tied, pick the lower take number. The reason must then say it was a near-tie, how many points apart, and that hook quality decided it.\n\nREASON: one line naming which dimension decided the win, for example \"won on hook specificity despite one stumble\", \"won on clean delivery, hooks were comparable\", or \"near-tie, 2 points apart, won on hook quality\".\n\nOUTPUT: return ONLY a raw JSON object, no code fences, no commentary, exactly this shape:\n{\"takes\":[{\"take\":1,\"hook\":82,\"delivery\":70,\"combined\":78,\"note\":\"short reason\"}],\"winner_take\":1,\"runner_up_take\":2,\"margin\":5,\"near_tie\":false,\"tie_break_used\":false,\"reason\":\"one line\",\"scores_summary\":\"T1 82/70/78; T2 75/85/79\"}\n- \"take\" numbers must be the TAKE numbers given in the headers below, as integers.\n- \"scores_summary\" lists every take as T<n> hook/delivery/combined, separated by \"; \".\n- \"margin\" is the combined-score gap between the winner and the runner-up (0 if only one take).\n- If only one take transcribed it wins by default; reason: \"only take that transcribed\".\n- Use \\n for line breaks inside strings. No em dashes.\n\nTRANSCRIPTS\n{{87.text}}"
+           },
+           "metadata": {
+            "designer": {
+             "x": 3000,
+             "y": 900,
+             "name": "Claude: score every take (hook/content 65 · delivery 35, ABA Ch.29 + Gary Vee) and pick the winner"
+            }
+           }
+          },
+          {
+           "id": 89,
+           "module": "json:ParseJSON",
+           "version": 1,
+           "parameters": {},
+           "mapper": {
+            "json": "{{trim(replace(replace(88.result; \"```json\"; \"\"); \"```\"; \"\"))}}"
+           },
+           "metadata": {
+            "designer": {
+             "x": 3300,
+             "y": 900,
+             "name": "Parse the scores JSON"
+            }
+           }
+          },
+          {
+           "id": 90,
+           "module": "util:SetVariables",
+           "version": 1,
+           "parameters": {},
+           "mapper": {
+            "variables": [
+             {
+              "name": "WINNER_TAKE",
+              "value": "{{89.winner_take}}"
+             },
+             {
+              "name": "WINNER_PROJECT",
+              "value": "{{get(map(81.array; \"project_id\"; \"take_no\"; toString(89.winner_take)); 1)}}"
+             },
+             {
+              "name": "WINNER_URL",
+              "value": "{{get(map(81.array; \"project_url\"; \"take_no\"; toString(89.winner_take)); 1)}}"
+             },
+             {
+              "name": "WINNER_SOURCE",
+              "value": "{{get(map(81.array; \"source\"; \"take_no\"; toString(89.winner_take)); 1)}}"
+             },
+             {
+              "name": "WINNER_DRIVE_ID",
+              "value": "{{get(map(81.array; \"drive_id\"; \"take_no\"; toString(89.winner_take)); 1)}}"
+             }
+            ]
+           },
+           "metadata": {
+            "designer": {
+             "x": 3600,
+             "y": 900,
+             "name": "Winning take → its Descript project / Drive file"
+            }
+           }
+          },
+          {
+           "id": 91,
+           "module": "http:ActionSendData",
+           "version": 3,
+           "parameters": {
+            "handleErrors": true,
+            "useNewZLibDeCompress": true
+           },
+           "mapper": {
+            "qs": [],
+            "url": "https://descriptapi.com/v1/jobs/agent",
+            "gzip": true,
+            "method": "post",
+            "headers": [
+             {
+              "name": "Authorization",
+              "value": "Bearer {{2.DESCRIPT_API_TOKEN}}"
+             }
+            ],
+            "useMtls": false,
+            "bodyType": "raw",
+            "serializeUrl": false,
+            "shareCookies": false,
+            "parseResponse": true,
+            "followRedirect": true,
+            "useQuerystring": false,
+            "followAllRedirects": false,
+            "rejectUnauthorized": true,
+            "data": "{\"project_id\": \"{{90.WINNER_PROJECT}}\", \"callback_url\": \"{{2.DESCRIPT_CALLBACK_URL}}\", \"prompt\": \"Edit this raw talking-head recording into one short vertical clip for TikTok and Instagram Reels. 1) Use your clip-finding to pick the single best self-contained moment, 20 to 60 seconds long: a sharp, specific, scroll-stopping first line, one clear idea, and a natural ending. 2) Create a NEW composition named exactly '{{2.CLIP_COMPOSITION_NAME}}' containing only that moment, vertical 9:16 (1080x1920). If you cannot create a new composition, trim the existing composition down to that moment instead. 3) In the clip: remove filler words, apply Studio Sound, and add clean, large captions that are readable on a phone. 4) Do not add music, stock footage, B-roll, AI voices, eye-contact fixes or effects. Keep it raw and real. 5) Do not delete or alter the original media files.\"}",
+            "contentType": "application/json"
+           },
+           "metadata": {
+            "designer": {
+             "x": 3900,
+             "y": 900,
+             "name": "Descript Underlord: find best clip in the WINNING take only (async, calls back)"
+            }
+           }
+          },
+          {
+           "id": 92,
+           "module": "google-sheets:addRow",
+           "version": 2,
+           "parameters": {
+            "__IMTCONN__": 11391947
+           },
+           "mapper": {
+            "mode": "map",
+            "values": {
+             "0": "{{formatDate(now; \"YYYY-MM-DD HH:mm\"; \"America/New_York\")}}",
+             "1": "3. Best take chosen · clip finding started",
+             "2": "ok",
+             "3": "{{90.WINNER_SOURCE}}",
+             "4": "{{90.WINNER_DRIVE_ID}}",
+             "5": "{{90.WINNER_PROJECT}}",
+             "6": "{{90.WINNER_URL}}",
+             "7": "{{91.data.job_id}}",
+             "15": "Take {{90.WINNER_TAKE}} of {{83.GROUP_SIZE}} won: {{89.reason}}. Scores (hook/delivery/combined, weighted 65/35): {{89.scores_summary}}. Margin over runner-up: {{89.margin}} points{{if(89.near_tie; \" (near-tie, broken on hook/content alone)\"; emptystring)}}. Excluded takes: {{ifempty(83.EXCLUDED_TAKES; \"none\")}}{{if(length(83.EXCLUDED_NOTES) > 0; \" – \"; emptystring)}}{{83.EXCLUDED_NOTES}}. Underlord is now picking the clip from the winning take ({{90.WINNER_SOURCE}}); the other takes stay untouched in Drive and Descript.",
+             "16": "{{1.take_group}}",
+             "17": "{{90.WINNER_TAKE}}",
+             "18": "{{83.GROUP_SIZE}}",
+             "19": "{{89.scores_summary}}",
+             "20": "{{89.reason}}"
+            },
+            "sheetId": "Sheet1",
+            "spreadsheetId": "18oYWSHC-30GD_oGVgJIMp3iKMnys5_y1qGuCHNrl4Yg",
+            "tableFirstRow": "A1:Z1",
+            "valueInputOption": "USER_ENTERED",
+            "insertUnformatted": false
+           },
+           "metadata": {
+            "designer": {
+             "x": 4200,
+             "y": 900,
+             "name": "Log → best take chosen (scores + one-line reason)"
+            }
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
   }
+ ],
+ "metadata": {
+  "instant": true,
+  "version": 1,
+  "designer": {
+   "orphans": []
+  },
+  "scenario": {
+   "dlq": false,
+   "slots": null,
+   "dataloss": false,
+   "maxErrors": 3,
+   "autoCommit": true,
+   "roundtrips": 1,
+   "sequential": true,
+   "confidential": false,
+   "freshVariables": false,
+   "autoCommitTriggerLast": true
+  }
+ }
 }

@@ -5,6 +5,8 @@ Status: **built and wired in Make, both scenarios OFF, waiting on one thing from
 API token** (see "What is left" below). No Metricool token is needed: the Metricool steps are
 switched off and the pipeline writes everything you need to post by hand into the Review Log.
 
+**Update 2026-10-22 (Prompt Library row 24):** both scenarios are ON and were extended so that several takes of the same recording dropped together are grouped, transcribed, scored by Claude and only the best take is clipped. See [`BEST_TAKE_PICKER.md`](BEST_TAKE_PICKER.md). The blueprints in `automation/make/` now mirror the live scenarios, including Marcus's 2026-10-22 switch of scenario 1 from direct upload to URL import (the recording is link-shared as viewer, not searchable, so Descript can fetch it; the Review Log row tells you how to make it private again), so the "never link-shared" guardrail below no longer describes the live setup. Three pre-existing bugs in scenario 2 (clip download fields, missing download URL in the publish callback, binary transcript in the final log row) were fixed the same day.
+
 ## What exists
 
 | Thing | Where | ID |
