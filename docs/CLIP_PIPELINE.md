@@ -39,7 +39,7 @@ Phone → Drive "Raw Recordings" folder
    │            anything else → log row "1. ERROR – Descript rejected the import" (file is not retried)
    └─ > 100 MB: log row "1. SKIPPED – recording over 100 MB" (needs you), nothing else happens
 Descript → calls back scenario 2's webhook when each job finishes
-   │  job_type = import  → POST /jobs/agent (Underlord picks the best 20–60 s moment,
+   │  job_type = import/project_media → POST /jobs/agent (Underlord picks the best 20–60 s moment,
    │                        new 9:16 composition "AI Dad Clip", filler words out, Studio Sound,
    │                        captions)                               → log row "2."
    │  job_type = agent   → GET /projects/{id}, pick the "AI Dad Clip" composition (else newest),
@@ -91,8 +91,9 @@ Guardrails baked in:
    (column P), the transcript (I), the Descript share link (J), the TikTok caption (L), the
    Instagram caption (M) and the suggested post times (N, O). Download the clip from the Clips
    (auto) folder and post it by hand. *(Step 1 verified 2026-10-22 with
-   "20261020_070757 pipeline-test.mp4", a copy of a real recording; rows 2–4 depend on Descript's
-   callbacks.)*
+   "20261020_070757 pipeline-test.mp4", a copy of a real recording: row 1 "ok" with a real project
+   ID, then row 2 "Transcribed · clip finding started" (41 s of media) once scenario 2's import
+   filter was fixed. Rows 3–4 depend on Descript's later callbacks.)*
 4. **Tune.** All knobs live in scenario 2's CONFIG module: posting times and day offsets,
    `MAX_CLIP_SECONDS` (90), `IG_HASHTAG_HINTS` (update from the Sunday doc's caption re-check),
    `CLIP_COMPOSITION_NAME`, `METRICOOL_ENABLED`, `METRICOOL_AUTO_PUBLISH`. Scenario 1's CONFIG
@@ -141,6 +142,9 @@ offsets. Revisit after ~3 weeks of posting when Metricool has your own data.
 - **Batching.** "Wait 15 minutes, then batch" is implemented as a 15-minute poll: every file that
   landed in the same window runs in one execution. A file still uploading at poll time is picked
   up next window. Make Core allows a 1-minute minimum, so you can tighten this later.
+- **Callback job_type.** Descript reports the import job as `import/project_media` (not `import`).
+  Scenario 2's route A accepts both spellings since 2026-10-22; before that the import callback
+  matched no route and the pipeline silently stopped after row 1.
 - **Descript errors do not retry.** Module 11 never throws; a non-2xx answer is logged as
   "1. ERROR – Descript rejected the import" with Descript's message and the file is considered
   handled (drop it in again to retry). Before this change a failing import re-ran every 15 minutes
