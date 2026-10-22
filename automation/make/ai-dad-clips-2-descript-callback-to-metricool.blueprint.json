@@ -127,6 +127,18 @@
                     {
                       "a": "{{1.job_type}}",
                       "o": "text:equal",
+                      "b": "import/project_media"
+                    },
+                    {
+                      "a": "{{1.result.status}}",
+                      "o": "text:equal",
+                      "b": "success"
+                    }
+                  ],
+                  [
+                    {
+                      "a": "{{1.job_type}}",
+                      "o": "text:equal",
                       "b": "import"
                     },
                     {
