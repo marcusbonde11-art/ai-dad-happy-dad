@@ -15,6 +15,8 @@ Platforms: TikTok first, then Instagram Reels. First post: Wednesday, Oct 14, 20
 | `tools/build_workbook.py` | Rebuilds the .xlsx, .csv, .html and Markdown from `content.py` |
 | `tools/check_content.py` | Review pass 1: hint words, bio limits, idea counts (6 pillars), hook/beats/closing/tagline/caption structure, cross-references |
 | `deliverables/weekly/` | Local copies of the Sunday weekly ideas docs (3 sourced ideas per pillar + 15 taglines) |
+| [`docs/CLIP_PIPELINE.md`](docs/CLIP_PIPELINE.md) | Automated clip pipeline (Drive → Descript → Claude → Review Log, Metricool optional): what exists in Make, what is left, limits |
+| `automation/make/` | Make.com blueprints for the two clip-pipeline scenarios (placeholders only, no tokens or webhook URLs) |
 | `tools/verify_sheet.py` | Compares a CSV export of the Google Sheet against the source, cell by cell |
 
 The project Google Sheet is **AI Dad Healthy Dad: Launch Plan (Oct 2026)** in the owner's Google Drive.
